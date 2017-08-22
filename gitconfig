@@ -1,0 +1,18 @@
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore
+[color]
+    ui = auto
+[pull]
+    ff = only
+[push]
+    default = simple
+    followTags = true
+[merge]
+    ff = true
+[diff]
+    tool = vimdiff
+
+# Local settings
+[include]
+    path = ~/.gitconfig_local
