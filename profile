@@ -28,6 +28,15 @@ export FCEDIT='vim'
 # Colours for grep results
 export GREP_COLORS='mt=01;31:sl=:cx=00;38;5;10:fn=38;2;108;113;196:ln=32:bn=35:se=33'
 
+# Enable color support of ls
+if [ -x /usr/bin/dircolors ]; then
+    if [ -r "$HOME/.dircolors" ]; then
+        eval "$(dircolors -b "$HOME/.dircolors")"
+    else
+        eval "$(dircolors -b)"
+    fi
+fi
+
 # Local settings
 if [ -r "$HOME/.profile_local" ]; then
     . "$HOME/.profile_local"
