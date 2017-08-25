@@ -47,6 +47,15 @@ else
     color_prompt=
 fi
 
+# Enable color support of ls
+if [ -x /usr/bin/dircolors ]; then
+    if [ -r "$HOME/.dircolors" ]; then
+        eval "$(dircolors -b "$HOME/.dircolors")"
+    else
+        eval "$(dircolors -b)"
+    fi
+fi
+
 # Set custom prompt if present
 if [[ $color_prompt = 'yes' ]]; then
     . "$HOME/.myprompt.bash"
