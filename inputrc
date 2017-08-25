@@ -1,0 +1,47 @@
+# Be always 8 bit clean
+set input-meta on
+set output-meta on
+
+# Kill complete line
+"\e\C-k": kill-whole-line
+
+# Jump to next/previous whitespace
+"\e\C-f": shell-forward-word
+"\e\C-b": shell-backward-word
+
+# Forward incremental search
+"\C-s": forward-search-history
+
+# Cycle through possible completions
+"\e\C-n": menu-complete
+"\e\C-p": menu-complete-backward
+
+# No bells!
+set bell-style none
+
+# Highlight opening parenthesis when closing one
+set blink-matching-paren on
+
+# Paste as stream to avoid interpretation as command
+set enable-bracketed-paste on
+
+# Replace common parts of the auto-complete choice with dots
+set completion-prefix-display-length 2
+
+# Possible completions get different colors depending on file type
+set colored-stats on
+
+# Ask "really?" if there are more than this many completion options
+set completion-query-items 150
+
+# Add a slash to symlinked directories at the first tab press
+set mark-symlinked-directories on
+
+# Complete unambiguously on first tab, then show completions
+set show-all-if-unmodified on
+
+# Smart insert when autocompleting in middle of line
+set skip-completed-text on
+
+# Local settings
+$include ~/.inputrc_local
