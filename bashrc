@@ -79,3 +79,8 @@ fi
 if [[ -f $HOME/.functions.bash ]]; then
     . "$HOME/.functions.bash"
 fi
+
+# Local settings
+if [ -r "$HOME/.bashrc_local" ]; then
+    . "$HOME/.bashrc_local"
+fi
