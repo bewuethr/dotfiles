@@ -8,3 +8,8 @@ cdl () {
 wrap () {
     fold --spaces "$1" > "$1".$$ && mv "$1".$$ "$1"
 }
+
+# Local function definitions
+if [[ -f $HOME/.functions_local.bash ]]; then
+    . "$HOME/.functions_local.bash"
+fi

@@ -31,3 +31,8 @@ alias iiof='dig +short txt istheinternetonfire.com | fmt'
 
 # xclip to Ctrl-V-able clipboard
 alias xclips='xclip -selection clipboard'
+
+# Local alias definitions
+if [[ -f $HOME/.aliases_local.sh ]]; then
+    . "$HOME/.aliases_local.sh"
+fi
