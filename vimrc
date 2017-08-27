@@ -1,0 +1,43 @@
+execute pathogen#infect()
+
+" Indentation
+set shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+
+" Colours
+let g:solarized_termtrans = 1
+let g:solarized_old_cursor_style = 1
+let g:solarized_term_italics = 1
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
+colorscheme solarized8_dark
+set hlsearch
+
+" Ignore case in searches, unless there is an uppercase character. Tags don't ignore case.
+set ignorecase smartcase tagcase=match
+
+" Highlight current line
+set cursorline
+
+" Activate mouse
+set mouse=a
+
+" Save file when following tag
+set autowrite
+
+" Vimwiki settings
+let g:vimwiki_list = [{'maxhi': 1, 'list_margin': 0, 'auto_toc': 1, 'auto_tags': 1}]
+let g:vimwiki_hl_headers = 1
+let g:vimwiki_hl_cb_checked = 1
+
+" Lion.vim settings
+let g:lion_squeeze_spaces = 1
+
+" Shell syntax highlighting defaults to Bash
+let g:is_bash = 1
+
+" Enable syntax highlighting for Bash specific readline commands
+let readline_has_bash = 1
+
+" Read modeline if present
+set autoread modeline
