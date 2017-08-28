@@ -1,0 +1,331 @@
+# Solarized dark colours for dircolors, based on https://github.com/seebi/dircolors-solarized
+
+# This uses true colour escape codes to get around having to use bold when we don't
+# really want to. It doesn't look great in terminals that don't support it.
+
+# COLOR needs one of these arguments: 'tty' colorizes output to ttys, but not
+# pipes. 'all' adds color characters to all output. 'none' shuts colorization
+# off.
+COLOR tty
+
+# Below, there should be one TERM entry for each termtype that is colorizable
+TERM ansi
+TERM color_xterm
+TERM color-xterm
+TERM con132x25
+TERM con132x30
+TERM con132x43
+TERM con132x60
+TERM con80x25
+TERM con80x28
+TERM con80x30
+TERM con80x43
+TERM con80x50
+TERM con80x60
+TERM cons25
+TERM console
+TERM cygwin
+TERM dtterm
+TERM Eterm
+TERM eterm-color
+TERM gnome
+TERM gnome-256color
+TERM jfbterm
+TERM konsole
+TERM kterm
+TERM linux
+TERM linux-c
+TERM mach-color
+TERM mlterm
+TERM nxterm
+TERM putty
+TERM rxvt
+TERM rxvt-256color
+TERM rxvt-cygwin
+TERM rxvt-cygwin-native
+TERM rxvt-unicode
+TERM rxvt-unicode256
+TERM rxvt-unicode-256color
+TERM screen
+TERM screen-256color
+TERM screen-256color-bce
+TERM screen-bce
+TERM screen.linux
+TERM screen-w
+TERM vt100
+TERM xterm
+TERM xterm-16color
+TERM xterm-256color
+TERM xterm-88color
+TERM xterm-color
+TERM xterm-debian
+
+# EIGHTBIT, followed by '1' for on, '0' for off. (8-bit output)
+EIGHTBIT 1
+
+# By file type
+
+# Global default
+NORMAL 00
+# Normal file
+FILE 00
+# Directory
+DIR 36
+# Symbolic link
+LINK 35
+
+# Pipe, socket, block device, character device (blue bg)
+FIFO 30;44
+SOCK 35;44
+DOOR 35;44 # Solaris 2.5 and later
+BLK  33;44
+CHR  37;44
+
+OTHER_WRITABLE 37;42 # dir that is other-writable (o+w) and not sticky
+
+
+# By file attributes
+
+# Orphaned symlinks (blinking white on red)
+# Blink may or may not work (works on iTerm dark or light, and Putty dark)
+ORPHAN  05;37;41
+# ... and the files that orphaned symlinks point to (blinking white on red)
+MISSING 05;37;41
+
+# files with execute permission
+EXEC 38;2;203;75;22  # Unix
+.cmd 38;2;203;75;22  # Win
+.exe 38;2;203;75;22  # Win
+.com 38;2;203;75;22  # Win
+.bat 38;2;203;75;22  # Win
+.reg 38;2;203;75;22  # Win
+.app 38;2;203;75;22  # OSX
+
+# By extension
+
+# Text formats
+
+# Text that we can edit with a regular editor
+.txt 32
+.org 32
+.md 32
+.mkd 32
+.pdc 32
+
+# Source text
+.0 32
+.1 32
+.2 32
+.3 32
+.4 32
+.5 32
+.6 32
+.7 32
+.8 32
+.9 32
+.awk 32
+.bash 32
+.bats 32
+.C 32
+.c 32
+.cc 32
+.csh 32
+.css 32
+.cxx 32
+.el 32
+.h 32
+.hs 32
+.htm 32
+.html 32
+.java 32
+.js 32
+.l 32
+.man 32
+.n 32
+.objc 32
+.p 32
+.pas 32
+.php 32
+.pl 32
+.pm 32
+.pod 32
+.py 32
+.rb 32
+.rdf 32
+.sed 32
+.sh 32
+.shtml 32
+.tex 32
+.vim 32
+.xml 32
+.zsh 32
+
+# Multimedia formats
+
+# Image
+.bmp 33
+.cgm 33
+.dl 33
+.dvi 33
+.emf 33
+.eps 33
+.gif 33
+.jpeg 33
+.jpg 33
+.JPG 33
+.mng 33
+.pbm 33
+.pcx 33
+.pdf 33
+.pgm 33
+.png 33
+.ppm 33
+.pps 33
+.ppsx 33
+.ps 33
+.svg 33
+.svgz 33
+.tga 33
+.tif 33
+.tiff 33
+.xbm 33
+.xcf 33
+.xpm 33
+.xwd 33
+.xwd 33
+.yuv 33
+
+# Audio
+.aac 33
+.au  33
+.flac 33
+.mid 33
+.midi 33
+.mka 33
+.mp3 33
+.mpa 33
+.mpeg 33
+.mpg 33
+.ogg  33
+.ra 33
+.wav 33
+
+# Video
+.anx 33
+.asf 33
+.avi 33
+.axv 33
+.flc 33
+.fli 33
+.flv 33
+.gl 33
+.m2v 33
+.m4v 33
+.mkv 33
+.mov 33
+.mp4 33
+.mp4v 33
+.mpeg 33
+.mpg 33
+.nuv 33
+.ogm 33
+.ogv 33
+.ogx 33
+.qt 33
+.rm 33
+.rmvb 33
+.swf 33
+.vob 33
+.wmv 33
+
+# Misc
+
+# Binary document formats and multimedia source
+.doc 31
+.docx 31
+.rtf 31
+.dot 31
+.dotx 31
+.xls 31
+.xlsx 31
+.ppt 31
+.pptx 31
+.fla 31
+.psd 31
+
+# Archives, compressed
+.7z   38;2;108;113;196
+.apk  38;2;108;113;196
+.arj  38;2;108;113;196
+.bin  38;2;108;113;196
+.bz   38;2;108;113;196
+.bz2  38;2;108;113;196
+.cab  38;2;108;113;196  # Win
+.deb  38;2;108;113;196
+.dmg  38;2;108;113;196  # OSX
+.gem  38;2;108;113;196
+.gz   38;2;108;113;196
+.iso  38;2;108;113;196
+.jar  38;2;108;113;196
+.msi  38;2;108;113;196  # Win
+.rar  38;2;108;113;196
+.rpm  38;2;108;113;196
+.tar  38;2;108;113;196
+.tbz  38;2;108;113;196
+.tbz2 38;2;108;113;196
+.tgz  38;2;108;113;196
+.tx   38;2;108;113;196
+.war  38;2;108;113;196
+.xpi  38;2;108;113;196
+.xz   38;2;108;113;196
+.z    38;2;108;113;196
+.Z    38;2;108;113;196
+.zip  38;2;108;113;196
+
+# For testing
+.ANSI-30-black 30
+.ANSI-01;30-brblack 38;2;0;43;54
+.ANSI-31-red 31
+.ANSI-01;31-brred 38;2;203;75;22
+.ANSI-32-green 32
+.ANSI-01;32-brgreen 38;2;88;110;117
+.ANSI-33-yellow 33
+.ANSI-01;33-bryellow 38;2;101;123;131
+.ANSI-34-blue 34
+.ANSI-01;34-brblue 38;2;131;148;150
+.ANSI-35-magenta 35
+.ANSI-01;35-brmagenta 38;2;108;113;196
+.ANSI-36-cyan 36
+.ANSI-01;36-brcyan 38;2;147;161;161
+.ANSI-37-white 37
+.ANSI-01;37-brwhite 38;2;253;246;227
+
+# Unimportant text files
+.log 38;2;88;110;117
+*~ 38;2;88;110;117
+*# 38;2;88;110;117
+
+# Unimportant non-text files
+.bak 38;2;101;123;131
+.BAK 38;2;101;123;131
+.old 38;2;101;123;131
+.OLD 38;2;101;123;131
+.org_archive 38;2;101;123;131
+.off 38;2;101;123;131
+.OFF 38;2;101;123;131
+.dist 38;2;101;123;131
+.DIST 38;2;101;123;131
+.orig 38;2;101;123;131
+.ORIG 38;2;101;123;131
+.swp 38;2;101;123;131
+.swo 38;2;101;123;131
+*,v 38;2;101;123;131
+
+# The brightmagenta (Solarized: purple) color is free for you to use for your
+# custom file type
+.gpg 34
+.pgp 34
+.asc 34
+.3des 34
+.aes 34
+.enc 34
