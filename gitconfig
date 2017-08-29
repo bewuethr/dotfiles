@@ -23,3 +23,6 @@
 
 [includeIf "gitdir:~/.dotfiles_local/.git"]
     path = ~/.dotfiles_local/.gitconfig
+[filter "expand"]
+    clean = expand -t 4
+    smudge = unexpand -t 4
