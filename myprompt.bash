@@ -49,14 +49,14 @@ set_prompt () {
             __submodname=$(< "$(git rev-parse --show-toplevel)/.git")
             __submodname=${__submodname##*/}
             PS1+="\[$grey\](\[$lgrey\]$__submodname\[$grey\])"
-        # The official git prompt checks the following:
-        # - interactive/merge rebase (with step/total): REBASE-i, REBASE-m
-        # - rebase-apply/head-name and rebase-apply/applying with step/total), for REBASE, AM, AM/REBASE
-        # - MERGING
-        # - CHERRY-PICKING
-        # - REVERTING
-        # - BISECTING
-        # Look at https://github.com/git/git/blob/master/git-rebase.sh
+            # The official git prompt checks the following:
+            # - interactive/merge rebase (with step/total): REBASE-i, REBASE-m
+            # - rebase-apply/head-name and rebase-apply/applying with step/total), for REBASE, AM, AM/REBASE
+            # - MERGING
+            # - CHERRY-PICKING
+            # - REVERTING
+            # - BISECTING
+            # Look at https://github.com/git/git/blob/master/git-rebase.sh
         elif [[ -d $git_dir/rebase-merge ]]; then
             PS1+="\[$orange\]rebase-i $(< "$git_dir/rebase-merge/msgnum")/$(< "$git_dir/rebase-merge/end")"
         elif __bname=$(git symbolic-ref -q --short HEAD); then
