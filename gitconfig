@@ -1,17 +1,33 @@
+# Core setting
 [core]
     editor = vim
     excludesfile = ~/.gitignore
+
+# Colour when output to terminal
 [color]
     ui = auto
+
+# Allow only fast-forward merges when pulling
 [pull]
     ff = only
+
+# Don't push if upstream branch name is different; push tags
 [push]
     default = simple
     followTags = true
+
+# Don't create extra commits for fast-forward merges
 [merge]
     ff = true
+
+# Use vimdiff for diffing
 [diff]
     tool = vimdiff
+
+# Filter for machines using tab indentation instead of spaces
+[filter "expand"]
+    clean = expand -t 4
+    smudge = unexpand -t 4
 
 # Local settings
 [include]
@@ -20,9 +36,5 @@
 # Make sure that dotfiles repos always use same user
 [includeIf "gitdir:~/.dotfiles/.git"]
     path = ~/.dotfiles/.gitconfig
-
 [includeIf "gitdir:~/.dotfiles_local/.git"]
     path = ~/.dotfiles_local/.gitconfig
-[filter "expand"]
-    clean = expand -t 4
-    smudge = unexpand -t 4
