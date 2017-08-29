@@ -331,3 +331,5 @@ EXEC 38;2;203;75;22  # Unix
 .3des 34
 .aes 34
 .enc 34
+
+# vim:ft=dircolors

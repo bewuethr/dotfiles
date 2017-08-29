@@ -38,3 +38,5 @@
     path = ~/.dotfiles/.gitconfig
 [includeIf "gitdir:~/.dotfiles_local/.git"]
     path = ~/.dotfiles_local/.gitconfig
+
+# vim:ft=gitconfig
