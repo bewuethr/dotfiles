@@ -26,8 +26,8 @@
 
 # Filter for machines using tab indentation instead of spaces
 [filter "expand"]
-    clean = expand -t 4
-    smudge = unexpand -t 4
+    clean = expand -i -t 4
+    smudge = unexpand -t 4 --first-only
 
 # Local settings
 [include]
