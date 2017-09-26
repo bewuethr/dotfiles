@@ -161,6 +161,10 @@ set_prompt () {
         printf -v __cwd '%.3s/' "${cwd_arr[@]:0:$(( ${#cwd_arr[@]} - 1 ))}"
         __cwd+=${cwd_arr[-1]%/}
     fi
+    # Re-insert leading slash unless we use ~ or /
+    if [[ $__cwd != [~/]* ]]; then
+        __cwd=/$__cwd
+    fi
 
     # Set rest of prompt
     PS1+="\[$blue\]\$__un\[$orange\]@\[$yellow\]\$__hn\[$orange\]:\[$violet\]\$__cwd\[$orange\]\\$\[$no_colour\] "
