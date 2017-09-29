@@ -13,6 +13,12 @@ shopt -s cmdhist
 # Save multi-line commands with embedded newlines
 shopt -s lithist
 
+# Let me try again if I mess up a history substitution
+shopt -s histreedit
+
+# Show me the history expansion before running the command
+shopt -s histverify
+
 # Unlimited history
 HISTSIZE=-1
 HISTFILESIZE=-1
