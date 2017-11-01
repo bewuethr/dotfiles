@@ -26,7 +26,7 @@
 
 [alias]
     # Get all branches containing the argument in their name
-    gab = "!f () { git branch --list -a \"*$1*\"; }; f"
+    ba = "!git branch --list -a \"*$1*\" #"
 
 # Filter for machines using tab indentation instead of spaces
 [filter "expand"]
