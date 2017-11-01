@@ -24,6 +24,10 @@
 [diff]
     tool = vimdiff
 
+[alias]
+    # Get all branches containing the argument in their name
+    gab = "!f () { git branch --list -a \"*$1*\"; }; f"
+
 # Filter for machines using tab indentation instead of spaces
 [filter "expand"]
     clean = expand -i -t 4
