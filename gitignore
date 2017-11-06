@@ -2,6 +2,7 @@
 .gawkrc
 *.swp
 *.swo
+Session.vim
 tags
 
 # vim:ft=conf
