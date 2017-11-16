@@ -4,7 +4,7 @@ alias ...='cd ../..'
 # Some ls aliases
 alias ls='ls --color=auto'
 alias ll='ls -l'
-alias lla='ls -alF'
+alias lla='ls -AlF'
 alias la='ls -A'
 alias l='ls -CF'
 alias l1='ls -1'
