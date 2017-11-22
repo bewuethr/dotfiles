@@ -43,6 +43,9 @@ let g:vimwiki_list = [{'maxhi': 1, 'list_margin': 0, 'auto_toc': 1, 'auto_tags':
 let g:vimwiki_hl_headers = 1
 let g:vimwiki_hl_cb_checked = 1
 
+" Calendar.vim settings
+let g:calendar_monday = 1
+
 " Lion.vim settings
 let g:lion_squeeze_spaces = 1
 
