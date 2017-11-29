@@ -1,4 +1,7 @@
 set_prompt () {
+    # Exit status of last command
+    local exit_status=$?
+
     # Colours
     local red=$(tput setaf 1)
     local green=$(tput setaf 2)
@@ -166,8 +169,16 @@ set_prompt () {
         __cwd=/$__cwd
     fi
 
+    local sign_col
+    # Colour for prompt sign
+    if (( exit_status == 0 )); then
+        sign_col=$green
+    else
+        sign_col=$red
+    fi
+
     # Set rest of prompt
-    PS1+="\[$blue\]\$__un\[$orange\]@\[$yellow\]\$__hn\[$orange\]:\[$violet\]\$__cwd\[$orange\]\\$\[$no_colour\] "
+    PS1+="\[$blue\]\$__un\[$orange\]@\[$yellow\]\$__hn\[$orange\]:\[$violet\]\$__cwd\[$sign_col\]\\$\[$no_colour\] "
 
     # Set window title: see https://superuser.com/q/249293/372008
 }
