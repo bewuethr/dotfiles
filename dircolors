@@ -148,6 +148,7 @@ EXEC 38;2;203;75;22  # Unix
 .sed 32
 .sh 32
 .shtml 32
+.t 32
 .tex 32
 .vim 32
 .xml 32
