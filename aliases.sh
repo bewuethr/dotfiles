@@ -14,9 +14,6 @@ alias la1='ls -A1'
 alias grep='grep --color=auto --exclude-dir=.git --exclude=tags --exclude=*.swp'
 alias cgrep='grep --color=always --exclude-dir=.git --exclude=tags --exclude=*.swp'
 
-# Get colourful diffs with correct tabstops
-alias diff='diff --color --tabsize=4'
-
 # Get colour for diffstat
 alias diffstat='diffstat -C'
 
