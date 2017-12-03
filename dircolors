@@ -132,6 +132,7 @@ EXEC 38;2;203;75;22  # Unix
 .html 32
 .java 32
 .js 32
+.json 32
 .l 32
 .man 32
 .n 32
