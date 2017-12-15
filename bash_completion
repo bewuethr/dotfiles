@@ -1,0 +1,4 @@
+# Local completions
+. "$HOME/.bash_completion_local"
+
+# vim:ft=sh
