@@ -89,8 +89,6 @@ OTHER_WRITABLE 37;42 # dir that is other-writable (o+w) and not sticky
 # Orphaned symlinks (blinking white on red)
 # Blink may or may not work (works on iTerm dark or light, and Putty dark)
 ORPHAN  05;37;41
-# ... and the files that orphaned symlinks point to (blinking white on red)
-MISSING 05;37;41
 
 # files with execute permission
 EXEC 38;2;203;75;22  # Unix
