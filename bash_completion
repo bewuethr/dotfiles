@@ -1,4 +1,6 @@
 # Local completions
-. "$HOME/.bash_completion_local"
+if [[ -f $HOME/.bash_completion_local ]]; then
+    . "$HOME/.bash_completion_local"
+fi
 
 # vim:ft=sh
