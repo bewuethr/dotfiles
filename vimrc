@@ -49,6 +49,9 @@ let g:calendar_monday = 1
 " Lion.vim settings
 let g:lion_squeeze_spaces = 1
 
+" Ale settings
+let g:ale_sh_shellcheck_options = '-x'
+
 " Local settings
 if filereadable(expand("~/.vimrc_local"))
     source ~/.vimrc_local
