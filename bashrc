@@ -90,7 +90,7 @@ if ! shopt -oq posix && [[ -f /usr/share/bash-completion/bash_completion ]]; the
     . /usr/share/bash-completion/bash_completion
 fi
 
-# Alias definitions.
+# Alias definitions
 if [[ -f $HOME/.aliases.sh ]]; then
     . "$HOME/.aliases.sh"
 fi
