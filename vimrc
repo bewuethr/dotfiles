@@ -52,6 +52,9 @@ let g:lion_squeeze_spaces = 1
 " Ale settings
 let g:ale_sh_shellcheck_options = '-x'
 
+" Pandoc settings
+let g:pandoc#folding#level = 3
+
 " Local settings
 if filereadable(expand("~/.vimrc_local"))
     source ~/.vimrc_local
