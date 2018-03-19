@@ -53,7 +53,7 @@ let g:lion_squeeze_spaces = 1
 let g:ale_sh_shellcheck_options = '-x'
 
 " Pandoc settings
-let g:pandoc#folding#level = 3
+let g:pandoc#modules#disabled = ["folding"]
 
 " Local settings
 if filereadable(expand("~/.vimrc_local"))
