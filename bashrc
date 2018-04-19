@@ -68,7 +68,9 @@ else
 fi
 
 # Enable color support of ls
-if [ -x /usr/bin/dircolors ]; then
+if [ -x /usr/bin/dircolors ] \
+    || [ -x /usr/local/opt/coreutils/libexec/gnubin/dircolors ]
+then
     if [ -r "$HOME/.dircolors" ]; then
         eval "$(dircolors -b "$HOME/.dircolors")"
     else
@@ -86,8 +88,12 @@ fi
 unset color_prompt
 
 # Enable programmable completion if we're not in POSIX mode
-if ! shopt -oq posix && [[ -f /usr/share/bash-completion/bash_completion ]]; then
-    . /usr/share/bash-completion/bash_completion
+if ! shopt -oq posix; then
+    if [[ -f /usr/share/bash-completion/bash_completion ]]; then
+        . /usr/share/bash-completion/bash_completion
+    elif  [[ -f /usr/local/share/bash-completion/bash_completion ]]; then
+        . /usr/local/share/bash-completion/bash_completion
+    fi
 fi
 
 # Alias definitions
