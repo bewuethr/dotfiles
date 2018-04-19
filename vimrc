@@ -56,6 +56,16 @@ let g:ale_sh_shellcheck_options = '-x'
 let g:pandoc#modules#disabled = ["folding"]
 let g:pandoc#syntax#codeblocks#embeds#langs = ["bash=sh"]
 
+" vim-go settings
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_generate_tags = 1
+
 " Local settings
 if filereadable(expand("~/.vimrc_local"))
     source ~/.vimrc_local
