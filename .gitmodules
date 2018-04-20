@@ -20,3 +20,6 @@
 	path = vim/bundle/vimwiki
 	url = https://github.com/vimwiki/vimwiki.git
 	branch = dev
+[submodule "vim/bundle/vim-solarized8"]
+	path = vim/bundle/vim-solarized8
+	url = https://github.com/lifepillar/vim-solarized8.git
