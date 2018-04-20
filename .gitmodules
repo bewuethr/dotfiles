@@ -4,3 +4,6 @@
 [submodule "vim/bundle/ale"]
 	path = vim/bundle/ale
 	url = https://github.com/w0rp/ale.git
+[submodule "vim/bundle/vim-lion"]
+	path = vim/bundle/vim-lion
+	url = https://github.com/tommcdo/vim-lion.git
