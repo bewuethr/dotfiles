@@ -7,10 +7,9 @@ set shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 let g:solarized_termtrans = 1
 let g:solarized_old_cursor_style = 1
 let g:solarized_term_italics = 1
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
-colorscheme solarized8_dark
+set background=dark
+colorscheme solarized8
 
 " Highlight previous search matches
 set hlsearch
