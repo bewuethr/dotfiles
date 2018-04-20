@@ -53,7 +53,7 @@ let g:ale_sh_shellcheck_options = '-x'
 
 " Pandoc settings
 let g:pandoc#modules#disabled = ["folding"]
-let g:pandoc#syntax#codeblocks#embeds#langs = ["bash=sh"]
+let g:pandoc#syntax#codeblocks#embeds#langs = ["bash=sh", "sh"]
 
 " vim-go settings
 let g:go_highlight_types = 1
