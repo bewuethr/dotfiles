@@ -23,6 +23,10 @@
 # Use vimdiff for diffing
 [diff]
     tool = vimdiff
+    submodule = log
+
+[status]
+    submodulesummary = 1
 
 [alias]
     # Get all branches containing the argument in their name
