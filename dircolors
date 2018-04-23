@@ -111,6 +111,7 @@ EXEC 38;2;203;75;22  # Unix
 .md 32
 .mkd 32
 .pdc 32
+.wiki 32
 
 # Source text
 .awk 32
