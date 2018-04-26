@@ -57,6 +57,10 @@ let g:pandoc#modules#disabled = ["folding"]
 let g:pandoc#syntax#codeblocks#embeds#langs = ["bash=sh", "sh"]
 
 " vim-go settings
+" Use goimports instead of gofmt
+let g:go_fmt_command = "goimports"
+
+" Syntax highlighting
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
