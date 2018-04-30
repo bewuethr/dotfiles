@@ -5,7 +5,7 @@ case $- in
 esac
 
 # Make less more friendly for non-text input files
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+[[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # Show verbose prompt, reduce tabs, handle escape chars, case insensitive search
 export LESS='--LONG-PROMPT --tabs=4 --RAW-CONTROL-CHARS --ignore-case'
@@ -68,8 +68,8 @@ else
 fi
 
 # Enable color support of ls
-if [ -x /usr/bin/dircolors ] \
-    || [ -x /usr/local/opt/coreutils/libexec/gnubin/dircolors ]
+if [[ -x /usr/bin/dircolors ]] \
+    || [[ -x /usr/local/opt/coreutils/libexec/gnubin/dircolors ]]
 then
     if [ -r "$HOME/.dircolors" ]; then
         eval "$(dircolors -b "$HOME/.dircolors")"
@@ -107,6 +107,6 @@ if [[ -f $HOME/.functions.bash ]]; then
 fi
 
 # Local settings
-if [ -r "$HOME/.bashrc_local" ]; then
+if [[ -r "$HOME/.bashrc_local" ]]; then
     . "$HOME/.bashrc_local"
 fi
