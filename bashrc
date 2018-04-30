@@ -5,7 +5,11 @@ case $- in
 esac
 
 # Make less more friendly for non-text input files
-[[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
+if [[ -x /usr/bin/lesspipe ]]; then
+    eval "$(SHELL=/bin/sh lesspipe)"
+elif [[ -x /usr/local/bin/lesspipe.sh ]];then
+    eval "$(SHELL=/bin/sh lesspipe.sh)"
+fi
 
 # Show verbose prompt, reduce tabs, handle escape chars, case insensitive search
 export LESS='--LONG-PROMPT --tabs=4 --RAW-CONTROL-CHARS --ignore-case'
