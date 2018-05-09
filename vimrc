@@ -35,6 +35,25 @@ let g:is_bash = 1
 " Enable syntax highlighting for Bash specific readline commands
 let g:readline_has_bash = 1
 
+" netrw settings
+" Hide directory banner
+let g:netrw_banner = 0
+
+" Use tree style listing
+let g:netrw_liststyle = 3
+
+" Open splits in previous window
+let g:netrw_browse_split = 4
+
+" Vertical split to the right
+let g:netrw_altv = 1
+
+" Set netrw window width in percent of total window width
+let g:netrw_winsize = 20
+
+" Hide swap files
+let g:netrw_list_hide= '.*\.swp$'
+
 " Plugins
 
 " Vimwiki settings
