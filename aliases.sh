@@ -17,17 +17,11 @@ alias cgrep='grep --color=always --exclude-dir=.git --exclude=tags --exclude=*.s
 # Get colour for diffstat
 alias diffstat='diffstat -C'
 
-# Calendar in a normal, non-stupid format. Weeks start on Monday!
-alias cal='ncal -bM'
-
 # Syntax highlighting for bashdb
 alias bashdb='bashdb --highlight'
 
 # Is the internet on fire?
 alias iiof='dig +short txt istheinternetonfire.com | fmt'
-
-# xclip to Ctrl-V-able clipboard
-alias xclips='xclip -selection clipboard'
 
 # Local alias definitions
 if [[ -f $HOME/.aliases_local.sh ]]; then
