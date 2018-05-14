@@ -4,4 +4,4 @@ noremap <buffer> k gk
 noremap <buffer> 0 g0
 noremap <buffer> $ g$
 setlocal wrap linebreak
-setlocal spell spelllang=en_ca
+setlocal spell spelllang=en_ca spellcapcheck=
