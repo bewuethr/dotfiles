@@ -20,6 +20,10 @@
 [merge]
     ff = true
 
+# Delete local references on remotes that have deleted those branches
+[fetch]
+    prune = true
+
 # Use vimdiff for diffing
 [diff]
     tool = vimdiff
