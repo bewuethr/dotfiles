@@ -17,9 +17,6 @@ alias cgrep='grep --color=always --exclude-dir=.git --exclude=tags --exclude=*.s
 # Get colour for diffstat
 alias diffstat='diffstat -C'
 
-# Syntax highlighting for bashdb
-alias bashdb='bashdb --highlight dark'
-
 # Is the internet on fire?
 alias iiof='dig +short txt istheinternetonfire.com | fmt'
 
