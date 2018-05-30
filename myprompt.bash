@@ -37,21 +37,21 @@ set_prompt () {
     local git_dir
     if git_dir=$(git rev-parse --git-dir 2> /dev/null); then
 
-        PS1="\[$grey\](\[$cyan\]"
+        PS1="\\[$grey\\](\\[$cyan\\]"
 
         # Get current branch or just use ".git" if in git directory
         if [[ $(git rev-parse --is-inside-git-dir) == 'true' ]]; then
             # Or is it even a bare repo?
             if [[ $(git rev-parse --is-bare-repository) == 'true' ]]; then
-                PS1+="\[$grey\]bare"
+                PS1+="\\[$grey\\]bare"
             else
-                PS1+="\[$grey\].git"
+                PS1+="\\[$grey\\].git"
             fi
         elif [[ -f $(git rev-parse --show-toplevel)/.git ]]; then
             # We are in a submodule
             __submodname=$(< "$(git rev-parse --show-toplevel)/.git")
             __submodname=${__submodname##*/}
-            PS1+="\[$grey\](\[$lgrey\]$__submodname\[$grey\])"
+            PS1+="\\[$grey\\](\\[$lgrey\\]$__submodname\\[$grey\\])"
             # The official git prompt checks the following:
             # - interactive/merge rebase (with step/total): REBASE-i, REBASE-m
             # - rebase-apply/head-name and rebase-apply/applying with step/total), for REBASE, AM, AM/REBASE
@@ -61,7 +61,7 @@ set_prompt () {
             # - BISECTING
             # Look at https://github.com/git/git/blob/master/git-rebase.sh
         elif [[ -d $git_dir/rebase-merge ]]; then
-            PS1+="\[$orange\]rebase-i $(< "$git_dir/rebase-merge/msgnum")/$(< "$git_dir/rebase-merge/end")"
+            PS1+="\\[$orange\\]rebase-i $(< "$git_dir/rebase-merge/msgnum")/$(< "$git_dir/rebase-merge/end")"
         elif __bname=$(git symbolic-ref -q --short HEAD); then
             # Use variable instead of assigning directly because of expansions vulnerability
             PS1+="\${__bname}"
@@ -71,7 +71,7 @@ set_prompt () {
             local uscct
             if uscct=$(git status --porcelain | grep -c '^.[MD]'); then
                 (( uscct == 1 )) && uscct=
-                PS1+="${space:-\[$grey\]|}\[$orange\]$uscct"$'\u25cb'
+                PS1+="${space:-"\\[$grey\\]|"}\\[$orange\\]$uscct"$'\u25cb'
                 space=
             fi
 
@@ -79,7 +79,7 @@ set_prompt () {
             local scct
             if scct=$(git status --porcelain | grep -c '^[MADRC]'); then
                 (( scct == 1 )) && scct=
-                PS1+="${space:-\[$grey\]|}\[$orange\]$scct"$'\u25cf'
+                PS1+="${space:-"\\[$grey\\]|"}\\[$orange\\]$scct"$'\u25cf'
                 space=
             fi
 
@@ -87,7 +87,7 @@ set_prompt () {
             if git reflog exists refs/stash; then
                 local stashct=$(git stash list | wc -l)
                 (( stashct == 1 )) && stashct=
-                PS1+="${space:-\[$grey\]|}\[$blue\]$stashct"$'\u2295'
+                PS1+="${space:-"\\[$grey\\]|"}\\[$blue\\]$stashct"$'\u2295'
                 space=
             fi
 
@@ -95,35 +95,35 @@ set_prompt () {
             local utct
             if utct=$(git status --porcelain | grep -c '^??'); then
                 (( utct == 1 )) && utct=
-                PS1+="${space:-\[$grey\]|}\[$magenta\]$utct"$'\u2302'
+                PS1+="${space:-"\\[$grey\\]|"}\\[$magenta\\]$utct"$'\u2302'
                 space=
             fi
 
             # Commits ahead/behind upstream
             local commits
-            if commits=$(git rev-list --left-right HEAD...@{u} 2> /dev/null); then
+            if commits=$(git rev-list --left-right HEAD...@\{u\} 2> /dev/null); then
                 local ahead=$(grep -c '^<' <<< "$commits")
-                (( ahead > 0 )) && { PS1+="${space:-\[$grey\]|}\[$violet\]${ahead}"$'\u2b06'; space=; }
+                (( ahead > 0 )) && { PS1+="${space:-"\\[$grey\\]|"}\\[$violet\\]${ahead}"$'\u2b06'; space=; }
 
                 local behind=$(grep -c '^>' <<< "$commits")
                 local behcol
                 if (( behind > 0 )); then
                     # Check if can be fast-forwarded
-                    if git merge-base --is-ancestor HEAD @{u}; then
+                    if git merge-base --is-ancestor HEAD @\{u\}; then
                         behcol=$yellow
                     else
                         behcol=$red
                     fi
-                    PS1+="${space:-\[$grey\]|}\[$behcol\]${behind}"$'\u2b07'
+                    PS1+="${space:-"\\[$grey\\]|"}\\[$behcol\\]${behind}"$'\u2b07'
                     space=
                 fi
 
-                (( ahead == 0 && behind == 0 )) && PS1+="${space:-\[$grey\]|}\[$green\]"$'\u2713'
+                (( ahead == 0 && behind == 0 )) && PS1+="${space:-"\\[$grey\\]|"}\\[$green\\]"$'\u2713'
             fi
         else
             # Probably detached HEAD, use describe or commit hash
             # Use variable instead of assigning directly because of expansions vulnerability
-            PS1+="\[$lgrey\]"
+            PS1+="\\[$lgrey\\]"
             if __bname=$(git describe --tags HEAD 2> /dev/null); then
                 PS1+="\${__bname}"
             else
@@ -131,7 +131,7 @@ set_prompt () {
             fi
 
         fi
-        PS1+="\[$grey\]) "
+        PS1+="\\[$grey\\]) "
     fi
 
     # If user name has multiple parts, shorten to 'a_b' or similar; else just use first letter
@@ -178,7 +178,7 @@ set_prompt () {
     fi
 
     # Set rest of prompt
-    PS1+="\[$blue\]\$__un\[$orange\]@\[$yellow\]\$__hn\[$orange\]:\[$violet\]\$__cwd\[$sign_col\]\\$\[$no_colour\] "
+    PS1+="\\[$blue\\]\$__un\\[$orange\\]@\\[$yellow\\]\$__hn\\[$orange\\]:\\[$violet\\]\$__cwd\\[$sign_col\\]\\$\\[$no_colour\\] "
 
     # Set window title: see https://superuser.com/q/249293/372008
 }
