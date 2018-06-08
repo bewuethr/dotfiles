@@ -57,7 +57,11 @@ let g:netrw_list_hide= '.*\.swp$'
 " Plugins
 
 " Vimwiki settings
-let g:vimwiki_list = [{'maxhi': 1, 'list_margin': 0, 'auto_toc': 1, 'auto_tags': 1}]
+let g:vimwiki_list = [{'maxhi': 1,
+    \'list_margin': 0,
+    \'auto_toc': 1,
+    \'auto_tags': 1,
+    \'auto_export': 1}]
 let g:vimwiki_hl_headers = 1
 let g:vimwiki_hl_cb_checked = 1
 let g:vimwiki_html_header_numbering = 2
