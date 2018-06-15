@@ -25,8 +25,8 @@ set blink-matching-paren on
 # Paste as stream to avoid interpretation as command
 set enable-bracketed-paste on
 
-# Replace common parts of the auto-complete choice with dots
-set completion-prefix-display-length 2
+# Colourize common prefix in completions
+set colored-completion-prefix on
 
 # Possible completions get different colors depending on file type
 set colored-stats on
