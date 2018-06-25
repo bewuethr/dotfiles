@@ -34,7 +34,7 @@
 
 [alias]
     # Get all branches containing the argument in their name
-    ba = "!git branch --list -i -a \"*$1*\" | cat #"
+    ba = "!git -P branch --list -i -a \"*$1*\" #"
 
 # Filter for machines using tab indentation instead of spaces
 [filter "expand"]
