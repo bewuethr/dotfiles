@@ -1,5 +1,5 @@
 compiler fpc
-set autowrite
+setlocal autowrite
 
 let pascal_traditional = 1
 let pascal_symbol_operator = 1
