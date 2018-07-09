@@ -19,6 +19,11 @@
 # Don't create extra commits for fast-forward merges
 [merge]
     ff = true
+    tool = vimdiff
+    conflictstyle = diff3
+
+[mergetool]
+    prompt = false
 
 # Delete local references on remotes that have deleted those branches
 [fetch]
