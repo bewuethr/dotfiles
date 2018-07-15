@@ -1,6 +1,6 @@
 # Find lexically last directory that starts with provided parameter and cd into it
 cdl () {
-    local cands=("$1"*)
+    local cands=("$1"*/)
     cd "${cands[-1]}"
 }
 
