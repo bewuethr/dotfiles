@@ -3,17 +3,18 @@ set_prompt () {
     local exit_status=$?
 
     # Colours
-    local red=$(tput setaf 1)
-    local green=$(tput setaf 2)
-    local yellow=$(tput setaf 3)
-    local blue=$(tput setaf 4)
-    local magenta=$(tput setaf 5)
-    local cyan=$(tput setaf 6)
-    local orange=$(tput setaf 9)
-    local grey=$(tput setaf 10)
-    local violet=$(tput setaf 13)
-    local lgrey=$(tput setaf 14)
-    local no_colour=$(tput sgr0)
+    local red green yellow blue magenta cyan orange grey violet lgrey no_colour
+    red=$(tput setaf 1)
+    green=$(tput setaf 2)
+    yellow=$(tput setaf 3)
+    blue=$(tput setaf 4)
+    magenta=$(tput setaf 5)
+    cyan=$(tput setaf 6)
+    orange=$(tput setaf 9)
+    grey=$(tput setaf 10)
+    violet=$(tput setaf 13)
+    lgrey=$(tput setaf 14)
+    no_colour=$(tput sgr0)
 
     PS1=
 
@@ -64,7 +65,7 @@ set_prompt () {
             PS1+="\\[$orange\\]rebase-i $(< "$git_dir/rebase-merge/msgnum")/$(< "$git_dir/rebase-merge/end")"
         elif __bname=$(git symbolic-ref -q --short HEAD); then
             # Use variable instead of assigning directly because of expansions vulnerability
-            PS1+="\${__bname}"
+            PS1+='${__bname}'
             local space=" "
 
             # Unstaged changes
@@ -85,7 +86,8 @@ set_prompt () {
 
             # Stash
             if git reflog exists refs/stash; then
-                local stashct=$(git stash list | wc -l)
+                local stashct
+                stashct=$(git stash list | wc -l)
                 (( stashct == 1 )) && stashct=
                 PS1+="${space:-"\\[$grey\\]|"}\\[$blue\\]$stashct"$'\u2295'
                 space=
@@ -102,14 +104,16 @@ set_prompt () {
             # Commits ahead/behind upstream
             local commits
             if commits=$(git rev-list --left-right HEAD...@\{u\} 2> /dev/null); then
-                local ahead=$(grep -c '^<' <<< "$commits")
+                local ahead
+                ahead=$(grep -c '^<' <<< "$commits")
                 (( ahead > 0 )) && { PS1+="${space:-"\\[$grey\\]|"}\\[$violet\\]${ahead}"$'\u2b06'; space=; }
 
-                local behind=$(grep -c '^>' <<< "$commits")
+                local behind
+                behind=$(grep -c '^>' <<< "$commits")
                 local behcol
                 if (( behind > 0 )); then
                     # Check if can be fast-forwarded
-                    if git merge-base --is-ancestor HEAD @\{u\}; then
+                    if git merge-base --is-ancestor HEAD '@{u}'; then
                         behcol=$yellow
                     else
                         behcol=$red
@@ -125,7 +129,7 @@ set_prompt () {
             # Use variable instead of assigning directly because of expansions vulnerability
             PS1+="\\[$lgrey\\]"
             if __bname=$(git describe --tags HEAD 2> /dev/null); then
-                PS1+="\${__bname}"
+                PS1+='${__bname}'
             else
                 PS1+=$(git rev-parse --short HEAD)
             fi
@@ -150,7 +154,7 @@ set_prompt () {
     fi
 
     # If $PWD starts with $HOME, replace the $HOME part with a tilde
-    if [[ $PWD == $HOME* ]]; then
+    if [[ $PWD == "$HOME"* ]]; then
         __cwd="~${PWD:${#HOME}}"
     else
         __cwd=$PWD
@@ -161,8 +165,8 @@ set_prompt () {
     local cwd_arr
     IFS='/' read -ra cwd_arr <<< "${__cwd#/}"
     if (( ${#cwd_arr[@]} > 1 )); then
-        printf -v __cwd '%.3s/' "${cwd_arr[@]:0:$(( ${#cwd_arr[@]} - 1 ))}"
-        __cwd+=${cwd_arr[-1]%/}
+        printf -v __cwd '%.3s/' "${cwd_arr[@]}"
+        __cwd=${__cwd%/}
     fi
     # Re-insert leading slash unless we use ~ or /
     if [[ $__cwd != [~/]* ]]; then
