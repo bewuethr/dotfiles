@@ -22,5 +22,6 @@ alias iiof='dig +short txt istheinternetonfire.com | fmt'
 
 # Local alias definitions
 if [[ -f $HOME/.aliases_local.sh ]]; then
+    # shellcheck source=/dev/null
     . "$HOME/.aliases_local.sh"
 fi

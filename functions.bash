@@ -11,5 +11,6 @@ wrap () {
 
 # Local function definitions
 if [[ -f $HOME/.functions_local.bash ]]; then
+    # shellcheck source=/dev/null
     . "$HOME/.functions_local.bash"
 fi

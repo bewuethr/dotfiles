@@ -7,7 +7,7 @@ esac
 # Make less more friendly for non-text input files
 if [[ -x /usr/bin/lesspipe ]]; then
     eval "$(SHELL=/bin/sh lesspipe)"
-elif [[ -x /usr/local/bin/lesspipe.sh ]];then
+elif [[ -x /usr/local/bin/lesspipe.sh ]]; then
     eval "$(SHELL=/bin/sh lesspipe.sh)"
 fi
 
@@ -75,7 +75,7 @@ fi
 if [[ -x /usr/bin/dircolors ]] \
     || [[ -x /usr/local/opt/coreutils/libexec/gnubin/dircolors ]]
 then
-    if [ -r "$HOME/.dircolors" ]; then
+    if [[ -r $HOME/.dircolors ]]; then
         eval "$(dircolors -b "$HOME/.dircolors")"
     else
         eval "$(dircolors -b)"
@@ -84,7 +84,8 @@ fi
 
 # Set custom prompt if present
 if [[ $color_prompt = 'yes' ]]; then
-    . "$HOME/.myprompt.bash"
+    # shellcheck source=/dev/null
+    . "$HOME"/.myprompt.bash
     PROMPT_COMMAND="set_prompt${PROMPT_COMMAND:+$'\n'$PROMPT_COMMAND}"
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
@@ -94,23 +95,28 @@ unset color_prompt
 # Enable programmable completion if we're not in POSIX mode
 if ! shopt -oq posix; then
     if [[ -f /usr/share/bash-completion/bash_completion ]]; then
+        # shellcheck source=/dev/null
         . /usr/share/bash-completion/bash_completion
     elif  [[ -f /usr/local/share/bash-completion/bash_completion ]]; then
+        # shellcheck source=/dev/null
         . /usr/local/share/bash-completion/bash_completion
     fi
 fi
 
 # Alias definitions
 if [[ -f $HOME/.aliases.sh ]]; then
-    . "$HOME/.aliases.sh"
+    # shellcheck source=/dev/null
+    . "$HOME"/.aliases.sh
 fi
 
 # Source custom utility functions
 if [[ -f $HOME/.functions.bash ]]; then
-    . "$HOME/.functions.bash"
+    # shellcheck source=/dev/null
+    . "$HOME"/.functions.bash
 fi
 
 # Local settings
-if [[ -r "$HOME/.bashrc_local" ]]; then
-    . "$HOME/.bashrc_local"
+if [[ -r $HOME/.bashrc_local ]]; then
+    # shellcheck source=/dev/null
+    . "$HOME"/.bashrc_local
 fi

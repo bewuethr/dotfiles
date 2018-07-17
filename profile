@@ -8,6 +8,7 @@ fi
 
 # Local settings
 if [ -r "$HOME/.profile_local" ]; then
+    # shellcheck source=/dev/null
     . "$HOME/.profile_local"
 fi
 
@@ -15,6 +16,7 @@ fi
 if [ -n "$BASH_VERSION" ]; then
     # Include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
+        # shellcheck source=/dev/null
         . "$HOME/.bashrc"
     fi
 fi
