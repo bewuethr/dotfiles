@@ -165,8 +165,8 @@ set_prompt () {
     local cwd_arr
     IFS='/' read -ra cwd_arr <<< "${__cwd#/}"
     if (( ${#cwd_arr[@]} > 1 )); then
-        printf -v __cwd '%.3s/' "${cwd_arr[@]}"
-        __cwd=${__cwd%/}
+        printf -v __cwd '%.3s/' "${cwd_arr[@]:0:$(( ${#cwd_arr[@]} - 1 ))}"
+        __cwd+=${cwd_arr[-1]%/}
     fi
     # Re-insert leading slash unless we use ~ or /
     if [[ $__cwd != [~/]* ]]; then
