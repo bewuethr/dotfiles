@@ -12,7 +12,7 @@ alias la1='ls -A1'
 
 # grep
 alias grep='grep --color=auto --exclude-dir=.git --exclude=tags --exclude=*.swp'
-alias cgrep='grep --color=always --exclude-dir=.git --exclude=tags --exclude=*.swp'
+alias cgrep='grep --color=always'
 
 # Get colour for diffstat
 alias diffstat='diffstat -C'
