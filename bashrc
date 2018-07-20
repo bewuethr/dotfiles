@@ -76,7 +76,7 @@ if [[ -x /usr/bin/dircolors ]] \
     || [[ -x /usr/local/opt/coreutils/libexec/gnubin/dircolors ]]
 then
     if [[ -r $HOME/.dircolors ]]; then
-        eval "$(dircolors -b "$HOME/.dircolors")"
+        eval "$(dircolors -b "$HOME"/.dircolors)"
     else
         eval "$(dircolors -b)"
     fi
