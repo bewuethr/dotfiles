@@ -25,8 +25,8 @@ set blink-matching-paren on
 # Paste as stream to avoid interpretation as command
 set enable-bracketed-paste on
 
-# Colourize common prefix in completions
-set colored-completion-prefix on
+# Replace common prefix with ellipsis for completion
+set completion-prefix-display-length 2
 
 # Possible completions get different colors depending on file type
 set colored-stats on
