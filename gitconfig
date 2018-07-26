@@ -61,6 +61,11 @@
     # Don't ask to confirm merge tool
     prompt = false
 
+[pager]
+    diff = diff-highlight | less
+    log = diff-highlight | less
+    show = diff-highlight | less
+
 [pull]
     # Allow only fast-forward merges when pulling
     ff = only
