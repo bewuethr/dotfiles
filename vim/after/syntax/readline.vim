@@ -1,12 +1,16 @@
 syn keyword readlineVariable    contained
                               \ nextgroup=readlineBoolean
-                              \ skipwhite
                               \ blink-matching-paren
+                              \ colored-completion-prefix
                               \ enable-bracketed-paste
-                              \ colored-stats
+
+syn keyword readlineFunction    contained
+                              \ print-last-kbd-macro
 
 if exists("readline_has_bash")
   syn keyword readlineFunction  contained
                               \ shell-forward-word
                               \ shell-backward-word
+                              \ shell-kill-word
+                              \ shell-backward-kill-word
 endif
