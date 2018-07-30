@@ -3,7 +3,7 @@
 " Adapted from awk embedding in :h sh-embed
 
 if exists("b:current_syntax")
-  unlet b:current_syntax
+	unlet b:current_syntax
 endif
 
 syn include @bcScript syntax/bc.vim
