@@ -1,7 +1,7 @@
 execute pathogen#infect()
 
 " Indentation
-set shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+set shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
 
 " Colours
 let g:solarized_termtrans = 1
