@@ -1,95 +1,95 @@
 [core]
-    # Abbreviate object names
-    abbrev = auto
-    # Default editor
-    editor = vim
-    # Global ignore file
-    excludesfile = ~/.gitignore
+	# Abbreviate object names
+	abbrev = auto
+	# Default editor
+	editor = vim
+	# Global ignore file
+	excludesfile = ~/.gitignore
 
 [alias]
-    # Get all branches containing the argument in their name
-    ba = "!git -P branch --list -i -a \"*$1*\" #"
-    # Colour git blame by age
-    bla = blame --color-by-age --minimal -C -C --abbrev=6 --progress
-    # Different colour for repeated author information in blame
-    blc = blame --color-lines
+	# Get all branches containing the argument in their name
+	ba = "!git -P branch --list -i -a \"*$1*\" #"
+	# Colour git blame by age
+	bla = blame --color-by-age --minimal -C -C --abbrev=6 --progress
+	# Different colour for repeated author information in blame
+	blc = blame --color-lines
 
 [color]
-    # Colour when output to terminal
-    ui = auto
+	# Colour when output to terminal
+	ui = auto
 
 [color "blame"]
-    # Gradient from grey to red for --color-by-age
-    highlightRecent = "#586e75,12 month ago,#63696f,11 month ago,\
-        #6e6469,10 month ago,#795f63,9 month ago,#845a5d,8 month ago,\
-        #8f5557,7 month ago,#9a5052,6 month ago,#a54b4c,5 month ago,\
-        #b04646,4 month ago,#bb4140,3 month ago,#c63c3a,2 month ago,\
-        #d13734,1 month ago,#dc322f"
-    # Use grey to fade out lines with repeated information for --color-lines
-    repeatedLines = "#586e75"
+	# Gradient from grey to red for --color-by-age
+	highlightRecent = "#586e75,12 month ago,#63696f,11 month ago,\
+		#6e6469,10 month ago,#795f63,9 month ago,#845a5d,8 month ago,\
+		#8f5557,7 month ago,#9a5052,6 month ago,#a54b4c,5 month ago,\
+		#b04646,4 month ago,#bb4140,3 month ago,#c63c3a,2 month ago,\
+		#d13734,1 month ago,#dc322f"
+	# Use grey to fade out lines with repeated information for --color-lines
+	repeatedLines = "#586e75"
 
 [diff]
-    # Spend more time on diffing
-    algorithm = histogram
-    # List submodule commits like "git submodule summary" does
-    submodule = log
-    # Use vimdiff for diffing
-    tool = vimdiff
+	# Spend more time on diffing
+	algorithm = histogram
+	# List submodule commits like "git submodule summary" does
+	submodule = log
+	# Use vimdiff for diffing
+	tool = vimdiff
 
 [fetch]
-    # Delete local references on remotes that have deleted those branches
-    prune = true
+	# Delete local references on remotes that have deleted those branches
+	prune = true
 
 [filter "expand"]
-    # Clean filter to expand tabs to spaces
-    clean = expand -i -t 4
-    # Smudge filter to unexpand spaces to tabs
-    smudge = unexpand -t 4 --first-only
+	# Clean filter to expand tabs to spaces
+	clean = expand -i -t 4
+	# Smudge filter to unexpand spaces to tabs
+	smudge = unexpand -t 4 --first-only
 
 [log]
-    graphColors = "#dc322f,#859900,#b58900,#268bd2,#d33682,#2aa198,#cb4b16,#6c71c4"
+	graphColors = "#dc322f,#859900,#b58900,#268bd2,#d33682,#2aa198,#cb4b16,#6c71c4"
 
 [merge]
-    # Show common ancestor code in merge conflicts
-    conflictstyle = diff3
-    # Don't create extra commits for fast-forward merges
-    ff = true
-    # Use vimdiff for merge conflict resolution
-    tool = vimdiff
+	# Show common ancestor code in merge conflicts
+	conflictstyle = diff3
+	# Don't create extra commits for fast-forward merges
+	ff = true
+	# Use vimdiff for merge conflict resolution
+	tool = vimdiff
 
 [mergetool]
-    # Don't ask to confirm merge tool
-    prompt = false
+	# Don't ask to confirm merge tool
+	prompt = false
 
 [pager]
-    diff = diff-highlight | less
-    log = diff-highlight | less
-    show = diff-highlight | less
+	diff = diff-highlight | less
+	log = diff-highlight | less
+	show = diff-highlight | less
 
 [pull]
-    # Allow only fast-forward merges when pulling
-    ff = only
+	# Allow only fast-forward merges when pulling
+	ff = only
 
 [push]
-    # Don't push if upstream branch name is different
-    default = simple
-    # Push tags
-    followTags = true
+	# Don't push if upstream branch name is different
+	default = simple
+	# Push tags
+	followTags = true
 
 [status]
-    # Show stash count in status
-    showStash = true
-    # Show submodule summary for "git status"
-    submodulesummary = true
+	# Show stash count in status
+	showStash = true
+	# Show submodule summary for "git status"
+	submodulesummary = true
 
 # Local settings
 [include]
-    path = ~/.gitconfig_local
+	path = ~/.gitconfig_local
 
 # Make sure that dotfiles repos always use same user
 [includeIf "gitdir:~/.dotfiles/.git"]
-    path = ~/.dotfiles/.gitconfig
+	path = ~/.dotfiles/.gitconfig
 [includeIf "gitdir:~/.dotfiles_local/.git"]
-    path = ~/.dotfiles_local/.gitconfig
+	path = ~/.dotfiles_local/.gitconfig
 
 # vim:ft=gitconfig

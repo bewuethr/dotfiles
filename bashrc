@@ -1,14 +1,14 @@
 # If not running interactively, don't do anything, else set flow control
 case $- in
-    *i*)    stty -ixon ;;
-    *)      return ;;
+	*i*)    stty -ixon ;;
+	*)      return ;;
 esac
 
 # Make less more friendly for non-text input files
 if [[ -x /usr/bin/lesspipe ]]; then
-    eval "$(SHELL=/bin/sh lesspipe)"
+	eval "$(SHELL=/bin/sh lesspipe)"
 elif [[ -x /usr/local/bin/lesspipe.sh ]]; then
-    eval "$(SHELL=/bin/sh lesspipe.sh)"
+	eval "$(SHELL=/bin/sh lesspipe.sh)"
 fi
 
 # Show verbose prompt, reduce tabs, handle escape chars, case insensitive search
@@ -61,62 +61,62 @@ set -o ignoreeof
 
 # Set variable identifying the chroot you work in (used in the prompt below)
 if [[ -z ${debian_chroot:-} ]] && [[ -r /etc/debian_chroot ]]; then
-    debian_chroot=$(< /etc/debian_chroot)
+	debian_chroot=$(< /etc/debian_chroot)
 fi
 
 # Check for colour
 if [[ -x /usr/bin/tput ]] && tput setaf 1 &> /dev/null; then
-    color_prompt='yes'
+	color_prompt='yes'
 else
-    color_prompt=
+	color_prompt=
 fi
 
 # Enable color support of ls
 if [[ -x /usr/bin/dircolors ]] \
-    || [[ -x /usr/local/opt/coreutils/libexec/gnubin/dircolors ]]
+	|| [[ -x /usr/local/opt/coreutils/libexec/gnubin/dircolors ]]
 then
-    if [[ -r $HOME/.dircolors ]]; then
-        eval "$(dircolors -b "$HOME"/.dircolors)"
-    else
-        eval "$(dircolors -b)"
-    fi
+	if [[ -r $HOME/.dircolors ]]; then
+		eval "$(dircolors -b "$HOME"/.dircolors)"
+	else
+		eval "$(dircolors -b)"
+	fi
 fi
 
 # Set custom prompt if present
 if [[ $color_prompt = 'yes' ]]; then
-    # shellcheck source=/dev/null
-    . "$HOME"/.myprompt.bash
-    PROMPT_COMMAND="set_prompt${PROMPT_COMMAND:+$'\n'$PROMPT_COMMAND}"
+	# shellcheck source=/dev/null
+	. "$HOME"/.myprompt.bash
+	PROMPT_COMMAND="set_prompt${PROMPT_COMMAND:+$'\n'$PROMPT_COMMAND}"
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+	PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt
 
 # Enable programmable completion if we're not in POSIX mode
 if ! shopt -oq posix; then
-    if [[ -f /usr/share/bash-completion/bash_completion ]]; then
-        # shellcheck source=/dev/null
-        . /usr/share/bash-completion/bash_completion
-    elif  [[ -f /usr/local/share/bash-completion/bash_completion ]]; then
-        # shellcheck source=/dev/null
-        . /usr/local/share/bash-completion/bash_completion
-    fi
+	if [[ -f /usr/share/bash-completion/bash_completion ]]; then
+		# shellcheck source=/dev/null
+		. /usr/share/bash-completion/bash_completion
+	elif  [[ -f /usr/local/share/bash-completion/bash_completion ]]; then
+		# shellcheck source=/dev/null
+		. /usr/local/share/bash-completion/bash_completion
+	fi
 fi
 
 # Alias definitions
 if [[ -f $HOME/.aliases.sh ]]; then
-    # shellcheck source=/dev/null
-    . "$HOME"/.aliases.sh
+	# shellcheck source=/dev/null
+	. "$HOME"/.aliases.sh
 fi
 
 # Source custom utility functions
 if [[ -f $HOME/.functions.bash ]]; then
-    # shellcheck source=/dev/null
-    . "$HOME"/.functions.bash
+	# shellcheck source=/dev/null
+	. "$HOME"/.functions.bash
 fi
 
 # Local settings
 if [[ -r $HOME/.bashrc_local ]]; then
-    # shellcheck source=/dev/null
-    . "$HOME"/.bashrc_local
+	# shellcheck source=/dev/null
+	. "$HOME"/.bashrc_local
 fi

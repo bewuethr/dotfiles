@@ -58,11 +58,11 @@ let g:netrw_list_hide= '.*\.swp$'
 
 " Vimwiki settings
 let g:vimwiki_list = [{
-\   'maxhi': 1,
-\   'list_margin': 0,
-\   'auto_toc': 1,
-\   'auto_tags': 1,
-\   'auto_export': 1
+\	'maxhi': 1,
+\	'list_margin': 0,
+\	'auto_toc': 1,
+\	'auto_tags': 1,
+\	'auto_export': 1
 \}]
 let g:vimwiki_hl_headers = 1
 let g:vimwiki_hl_cb_checked = 1
@@ -110,5 +110,5 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Local settings
 if filereadable(expand("~/.vimrc_local"))
-    source ~/.vimrc_local
+	source ~/.vimrc_local
 endif
