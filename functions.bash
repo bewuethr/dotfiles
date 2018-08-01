@@ -10,8 +10,22 @@ wrap () {
 	fold --spaces "$1" > "$1".$$ && mv "$1".$$ "$1"
 }
 
-# Filter for percent encoding - encodes space as "%20" and not as "+"
+# Filter for percent encoding - chose between "%20" and "+" for spaces with the
+# -p option
 percentencode () {
+	local usage='Usage: percentencode [-h|-p]'
+	local opt
+	local p
+	OPTIND=1
+	while getopts ':hp' opt; do
+		case $opt in
+			h) printf '%s\n' "$usage" >&2  && return 1 ;;
+			p) p='yes' ;;
+			*) printf 'Invalid option: %s\n%s\n' "$OPTARG" "$usage" >&2 && return 1 ;;
+		esac
+	done
+	shift "$((OPTIND-1))"
+
 	local line i res
 	local re='[]:/?#@!$&'"'"'()*+,;=% []'
 	while IFS= read -r line; do
@@ -23,7 +37,12 @@ percentencode () {
 				res+=$l
 			fi
 		done
-		printf '%s\n' "$res"
+		# Check if spaces should be "+"
+		if [[ $p ]]; then
+			printf '%s\n' "${res//%20/+}"
+		else
+			printf '%s\n' "$res"
+		fi
 	done < "${1:-/dev/stdin}"
 }
 
