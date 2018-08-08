@@ -24,26 +24,29 @@ percentencode () {
 			*) printf 'Invalid option: %s\n%s\n' "$OPTARG" "$usage" >&2 && return 1 ;;
 		esac
 	done
-	shift "$((OPTIND-1))"
+	shift "$(( OPTIND - 1 ))"
 
-	local line i res
+	local str i j res
 	local re='[]:/?#@!$&'"'"'()*+,;=% []'
-	while IFS= read -r line; do
-		for (( i = 0; i < ${#line}; ++i )); do
-			local l=${line:i:1}
+	i=0
+	for str in "$@"; do
+		for (( j = 0; j < ${#str}; ++j )); do
+			local l=${str:j:1}
 			if [[ $l =~ $re ]]; then
-				res+=$(printf '%%%02X' "'$l")
+				res[i]+=$(printf '%%%02X' "'$l")
 			else
-				res+=$l
+				res[i]+=$l
 			fi
 		done
-		# Check if spaces should be "+"
-		if [[ $p ]]; then
-			printf '%s\n' "${res//%20/+}"
-		else
-			printf '%s\n' "$res"
-		fi
-	done < "${1:-/dev/stdin}"
+		(( ++i ))
+	done
+
+	# Check if spaces should be "+"
+	if [[ $p ]]; then
+		printf '%s\n' "${res[*]//%20/+}"
+	else
+		printf '%s\n' "${res[*]}"
+	fi
 }
 
 # Local function definitions
