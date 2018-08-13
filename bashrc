@@ -4,6 +4,12 @@ case $- in
 	*)      return ;;
 esac
 
+# Old Bash gets very confused
+if [[ $BASH_VERSION = [1-3]* ]]; then
+	return
+fi
+
+
 # Make less more friendly for non-text input files
 if [[ -x /usr/bin/lesspipe ]]; then
 	eval "$(SHELL=/bin/sh lesspipe)"
