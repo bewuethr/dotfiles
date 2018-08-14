@@ -1,4 +1,4 @@
-set_prompt () {
+set_prompt()  {
 	# Exit status of last command
 	local exit_status=$?
 
@@ -71,7 +71,7 @@ set_prompt () {
 			# Unstaged changes
 			local uscct
 			if uscct=$(git status --porcelain | grep -c '^.[MD]'); then
-				(( uscct == 1 )) && uscct=
+				((uscct == 1)) && uscct=
 				PS1+="${space:-"\\[$grey\\]|"}\\[$orange\\]$uscct"$'\u25cb'
 				space=
 			fi
@@ -79,7 +79,7 @@ set_prompt () {
 			# Staged changes
 			local scct
 			if scct=$(git status --porcelain | grep -c '^[MADRC]'); then
-				(( scct == 1 )) && scct=
+				((scct == 1)) && scct=
 				PS1+="${space:-"\\[$grey\\]|"}\\[$orange\\]$scct"$'\u25cf'
 				space=
 			fi
@@ -88,7 +88,7 @@ set_prompt () {
 			if git reflog exists refs/stash; then
 				local stashct
 				stashct=$(git stash list | wc -l)
-				(( stashct == 1 )) && stashct=
+				((stashct == 1)) && stashct=
 				PS1+="${space:-"\\[$grey\\]|"}\\[$blue\\]$stashct"$'\u2295'
 				space=
 			fi
@@ -96,7 +96,7 @@ set_prompt () {
 			# Untracked files
 			local utct
 			if utct=$(git status --porcelain | grep -c '^??'); then
-				(( utct == 1 )) && utct=
+				((utct == 1)) && utct=
 				PS1+="${space:-"\\[$grey\\]|"}\\[$magenta\\]$utct"$'\u2302'
 				space=
 			fi
@@ -106,12 +106,15 @@ set_prompt () {
 			if commits=$(git rev-list --left-right HEAD...@\{u\} 2> /dev/null); then
 				local ahead
 				ahead=$(grep -c '^<' <<< "$commits")
-				(( ahead > 0 )) && { PS1+="${space:-"\\[$grey\\]|"}\\[$violet\\]${ahead}"$'\u2b06'; space=; }
+				((ahead > 0)) && {
+					PS1+="${space:-"\\[$grey\\]|"}\\[$violet\\]${ahead}"$'\u2b06'
+					space=
+				}
 
 				local behind
 				behind=$(grep -c '^>' <<< "$commits")
 				local behcol
-				if (( behind > 0 )); then
+				if ((behind > 0)); then
 					# Check if can be fast-forwarded
 					if git merge-base --is-ancestor HEAD '@{u}'; then
 						behcol=$yellow
@@ -122,7 +125,7 @@ set_prompt () {
 					space=
 				fi
 
-				(( ahead == 0 && behind == 0 )) && PS1+="${space:-"\\[$grey\\]|"}\\[$green\\]"$'\u2713'
+				((ahead == 0 && behind == 0)) && PS1+="${space:-"\\[$grey\\]|"}\\[$green\\]"$'\u2713'
 			fi
 		else
 			# Probably detached HEAD, use describe or commit hash
@@ -143,14 +146,14 @@ set_prompt () {
 	__un=${USER:0:1}
 	if [[ $USER == *?[-._]?* ]]; then
 		suff=${USER#*[-._]}
-		__un+=${USER:$(( ${#USER} - ${#suff} - 1 )):1}${suff:0:1}
+		__un+=${USER:$((${#USER} - ${#suff} - 1)):1}${suff:0:1}
 	fi
 
 	# If host name has multiple parts, shorten to 'a-b' or similar; else just use first letter
 	__hn=${HOSTNAME:0:1}
 	if [[ $HOSTNAME == *?[-._]?* ]]; then
 		suff=${HOSTNAME#*[-._]}
-		__hn+=${HOSTNAME:$(( ${#HOSTNAME} - ${#suff} - 1 )):1}${suff:0:1}
+		__hn+=${HOSTNAME:$((${#HOSTNAME} - ${#suff} - 1)):1}${suff:0:1}
 	fi
 
 	# If $PWD starts with $HOME, replace the $HOME part with a tilde
@@ -164,8 +167,8 @@ set_prompt () {
 	# Use '/' as delimiter because it's the only character not allowed in filenames
 	local cwd_arr
 	IFS='/' read -ra cwd_arr <<< "${__cwd#/}"
-	if (( ${#cwd_arr[@]} > 1 )); then
-		printf -v __cwd '%.3s/' "${cwd_arr[@]:0:$(( ${#cwd_arr[@]} - 1 ))}"
+	if ((${#cwd_arr[@]} > 1)); then
+		printf -v __cwd '%.3s/' "${cwd_arr[@]:0:$((${#cwd_arr[@]} - 1))}"
 		__cwd+=${cwd_arr[-1]%/}
 	fi
 	# Re-insert leading slash unless we use ~ or /
@@ -175,7 +178,7 @@ set_prompt () {
 
 	local sign_col
 	# Colour for prompt sign
-	if (( exit_status == 0 )); then
+	if ((exit_status == 0)); then
 		sign_col=$green
 	else
 		sign_col=$red

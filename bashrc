@@ -5,10 +5,9 @@ case $- in
 esac
 
 # Old Bash gets very confused
-if [[ $BASH_VERSION = [1-3]* ]]; then
+if [[ $BASH_VERSION == [1-3]* ]]; then
 	return
 fi
-
 
 # Make less more friendly for non-text input files
 if [[ -x /usr/bin/lesspipe ]]; then
@@ -79,8 +78,7 @@ fi
 
 # Enable color support of ls
 if [[ -x /usr/bin/dircolors ]] \
-	|| [[ -x /usr/local/opt/coreutils/libexec/gnubin/dircolors ]]
-then
+	|| [[ -x /usr/local/opt/coreutils/libexec/gnubin/dircolors ]]; then
 	if [[ -r $HOME/.dircolors ]]; then
 		eval "$(dircolors -b "$HOME"/.dircolors)"
 	else
@@ -89,7 +87,7 @@ then
 fi
 
 # Set custom prompt if present
-if [[ $color_prompt = 'yes' ]]; then
+if [[ $color_prompt == 'yes' ]]; then
 	# shellcheck source=/dev/null
 	. "$HOME"/.myprompt.bash
 	PROMPT_COMMAND="set_prompt${PROMPT_COMMAND:+$'\n'$PROMPT_COMMAND}"
