@@ -75,7 +75,24 @@ let g:calendar_monday = 1
 let g:lion_squeeze_spaces = 1
 
 " Ale settings
-let g:ale_sh_shellcheck_options = '-x'
+" Bind F8 to fixing problems
+nmap <F8> <Plug>(ale_fix)
+
+" Format for message when cursor near warning/error
+let g:ale_echo_msg_format = '%severity%% (code)%: %s'
+
+" Set non-default linters
+let g:ale_linters = {'json': ['jq']}
+
+" Set non-default fixers
+let g:ale_fixers = {'json': ['jq'], 'sh': ['shfmt']}
+
+" Markers for gutter
+let g:ale_sign_error = '😱'
+let g:ale_sign_warning = '😳'
+let g:ale_sign_info = '🤔'
+let g:ale_sign_style_error = '🙄'
+let g:ale_sign_style_warning = '🧐'
 
 " Pandoc settings
 let g:pandoc#modules#disabled = ["folding"]
