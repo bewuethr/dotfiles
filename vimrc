@@ -87,13 +87,6 @@ let g:ale_linters = {'json': ['jq']}
 " Set non-default fixers
 let g:ale_fixers = {'json': ['jq'], 'sh': ['shfmt']}
 
-" Markers for gutter
-let g:ale_sign_error = '😱'
-let g:ale_sign_warning = '😳'
-let g:ale_sign_info = '🤔'
-let g:ale_sign_style_error = '🙄'
-let g:ale_sign_style_warning = '🧐'
-
 " Pandoc settings
 let g:pandoc#modules#disabled = ["folding"]
 let g:pandoc#syntax#codeblocks#embeds#langs = ["bash=sh", "sh"]
