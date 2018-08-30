@@ -46,6 +46,9 @@
 	# Smudge filter to unexpand spaces to tabs
 	smudge = unexpand -t 4 --first-only
 
+[icdiff]
+	options = --line-numbers --tabsize=4
+
 [log]
 	graphColors = "#dc322f,#859900,#b58900,#268bd2,#d33682,#2aa198,#cb4b16,#6c71c4"
 
