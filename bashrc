@@ -19,6 +19,9 @@ fi
 # Show verbose prompt, reduce tabs, handle escape chars, case insensitive search
 export LESS='--LONG-PROMPT --tabs=4 --RAW-CONTROL-CHARS --ignore-case'
 
+# Limit the width of man pages
+export MANWIDTH=120
+
 # Define default editor for C-x C-e and fc
 export VISUAL='vim'
 export EDITOR='vim'
