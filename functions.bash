@@ -13,7 +13,7 @@ wrap()  {
 # Filter for percent encoding - chose between "%20" and "+" for spaces with the
 # -p option
 percentencode()  {
-	local usage='Usage: percentencode [-h|-p]'
+	local usage='Usage: percentencode [-h|-p] STRING [STRING...]'
 	local opt
 	local p
 	OPTIND=1
@@ -25,6 +25,11 @@ percentencode()  {
 		esac
 	done
 	shift "$((OPTIND - 1))"
+
+	if (($# == 0)); then
+		printf '%s\n' "$usage" >&2
+		return 1
+	fi
 
 	local str i j res
 	local re='[]:/?#@!$&'"'"'()*+,;=% []'
