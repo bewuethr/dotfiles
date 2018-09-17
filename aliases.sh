@@ -20,6 +20,9 @@ alias diffstat='diffstat -C'
 # Is the internet on fire?
 alias iiof='dig +short txt istheinternetonfire.com | fmt'
 
+# Avoid super wide man pages
+alias man='MANWIDTH=$((COLUMNS > 120 ? 120 : COLUMNS)) man'
+
 # Local alias definitions
 if [[ -f $HOME/.aliases_local.sh ]]; then
 	# shellcheck source=/dev/null
