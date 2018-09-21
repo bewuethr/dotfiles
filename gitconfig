@@ -39,6 +39,8 @@
 [fetch]
 	# Delete local references on remotes that have deleted those branches
 	prune = true
+	# Delete local tags that have been deleted on remote
+	pruneTags = true
 
 [filter "expand"]
 	# Clean filter to expand tabs to spaces
