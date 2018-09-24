@@ -48,21 +48,49 @@ set_prompt()  {
 			else
 				PS1+="\\[$grey\\].git"
 			fi
+
 		elif [[ -f $(git rev-parse --show-toplevel)/.git ]]; then
 			# We are in a submodule
 			__submodname=$(< "$(git rev-parse --show-toplevel)/.git")
 			__submodname=${__submodname##*/}
 			PS1+="\\[$grey\\](\\[$lgrey\\]$__submodname\\[$grey\\])"
-			# The official git prompt checks the following:
-			# - interactive/merge rebase (with step/total): REBASE-i, REBASE-m
-			# - rebase-apply/head-name and rebase-apply/applying with step/total), for REBASE, AM, AM/REBASE
-			# - MERGING
-			# - CHERRY-PICKING
-			# - REVERTING
-			# - BISECTING
-			# Look at https://github.com/git/git/blob/master/git-rebase.sh
+
 		elif [[ -d $git_dir/rebase-merge ]]; then
-			PS1+="\\[$orange\\]rebase-i $(< "$git_dir/rebase-merge/msgnum")/$(< "$git_dir/rebase-merge/end")"
+			# We're in an interactive merge/rebase
+			if [[ -f $git_dir/rebase-merge/interactive ]]; then
+				local step total
+				step=$(< "$git_dir/rebase-merge/msgnum")
+				total=$(< "$git_dir/rebase-merge/end")
+				PS1+="\\[$orange\\]rebase-i $step/$total"
+			else
+				PS1+="\\[$orange\\]rebase-m $step/$total"
+			fi
+
+		elif [[ -d $git_dir/rebase-apply ]]; then
+			# We're applying a rebase or mail patch
+			local step total
+			step=$(< "$git_dir/rebase-apply/next")
+			total=$(< "$git_dir/rebase-apply/last")
+			if [[ -f $git_dir/rebase-apply/rebasing ]]; then
+				PS1+="\\[$orange\\]rebase $step/$total"
+			elif [[ -f $git_dir/rebase-apply/applying ]]; then
+				PS1+="\\[$orange\\]am $step/$total"
+			else
+				PS1+="\\[$orange\\]am/rebase $step/$total"
+			fi
+
+		elif [[ -f $git_dir/MERGE_HEAD ]]; then
+			PS1+="\\[$orange\\]merging"
+
+		elif [[ -f $git_dir/CHERRY_PICK_HEAD ]]; then
+			PS1+="\\[$orange\\]cherry-picking"
+
+		elif [[ -f $git_dir/REVERT_HEAD ]]; then
+			PS1+="\\[$orange\\]reverting"
+
+		elif [[ -f $git_dir/BISECT_LOG ]]; then
+			PS1+="\\[$orange\\]bisecting"
+
 		elif __bname=$(git symbolic-ref -q --short HEAD); then
 			# Use variable instead of assigning directly because of expansions vulnerability
 			PS1+='${__bname}'
