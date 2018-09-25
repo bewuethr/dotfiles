@@ -68,11 +68,12 @@ set_prompt()  {
 
 		elif [[ -d $git_dir/rebase-apply ]]; then
 			# We're applying a rebase or mail patch
-			local step total
+			local step total head
 			step=$(< "$git_dir/rebase-apply/next")
 			total=$(< "$git_dir/rebase-apply/last")
+			head=$(< "$git_dir/rebase-apply/head-name")
 			if [[ -f $git_dir/rebase-apply/rebasing ]]; then
-				PS1+="\\[$orange\\]rebase $step/$total"
+				PS1+="\\[$orange\\]rebase $step/$total \\[$cyan\\]${head##*/}"
 			elif [[ -f $git_dir/rebase-apply/applying ]]; then
 				PS1+="\\[$orange\\]am $step/$total"
 			else
