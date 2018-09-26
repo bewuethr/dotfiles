@@ -32,28 +32,27 @@ set_prompt()  {
 	# - Colours
 	# - Use unicode characters from patched Inconsolata font
 	# - ((submodule)) in double parentheses
-	# - TODO prompt during interactive rebasing and similar, see
-	#   https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh#L396
+	# - Prompt during interactive rebasing and similar
 	# - Check if in .git tree, or if bare repo
 	local git_dir
 	if git_dir=$(git rev-parse --git-dir 2> /dev/null); then
 
-		PS1="\\[$grey\\](\\[$cyan\\]"
+		PS1="\\[$grey\\]("
 
 		# Get current branch or just use ".git" if in git directory
 		if [[ $(git rev-parse --is-inside-git-dir) == 'true' ]]; then
 			# Or is it even a bare repo?
 			if [[ $(git rev-parse --is-bare-repository) == 'true' ]]; then
-				PS1+="\\[$grey\\]bare"
+				PS1+='bare'
 			else
-				PS1+="\\[$grey\\].git"
+				PS1+='.git'
 			fi
 
 		elif [[ -f $(git rev-parse --show-toplevel)/.git ]]; then
 			# We are in a submodule
 			__submodname=$(< "$(git rev-parse --show-toplevel)/.git")
 			__submodname=${__submodname##*/}
-			PS1+="\\[$grey\\](\\[$lgrey\\]$__submodname\\[$grey\\])"
+			PS1+="(\\[$lgrey\\]$__submodname\\[$grey\\])"
 
 		elif [[ -d $git_dir/rebase-merge ]]; then
 			# We're in an interactive merge/rebase
@@ -94,7 +93,7 @@ set_prompt()  {
 
 		elif __bname=$(git symbolic-ref -q --short HEAD); then
 			# Use variable instead of assigning directly because of expansions vulnerability
-			PS1+='${__bname}'
+			PS1+="\\[$cyan\\]\${__bname}"
 			local space=" "
 
 			# Unstaged changes
@@ -102,7 +101,7 @@ set_prompt()  {
 			if uscct=$(git status --porcelain | grep -c '^.[MD]'); then
 				((uscct == 1)) && uscct=
 				PS1+="${space:-"\\[$grey\\]|"}\\[$orange\\]$uscct"$'\u25cb'
-				space=
+				space=""
 			fi
 
 			# Staged changes
@@ -110,7 +109,7 @@ set_prompt()  {
 			if scct=$(git status --porcelain | grep -c '^[MADRC]'); then
 				((scct == 1)) && scct=
 				PS1+="${space:-"\\[$grey\\]|"}\\[$orange\\]$scct"$'\u25cf'
-				space=
+				space=""
 			fi
 
 			# Stash
@@ -119,7 +118,7 @@ set_prompt()  {
 				stashct=$(git stash list | wc -l)
 				((stashct == 1)) && stashct=
 				PS1+="${space:-"\\[$grey\\]|"}\\[$blue\\]$stashct"$'\u2295'
-				space=
+				space=""
 			fi
 
 			# Untracked files
