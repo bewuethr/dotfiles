@@ -63,6 +63,8 @@
 	tool = vimdiff
 
 [mergetool]
+	# Don't keep the .orig backup files
+	keepBackup = false
 	# Don't ask to confirm merge tool
 	prompt = false
 
