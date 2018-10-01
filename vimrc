@@ -62,7 +62,8 @@ let g:vimwiki_list = [{
 \	'list_margin': 0,
 \	'auto_toc': 1,
 \	'auto_tags': 1,
-\	'auto_export': 1
+\	'auto_export': 1,
+\	'auto_diary_index': 1
 \}]
 let g:vimwiki_hl_headers = 1
 let g:vimwiki_hl_cb_checked = 1
