@@ -83,6 +83,9 @@
 	# Push tags
 	followTags = true
 
+[rerere]
+	enabled = true
+
 [status]
 	# Show stash count in status
 	showStash = true
