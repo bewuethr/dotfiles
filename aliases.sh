@@ -23,6 +23,9 @@ alias iiof='dig +short txt istheinternetonfire.com | fmt'
 # Avoid super wide man pages
 alias man='MANWIDTH=$((COLUMNS > 120 ? 120 : COLUMNS)) man'
 
+# Prettier od
+alias od='od -A x -t x1z -v'
+
 # Local alias definitions
 if [[ -f $HOME/.aliases_local.sh ]]; then
 	# shellcheck source=/dev/null
