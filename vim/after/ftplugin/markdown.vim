@@ -4,4 +4,5 @@ noremap <expr> <buffer> 0 'g0'
 noremap <expr> <buffer> $ 'g$'
 setlocal linebreak
 setlocal colorcolumn=0
-setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+setlocal spell spelllang=en_ca spellcapcheck=
