@@ -83,7 +83,7 @@ nmap <F8> <Plug>(ale_fix)
 let g:ale_echo_msg_format = '%severity%% (code)%: %s'
 
 " Set non-default linters
-let g:ale_linters = {'json': ['jq']}
+let g:ale_linters = {'json': ['jq'], 'perl': ['perl', 'perlcritic']}
 
 " Set non-default fixers
 let g:ale_fixers = {'json': ['jq'], 'sh': ['shfmt']}
