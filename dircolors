@@ -107,6 +107,7 @@ EXEC 38;2;203;75;22  # Unix
 
 # Text that we can edit with a regular editor
 .txt 32
+.tsv 32
 .org 32
 .md 32
 .mkd 32
