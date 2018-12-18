@@ -66,6 +66,7 @@ let g:vimwiki_list = [{
 \	'auto_tags': 1,
 \	'auto_export': 0,
 \	'auto_diary_index': 1,
+\	'custom_wiki2html': '~/bin/vimwiki2html',
 \}]
 
 let g:vimwiki_global_ext = 0
