@@ -94,6 +94,9 @@ let g:ale_linters = {'json': ['jq'], 'perl': ['perl', 'perlcritic']}
 " Set non-default fixers
 let g:ale_fixers = {'json': ['jq'], 'sh': ['shfmt']}
 
+" Keep gutter around even if there are no errors
+let g:ale_sign_column_always = 1
+
 " Pandoc settings
 let g:pandoc#modules#disabled = ["folding"]
 let g:pandoc#syntax#codeblocks#embeds#langs = ["bash=sh", "sh"]
