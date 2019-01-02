@@ -213,7 +213,11 @@ set_prompt()  {
 	fi
 
 	# Set rest of prompt
-	PS1+="\\[$blue\\]\$__un\\[$orange\\]@\\[$yellow\\]\$__hn\\[$orange\\]:\\[$violet\\]\$__cwd\\[$sign_col\\]\\$\\[$no_colour\\] "
+	# User and hostname
+	PS1+="\\[$blue\\]\$__un\\[$orange\\]@\\[$yellow\\]\$__hn\\[$orange\\]:"
+
+	# Working directory and coloured prompt
+	PS1+="\\[$violet\\]\$__cwd\\[$sign_col\\]\\$\\[$no_colour\\] "
 
 	# Set window title: see https://superuser.com/q/249293/372008
 }
