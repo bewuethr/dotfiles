@@ -60,7 +60,7 @@ let g:netrw_list_hide= '.*\.swp$'
 let g:vimwiki_list = [{
 \	'path': '~/vimwiki',
 \	'syntax': 'markdown',
-\	'ext': '.wiki',
+\	'ext': '.md',
 \	'list_margin': 0,
 \	'auto_toc': 0,
 \	'auto_tags': 1,
@@ -87,12 +87,6 @@ nmap <F8> <Plug>(ale_fix)
 
 " Format for message when cursor near warning/error
 let g:ale_echo_msg_format = '%severity%% (code)%: %s'
-
-" Set non-default linters
-let g:ale_linters = {'json': ['jq'], 'perl': ['perl', 'perlcritic']}
-
-" Set non-default fixers
-let g:ale_fixers = {'json': ['jq'], 'sh': ['shfmt']}
 
 " Keep gutter around even if there are no errors
 let g:ale_sign_column_always = 1
