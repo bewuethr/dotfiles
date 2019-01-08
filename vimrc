@@ -58,15 +58,16 @@ let g:netrw_list_hide= '.*\.swp$'
 
 " Vimwiki settings
 let g:vimwiki_list = [{
-\	'path': '~/vimwiki',
-\	'syntax': 'markdown',
+\	'auto_diary_index': 1,
+\	'auto_export': 0,
+\	'auto_tags': 1,
+\	'auto_toc': 0,
+\	'bullet_types': ['-'],
+\	'custom_wiki2html': '~/bin/vimwiki2html',
 \	'ext': '.md',
 \	'list_margin': 0,
-\	'auto_toc': 0,
-\	'auto_tags': 1,
-\	'auto_export': 0,
-\	'auto_diary_index': 1,
-\	'custom_wiki2html': '~/bin/vimwiki2html',
+\	'path': '~/vimwiki',
+\	'syntax': 'markdown',
 \}]
 
 let g:vimwiki_global_ext = 0
