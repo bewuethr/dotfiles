@@ -29,3 +29,6 @@
 [submodule "vim/bundle/ctrlp.vim"]
 	path = vim/bundle/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "vim/bundle/bats.vim"]
+	path = vim/bundle/bats.vim
+	url = git@github.com:aliou/bats.vim.git
