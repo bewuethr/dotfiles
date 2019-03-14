@@ -13,6 +13,8 @@
 	bla = blame --color-by-age --minimal -C -C --abbrev=6 --progress
 	# Different colour for repeated author information in blame
 	blc = blame --color-lines
+	# Log without the tags
+	lnt = log --decorate-refs-exclude='tags/*'
 
 [color]
 	# Colour when output to terminal
