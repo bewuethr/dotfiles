@@ -68,6 +68,7 @@ let g:vimwiki_list = [{
 \	'list_margin': 0,
 \	'path': '~/vimwiki',
 \	'syntax': 'markdown',
+\	'diary_caption_level': 1
 \}]
 
 let g:vimwiki_global_ext = 0
