@@ -2,13 +2,14 @@ alias ..='cd ..'
 alias ...='cd ../..'
 
 # Some ls aliases
-alias ls='ls --color=auto'
+alias l1='ls -1'
+alias l='ls -CF'
+alias la1='ls -A1'
+alias la='ls -A'
 alias ll='ls -l'
 alias lla='ls -AlF'
-alias la='ls -A'
-alias l='ls -CF'
-alias l1='ls -1'
-alias la1='ls -A1'
+alias ls='ls --color=auto'
+alias lsd='ls --group-directories-first'
 
 # grep
 alias grep='grep --color=auto --exclude-dir=.git --exclude=tags --exclude=*.swp'
