@@ -1,4 +1,4 @@
-set_prompt()  {
+set_prompt() {
 	# Exit status of last command
 	local exit_status=$?
 

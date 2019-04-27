@@ -1,25 +1,25 @@
 # Find lexically last directory that starts with provided parameter and cd into it
-cdl()  {
+cdl() {
 	local cands=("$1"*/)
 	# shellcheck disable=SC2164
 	cd "${cands[-1]}"
 }
 
 # Fold text file at spaces to 80 columns
-wrap()  {
+wrap() {
 	fold --spaces "$1" > "$1".$$ && mv "$1".$$ "$1"
 }
 
 # Filter for percent encoding - chose between "%20" and "+" for spaces with the
 # -p option
-percentencode()  {
+percentencode() {
 	local usage='Usage: percentencode [-h|-p] STRING [STRING...]'
 	local opt
 	local p
 	OPTIND=1
 	while getopts ':hp' opt; do
 		case $opt in
-			h) printf '%s\n' "$usage" >&2  && return 1 ;;
+			h) printf '%s\n' "$usage" >&2 && return 1 ;;
 			p) p='yes' ;;
 			*) printf 'Invalid option: %s\n%s\n' "$OPTARG" "$usage" >&2 && return 1 ;;
 		esac

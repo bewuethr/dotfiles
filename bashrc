@@ -1,7 +1,7 @@
 # If not running interactively, don't do anything, else set flow control
 case $- in
-	*i*)    stty -ixon ;;
-	*)      return ;;
+	*i*) stty -ixon ;;
+	*) return ;;
 esac
 
 # Old Bash gets very confused
@@ -101,7 +101,7 @@ if ! shopt -oq posix; then
 	if [[ -f /usr/share/bash-completion/bash_completion ]]; then
 		# shellcheck source=/dev/null
 		. /usr/share/bash-completion/bash_completion
-	elif  [[ -f /usr/local/share/bash-completion/bash_completion ]]; then
+	elif [[ -f /usr/local/share/bash-completion/bash_completion ]]; then
 		# shellcheck source=/dev/null
 		. /usr/local/share/bash-completion/bash_completion
 	fi
