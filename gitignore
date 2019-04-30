@@ -4,5 +4,6 @@
 *.swo
 Session.vim
 tags
+!tags/
 
 # vim:ft=conf
