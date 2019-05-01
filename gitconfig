@@ -15,7 +15,7 @@
 	blc = blame --color-lines
 	# Delete Stale Branches - delete local branches where the tracking branch is gone
 	dsb = !git branch --format '%(if:equals=[gone])%(upstream:track)%(then)%(refname:short)%(end)' \
-		| xargs git branch -D
+		| xargs -r git branch -D
 	# Log, No Tags - hide all tags in log
 	lnt = log --decorate-refs-exclude='tags/*'
 
