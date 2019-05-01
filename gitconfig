@@ -7,13 +7,23 @@
 	excludesfile = ~/.gitignore
 
 [alias]
-	# Get all branches containing the argument in their name
+	# Branches All - get all branches containing the argument in their name
 	ba = "!git -P branch --list -i -a \"*$1*\" #"
-	# Colour git blame by age
+	# BLame Age - colour git blame by age
 	bla = blame --color-by-age --minimal -C -C --abbrev=6 --progress
-	# Different colour for repeated author information in blame
+	# BLame Colour - different colour for repeated author information in blame
 	blc = blame --color-lines
-	# Log without the tags
+	# Delete Stale Branches - delete local branches where the tracking branch is gone
+	dsb = "! \
+		git for-each-ref \
+			--shell \
+			--format=\"r=%(refname:short) u=%(upstream:track)\" \
+			refs/heads \
+		| while IFS= read -r entry; do \
+			eval \"$entry\"; \
+			[[ $u == \"[gone]\" ]] && git branch -D \"$r\"; \
+		done"
+	# Log, No Tags - hide all tags in log
 	lnt = log --decorate-refs-exclude='tags/*'
 
 [color]
