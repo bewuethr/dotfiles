@@ -18,6 +18,8 @@
 		| xargs -r git branch -D
 	# Log, No Tags - hide all tags in log
 	lnt = log --decorate-refs-exclude='tags/*'
+	# Pull Upstream Master
+	pum = pull upstream master
 
 [color]
 	# Colour when output to terminal
