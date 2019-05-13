@@ -18,6 +18,10 @@
 		| xargs -r git branch -D
 	# Log, No Tags - hide all tags in log
 	lnt = log --decorate-refs-exclude='tags/*'
+	# Pull Rebase Autostash Upstream Master
+	praum = pull --rebase --autostash upstream master
+	# Pull Rebase Upstream Master
+	prum = pull --rebase upstream master
 	# Pull Upstream Master
 	pum = pull upstream master
 
