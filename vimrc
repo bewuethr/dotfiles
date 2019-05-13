@@ -93,6 +93,13 @@ let g:ale_echo_msg_format = '%severity%% (code)%: %s'
 " Keep gutter around even if there are no errors
 let g:ale_sign_column_always = 1
 
+" Don't highlight gutter signs
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
+highlight clear ALEInfoSign
+highlight clear ALEStyleErrorSign
+highlight clear ALEStyleWarningSign
+
 " Pandoc settings
 let g:pandoc#modules#disabled = ["folding"]
 let g:pandoc#syntax#codeblocks#embeds#langs = ["bash=sh", "sh"]
