@@ -1,5 +1,6 @@
 .gawk_history
 .gawkrc
+.DS_Store
 *.swp
 *.swo
 Session.vim
