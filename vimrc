@@ -4,12 +4,8 @@ execute pathogen#infect()
 set shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
 
 " Colours
-let g:solarized_termtrans = 1
-let g:solarized_old_cursor_style = 1
-let g:solarized_term_italics = 1
 set termguicolors
-set background=dark
-colorscheme solarized8
+colorscheme flattened_dark
 
 " Highlight previous search matches
 set hlsearch
