@@ -39,3 +39,6 @@ nmap <buffer><silent> <LocalLeader>i <Plug>(go-info)
 
 " Highlight other occurrences of identifier under cursor
 nmap <buffer><silent> <LocalLeader>s :GoSameIdsToggle<CR>
+
+" Make gq break lines at 80 instead of 79 charatcers
+setlocal textwidth=80
