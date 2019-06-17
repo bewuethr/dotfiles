@@ -1,7 +1,9 @@
-# Solarized dark colours for dircolors, based on https://github.com/seebi/dircolors-solarized
+# Solarized dark colours for dircolors, based on
+# https://github.com/seebi/dircolors-solarized
 
-# This uses true colour escape codes to get around having to use bold when we don't
-# really want to. It doesn't look great in terminals that don't support it.
+# This uses true colour escape codes to get around having to use bold when we
+# don't really want to. It doesn't look great in terminals that don't support
+# it.
 
 # COLOR needs one of these arguments: 'tty' colorizes output to ttys, but not
 # pipes. 'all' adds color characters to all output. 'none' shuts colorization
