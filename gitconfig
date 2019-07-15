@@ -25,6 +25,9 @@
 	# Pull Upstream Master
 	pum = pull upstream master
 
+[checkout]
+	defaultRemote = origin
+
 [color]
 	# Colour when output to terminal
 	ui = auto
