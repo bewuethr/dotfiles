@@ -3,7 +3,7 @@
 	url = https://github.com/tpope/vim-sensible.git
 [submodule "vim/bundle/ale"]
 	path = vim/bundle/ale
-	url = https://github.com/w0rp/ale.git
+	url = https://github.com/dense-analysis/ale.git
 [submodule "vim/bundle/vim-lion"]
 	path = vim/bundle/vim-lion
 	url = https://github.com/tommcdo/vim-lion.git
