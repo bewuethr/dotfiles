@@ -110,9 +110,7 @@
 [include]
 	path = ~/.gitconfig_local
 
-# Make sure that dotfiles repos always use same user
-[includeIf "gitdir:~/.dotfiles/.git"]
-	path = ~/.dotfiles/.gitconfig
+# Make sure that local dotfiles repos always uses same user
 [includeIf "gitdir:~/.dotfiles_local/.git"]
 	path = ~/.dotfiles_local/.gitconfig
 
