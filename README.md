@@ -8,10 +8,11 @@ live in a private GitLab repo.
 This repo is best cloned as a bare repository straight into `$HOME`. [This
 Gist][1] contains a script that clones the repository, configures it to ignore
 untracked files and do sparse checkout (so `README.md` and `LICENSE` don't show
-up), and initializes all the submodules. It can be run like this:
+up), and initializes all the submodules. It can be run like this, preferably in
+`$HOME`:
 
 ```sh
-bash <(curl -L bit.ly/2MbP1UNdfinit)
+bash <(curl https://gist.githubusercontent.com/bewuethr/4d044f84989cb430a8b9c46dc4ea75c9/raw)
 ```
 
 Notice that this *overwrites* existing dotfiles.
