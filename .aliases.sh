@@ -11,6 +11,9 @@ alias lla='ls -AlF'
 alias ls='ls --color=auto'
 alias lsd='ls --group-directories-first'
 
+# Git for dotfiles
+alias gdf='git --git-dir="$HOME/.dotfiles.git" --work-tree="$HOME"'
+
 # grep
 alias grep='grep --color=auto --exclude-dir=.git --exclude=tags --exclude=*.swp'
 alias cgrep='grep --color=always'
