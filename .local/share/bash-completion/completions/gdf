@@ -1,10 +1,4 @@
 # Completion for git dotfiles
 complete -o bashdefault -o default -o nospace -F __git_wrap__git_main gdf
 
-# Local completions
-if [[ -f $HOME/.bash_completion_local ]]; then
-	# shellcheck source=/dev/null
-	. "$HOME/.bash_completion_local"
-fi
-
 # vim:ft=sh
