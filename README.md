@@ -17,13 +17,20 @@ bash <(curl https://gist.githubusercontent.com/bewuethr/4d044f84989cb430a8b9c46d
 
 Notice that this *overwrites* existing dotfiles.
 
-From now on, dotfiles can be manipulated with `git df`; for example, after a
-change to `.bashrc`, you'd use
+From now on, dotfiles can be manipulated with `gdf`, which is an alias for
 
 ```sh
-git df add .bashrc
-git df commit -m "Update .bashrc"
-git df push
+git --git-dir="$HOME/.dotfiles.git" --work-tree="$HOME"
+```
+
+with the same tab completion as `git` itself.
+
+For example, after a change to `.bashrc`, you'd use
+
+```sh
+gdf add .bashrc
+gdf commit -m "Update .bashrc"
+gdf push
 ```
 
 ## Credits
