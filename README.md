@@ -3,7 +3,7 @@
 These are my configuration files with settings applicable to all machines I'm
 using. Where possible, a file sources another, machine specific file, for
 example: `.profile` sources `.profile_local`. The machine specific dotfiles
-live in a private GitLab repo.
+live in a private GitHub repo.
 
 This repo is best cloned as a bare repository straight into `$HOME`. [This
 Gist][1] contains a script that clones the repository, configures it to ignore
