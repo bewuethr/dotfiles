@@ -16,8 +16,9 @@ elif [[ -x /usr/local/bin/lesspipe.sh ]]; then
 	eval "$(SHELL=/bin/sh lesspipe.sh)"
 fi
 
-# Show verbose prompt, reduce tabs, handle escape chars, case insensitive search
-export LESS='--LONG-PROMPT --tabs=4 --RAW-CONTROL-CHARS --ignore-case'
+# Show verbose prompt, reduce tabs, handle escape chars, case insensitive
+# search, exit if output fits on a single screen
+export LESS='--LONG-PROMPT --tabs=4 --RAW-CONTROL-CHARS --ignore-case --quit-if-one-screen'
 
 # Define default editor for C-x C-e and fc
 export VISUAL='vim'
