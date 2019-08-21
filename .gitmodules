@@ -29,3 +29,6 @@
 [submodule "vim/bundle/bats.vim"]
 	path = .vim/bundle/bats.vim
 	url = git@github.com:aliou/bats.vim.git
+[submodule ".vim/bundle/vim-rhubarb"]
+	path = .vim/bundle/vim-rhubarb
+	url = https://github.com/tpope/vim-rhubarb.git
