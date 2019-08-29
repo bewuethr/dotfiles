@@ -25,7 +25,7 @@ alias diffstat='diffstat -C'
 alias iiof='dig +short txt istheinternetonfire.com | fmt'
 
 # Avoid super wide man pages
-alias man='MANWIDTH=$((COLUMNS > 120 ? 120 : COLUMNS)) man'
+alias man='MANWIDTH=$((COLUMNS > 120 ? 120 : COLUMNS)) man -P "less $LESS"'
 
 # Prettier od
 alias od='od -A x -t x1z -v'
