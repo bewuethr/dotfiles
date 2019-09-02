@@ -5,3 +5,4 @@ setlocal foldcolumn=1
 compiler perl
 let g:perl_compiler_force_warnings = 0
 let b:ale_linters = ['perlcritic']
+let b:ale_fixers = ['perltidy']
