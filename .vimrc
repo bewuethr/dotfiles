@@ -72,6 +72,7 @@ let g:vimwiki_hl_headers = 1
 let g:vimwiki_hl_cb_checked = 1
 let g:vimwiki_html_header_numbering = 2
 let g:vimwiki_dir_link = 'index'
+let g:vimwiki_markdown_link_ext = 1
 
 " Calendar.vim settings
 let g:calendar_monday = 1
