@@ -71,15 +71,14 @@ if [[ -z ${debian_chroot:-} ]] && [[ -r /etc/debian_chroot ]]; then
 fi
 
 # Check for colour
-if [[ -x /usr/bin/tput ]] && tput setaf 1 &> /dev/null; then
+if type tput &> /dev/null; then
 	color_prompt='yes'
 else
 	color_prompt=
 fi
 
 # Enable color support of ls
-if [[ -x /usr/bin/dircolors ]] \
-	|| [[ -x /usr/local/opt/coreutils/libexec/gnubin/dircolors ]]; then
+if type dircolors &> /dev/null; then
 	if [[ -r $HOME/.dircolors ]]; then
 		eval "$(dircolors -b "$HOME/.dircolors")"
 	else
