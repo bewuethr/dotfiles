@@ -10,7 +10,7 @@ endif
 
 let colors_name = 'flattened_dark'
 
-hi  Normal                                  ctermfg=12  ctermbg=8  guifg=#839496  guibg=#002b36  gui=NONE
+hi  Normal                                  ctermfg=12  ctermbg=NONE  guifg=#839496  guibg=NONE  gui=NONE
 
 set background=dark
 
