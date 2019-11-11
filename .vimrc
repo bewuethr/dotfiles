@@ -87,6 +87,13 @@ nmap <F8> <Plug>(ale_fix)
 " Format for message when cursor near warning/error
 let g:ale_echo_msg_format = '%severity%% (code)%: %s'
 
+" Markers for gutter
+let g:ale_sign_error = '😱'
+let g:ale_sign_warning = '😳'
+let g:ale_sign_info = '🤔'
+let g:ale_sign_style_error = '🙄'
+let g:ale_sign_style_warning = '🧐'
+
 " Keep gutter around even if there are no errors
 let g:ale_sign_column_always = 1
 
