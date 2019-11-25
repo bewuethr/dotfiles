@@ -97,9 +97,8 @@
 	ff = only
 
 [push]
-	# Push the current branch to update a branch with the same name on the
-	# receiving end; allows to skip -u origin <branchname> on first push
-	default = current
+	# Don't push if upstream branch name is different
+	default = simple
 	# Push tags
 	followTags = true
 
