@@ -6,4 +6,5 @@ compiler perl
 let g:perl_compiler_force_warnings = 0
 let b:ale_linters = ['perlcritic']
 let b:ale_fixers = ['perltidy']
+set tabstop=4 shiftwidth=4 softtabstop=4
 setlocal expandtab
