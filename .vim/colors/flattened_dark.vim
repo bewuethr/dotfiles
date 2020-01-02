@@ -15,7 +15,7 @@ hi  Normal                                  ctermfg=12  ctermbg=NONE  guifg=#839
 set background=dark
 
 hi  ColorColumn                             cterm=NONE  ctermbg=0  guibg=#073642  gui=NONE
-hi  Comment                                 cterm=NONE  ctermfg=10  guifg=#586e75  gui=italic
+hi  Comment                                 cterm=italic  ctermfg=10  guifg=#586e75  gui=italic
 hi  ConId                                   cterm=NONE  ctermfg=3  guifg=#b58900  gui=NONE
 hi  Conceal                                 cterm=NONE  ctermfg=4  guifg=#268bd2  guibg=NONE  gui=NONE
 hi  Constant                                cterm=NONE  ctermfg=6  guifg=#2aa198  gui=NONE
@@ -74,7 +74,7 @@ hi  WildMenu                                cterm=reverse  ctermfg=7  ctermbg=0 
 hi  cPreCondit                              cterm=NONE  ctermfg=9  guifg=#cb4b16  gui=NONE
 
 hi  gitcommitBranch                         cterm=NONE  ctermfg=5  guifg=#d33682  gui=NONE
-hi  gitcommitComment                        cterm=NONE  ctermfg=10  guifg=#586e75  gui=italic
+hi  gitcommitComment                        cterm=italic  ctermfg=10  guifg=#586e75  gui=italic
 hi  gitcommitDiscardedFile                  cterm=NONE  ctermfg=1  guifg=#dc322f  gui=NONE
 hi  gitcommitDiscardedType                  cterm=NONE  ctermfg=1  guifg=#dc322f  gui=NONE
 hi  gitcommitFile                           cterm=NONE  ctermfg=12  guifg=#839496  gui=NONE
@@ -108,7 +108,7 @@ hi  hs_hlFunctionName                       cterm=NONE  ctermfg=4  guifg=#268bd2
 
 hi  htmlArg                                 cterm=NONE  ctermfg=11  guifg=#657b83  gui=NONE
 hi  htmlEndTag                              cterm=NONE  ctermfg=10  guifg=#586e75  gui=NONE
-hi  htmlSpecialTagName                      cterm=NONE  ctermfg=4  guifg=#268bd2  gui=italic
+hi  htmlSpecialTagName                      cterm=italic  ctermfg=4  guifg=#268bd2  gui=italic
 hi  htmlTag                                 cterm=NONE  ctermfg=10  guifg=#586e75  gui=NONE
 hi  htmlTagN                                cterm=NONE  ctermfg=14  guifg=#93a1a1  gui=NONE
 hi  htmlTagName                             cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
@@ -126,18 +126,18 @@ hi  pandocCitation                          cterm=NONE  ctermfg=5  guifg=#d33682
 hi  pandocCitationDelim                     cterm=NONE  ctermfg=5  guifg=#d33682  gui=NONE
 hi  pandocCitationID                        cterm=underline  ctermfg=5  guifg=#d33682  gui=underline
 hi  pandocCitationRef                       cterm=NONE  ctermfg=5  guifg=#d33682  gui=NONE
-hi  pandocComment                           cterm=NONE  ctermfg=10  guifg=#586e75  gui=italic
+hi  pandocComment                           cterm=italic  ctermfg=10  guifg=#586e75  gui=italic
 hi  pandocDefinitionBlock                   cterm=NONE  ctermfg=13  guifg=#6c71c4  gui=NONE
 hi  pandocDefinitionIndctr                  cterm=NONE  ctermfg=13  guifg=#6c71c4  gui=NONE
 hi  pandocDefinitionTerm                    cterm=standout  ctermfg=13  guifg=#6c71c4  gui=standout
-hi  pandocEmphasis                          cterm=NONE  ctermfg=12  guifg=#839496  gui=italic
-hi  pandocEmphasisDefinition                cterm=NONE  ctermfg=13  guifg=#6c71c4  gui=italic
+hi  pandocEmphasis                          cterm=italic  ctermfg=12  guifg=#839496  gui=italic
+hi  pandocEmphasisDefinition                cterm=italic  ctermfg=13  guifg=#6c71c4  gui=italic
 hi  pandocEmphasisHeading                   cterm=NONE  ctermfg=9  guifg=#cb4b16  gui=NONE
 hi  pandocEmphasisNested                    cterm=NONE  ctermfg=12  guifg=#839496  gui=NONE
 hi  pandocEmphasisNestedDefinition          cterm=NONE  ctermfg=13  guifg=#6c71c4  gui=NONE
 hi  pandocEmphasisNestedHeading             cterm=NONE  ctermfg=9  guifg=#cb4b16  gui=NONE
 hi  pandocEmphasisNestedTable               cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
-hi  pandocEmphasisTable                     cterm=NONE  ctermfg=4  guifg=#268bd2  gui=italic
+hi  pandocEmphasisTable                     cterm=italic  ctermfg=4  guifg=#268bd2  gui=italic
 hi  pandocEscapePair                        cterm=NONE  ctermfg=1  guifg=#dc322f  gui=NONE
 hi  pandocFootnote                          cterm=NONE  ctermfg=2  guifg=#719e07  gui=NONE
 hi  pandocFootnoteDefLink                   cterm=NONE  ctermfg=2  guifg=#719e07  gui=NONE
