@@ -60,11 +60,12 @@ let g:vimwiki_list = [{
 \	'auto_toc': 0,
 \	'bullet_types': ['-'],
 \	'custom_wiki2html': '~/bin/vimwiki2html',
+\	'diary_caption_level': 1,
 \	'ext': '.md',
+\	'links_space_char': '_',
 \	'list_margin': 0,
 \	'path': '~/vimwiki',
-\	'syntax': 'markdown',
-\	'diary_caption_level': 1
+\	'syntax': 'markdown'
 \}]
 
 let g:vimwiki_global_ext = 0
