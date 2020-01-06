@@ -50,6 +50,9 @@ let g:netrw_winsize = 20
 " Hide swap files
 let g:netrw_list_hide= '.*\.swp$'
 
+" Use patience diff algorithm
+set diffopt+=algorithm:patience
+
 " Plugins
 
 " Vimwiki settings
