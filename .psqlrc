@@ -1,0 +1,57 @@
+-- Environment settings
+-- Use less for paging
+\setenv PAGER less
+
+-- less options: case insensitive, verbose prompt, tabs are 4 spaces, quit if
+-- one screen
+\setenv LESS -iMx4F
+
+
+-- psql settings
+-- Stop processing after an error
+\set ON_ERROR_STOP on
+
+-- In interactive sessions, ignore errors in transactions
+\set ON_ERROR_ROLLBACK interactive
+
+-- Set encoding
+\encoding UTF8
+
+-- Don't add duplicates and commands starting with a space to the history
+\set HISTCONTROL ignoreboth
+
+-- Infinitely large command history
+\set HISTSIZE -1
+
+-- Ignore Ctrl-D 10 times
+\set IGNOREEOF 10
+
+
+-- Output options
+-- Set explicit string for null value
+\pset null '(null)'
+
+-- Draw borders around output
+\pset border 2
+
+-- Expand output when appropriate
+\pset expanded auto
+
+-- Wrap overly long columns
+\pset format wrapped
+
+-- Get thousands separators
+\pset numericlocale on
+
+-- Use box-drawing characters for borders
+\pset linestyle unicode
+
+-- Set drawing styles
+\pset unicode_border_linestyle single
+\pset unicode_column_linestyle single
+\pset unicode_header_linestyle double
+
+
+-- SQL variables
+-- Use proper timezone
+SET TIMEZONE TO 'America/Toronto';
