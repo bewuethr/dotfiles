@@ -55,3 +55,7 @@
 -- SQL variables
 -- Use proper timezone
 SET TIMEZONE TO 'America/Toronto';
+
+
+-- Local settings
+\i ~/.psqlrc_local
