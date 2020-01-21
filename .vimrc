@@ -116,8 +116,9 @@ let g:pandoc#syntax#codeblocks#embeds#langs = ["bash=sh", "sh"]
 " Use goimports instead of gofmt
 let g:go_fmt_command = "goimports"
 
-" Use gopls for :GoDef
+" Use gopls for :GoDef and :GoRename
 let g:go_def_mode = 'gopls'
+let g:go_rename_command = 'gopls'
 
 " Syntax highlighting
 let g:go_highlight_array_whitespace_error = 1
