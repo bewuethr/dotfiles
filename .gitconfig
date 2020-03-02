@@ -3,8 +3,6 @@
 	abbrev = auto
 	# Default editor
 	editor = vim
-	# Global ignore file
-	excludesfile = ~/.gitignore
 
 [alias]
 	# Branches All - get all branches containing the argument in their name
