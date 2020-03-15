@@ -2,5 +2,6 @@ extends: default
 
 rules:
   document-start: disable
+  truthy: disable
 
 # vim:ft=yaml
