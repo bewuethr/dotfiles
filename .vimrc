@@ -140,6 +140,9 @@ let g:go_highlight_types = 1
 let g:go_highlight_variable_assignments = 1
 let g:go_highlight_variable_declarations = 1
 
+" vim-pandoc settings
+" let g:pandoc#modules#enabled = []
+
 " Add git branch to statusline
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
