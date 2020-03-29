@@ -32,3 +32,9 @@
 [submodule ".vim/bundle/vim-rhubarb"]
 	path = .vim/bundle/vim-rhubarb
 	url = https://github.com/tpope/vim-rhubarb.git
+[submodule ".vim/bundle/vim-pandoc"]
+	path = .vim/bundle/vim-pandoc
+	url = https://github.com/vim-pandoc/vim-pandoc.git
+[submodule ".vim/bundle/vim-pandoc-syntax"]
+	path = .vim/bundle/vim-pandoc-syntax
+	url = https://github.com/vim-pandoc/vim-pandoc-syntax.git
