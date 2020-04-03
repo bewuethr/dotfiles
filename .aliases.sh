@@ -30,6 +30,9 @@ alias man='MANWIDTH=$((COLUMNS > 120 ? 120 : COLUMNS)) man -P "less $LESS"'
 # Prettier od
 alias od='od -A x -t x1z -v'
 
+# Use my style file for mdl
+alias mdl='mdl --style ~/.config/mdl/style.rb'
+
 # Local alias definitions
 if [[ -f $HOME/.aliases_local.sh ]]; then
 	# shellcheck source=/dev/null
