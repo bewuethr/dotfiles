@@ -14,3 +14,6 @@ rule 'MD029', :style => :ordered
 
 # Allow inline HTML
 exclude_rule 'MD033'
+
+# Don't require a language on fenced codeblocks
+exclude_rule 'MD040'

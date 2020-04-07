@@ -21,5 +21,8 @@ exclude_rule 'MD033'
 # Allow bare URLs
 exclude_rule 'MD034'
 
-# Ignor code block rule, there seems to be a bug
+# Don't require a language on fenced codeblocks
+exclude_rule 'MD040'
+
+# Ignore code block rule, there seems to be a bug
 exclude_rule 'MD046'
