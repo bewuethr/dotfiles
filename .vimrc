@@ -109,8 +109,20 @@ highlight clear ALEStyleErrorSign
 highlight clear ALEStyleWarningSign
 
 " Pandoc settings
+let g:pandoc#filetypes#pandoc_markdown = 0
+let g:pandoc#modules#enabled = []
 let g:pandoc#modules#disabled = ["folding"]
-let g:pandoc#syntax#codeblocks#embeds#langs = ["bash=sh", "sh"]
+let g:pandoc#syntax#codeblocks#embeds#langs = [
+\	"bash=sh",
+\	"c",
+\	"cpp",
+\	"go",
+\	"sh",
+\	"sql",
+\	"sqlpostgresql=sql",
+\	"yaml"
+\]
+let g:pandoc#formatting#mode = "h"
 
 " vim-go settings
 " Use goimports instead of gofmt
@@ -139,9 +151,6 @@ let g:go_highlight_trailing_whitespace_error = 1
 let g:go_highlight_types = 1
 let g:go_highlight_variable_assignments = 1
 let g:go_highlight_variable_declarations = 1
-
-" vim-pandoc settings
-" let g:pandoc#modules#enabled = []
 
 " Add git branch to statusline
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
