@@ -2,6 +2,9 @@ extends: default
 
 rules:
   document-start: disable
+  quoted-strings:
+    quote-type: single
+    required: only-when-needed
   truthy: disable
 
 # vim:ft=yaml
