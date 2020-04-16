@@ -16,14 +16,6 @@
 		| xargs -r git branch -D
 	# Log, No Tags - hide all tags in log
 	lnt = log --decorate-refs-exclude='tags/*'
-	# Pull Rebase Autostash Upstream Development
-	praud = pull --rebase --autostash upstream development
-	# Pull Rebase Upstream Development
-	prud = pull --rebase upstream development
-	# Pull Upstream Development
-	pud = pull upstream development
-	# Pull Upstream Master
-	pum = pull upstream master
 
 [checkout]
 	defaultRemote = origin
