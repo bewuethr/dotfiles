@@ -117,6 +117,7 @@ let g:pandoc#syntax#codeblocks#embeds#langs = [
 \	"c",
 \	"cpp",
 \	"go",
+\	"html",
 \	"sh",
 \	"sql",
 \	"sqlpostgresql=sql",
