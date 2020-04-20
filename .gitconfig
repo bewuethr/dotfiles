@@ -11,9 +11,12 @@
 	bla = blame --color-by-age --minimal -C -C --abbrev=6 --progress
 	# BLame Colour - different colour for repeated author information in blame
 	blc = blame --color-lines
+	# Delete No Upstream - delete local branches where there is no upstream branch
+	dnu = !git branch --format '%(if:equals=)%(upstream)%(then)%(refname:short)%(end)' \
+		| xargs --no-run-if-empty git branch -D
 	# Delete Stale Branches - delete local branches where the tracking branch is gone
 	dsb = !git branch --format '%(if:equals=[gone])%(upstream:track)%(then)%(refname:short)%(end)' \
-		| xargs -r git branch -D
+		| xargs --no-run-if-empty git branch -D
 	# Log, No Tags - hide all tags in log
 	lnt = log --decorate-refs-exclude='tags/*'
 
