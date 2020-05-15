@@ -109,7 +109,7 @@ highlight clear ALEStyleErrorSign
 highlight clear ALEStyleWarningSign
 
 " Pandoc settings
-let g:pandoc#filetypes#pandoc_markdown = 0
+let g:pandoc#filetypes#pandoc_markdown = 1
 let g:pandoc#modules#enabled = []
 let g:pandoc#modules#disabled = ["folding"]
 let g:pandoc#syntax#codeblocks#embeds#langs = [
