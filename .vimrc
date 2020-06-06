@@ -60,7 +60,7 @@ let g:vimwiki_list = [{
 \	'auto_diary_index': 1,
 \	'auto_export': 0,
 \	'auto_tags': 1,
-\	'auto_toc': 0,
+\	'auto_toc': 1,
 \	'bullet_types': ['-'],
 \	'custom_wiki2html': '~/bin/vimwiki2html',
 \	'diary_caption_level': 1,
@@ -77,6 +77,7 @@ let g:vimwiki_hl_cb_checked = 1
 let g:vimwiki_html_header_numbering = 2
 let g:vimwiki_dir_link = 'index'
 let g:vimwiki_markdown_link_ext = 1
+let g:vimwiki_toc_header_level = 2
 
 " Calendar.vim settings
 let g:calendar_monday = 1
