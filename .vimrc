@@ -120,6 +120,7 @@ let g:pandoc#syntax#codeblocks#embeds#langs = [
 \	"dot",
 \	"go",
 \	"html",
+\	"json",
 \	"markdown",
 \	"python",
 \	"sh",
