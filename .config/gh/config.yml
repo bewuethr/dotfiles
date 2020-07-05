@@ -1,2 +1,3 @@
 aliases:
     pcw: pr create --web
+git_protocol: ssh
