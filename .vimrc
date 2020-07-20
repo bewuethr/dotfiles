@@ -114,18 +114,33 @@ let g:pandoc#filetypes#pandoc_markdown = 1
 let g:pandoc#modules#enabled = []
 let g:pandoc#modules#disabled = ["folding"]
 let g:pandoc#syntax#codeblocks#embeds#langs = [
+\	"ada",
+\	"awk",
 \	"bash=sh",
 \	"c",
+\	"clojure",
 \	"cpp",
+\	"css",
 \	"dot",
+\	"eiffel",
 \	"go",
 \	"html",
+\	"java",
+\	"javascript",
 \	"json",
+\	"latex=tex",
+\	"lua",
+\	"makefile=make",
 \	"markdown",
+\	"pascal",
+\	"perl",
 \	"python",
+\	"roff=nroff",
+\	"sed",
 \	"sh",
 \	"sql",
 \	"sqlpostgresql=sql",
+\	"xml",
 \	"yaml"
 \]
 let g:pandoc#formatting#mode = "h"
