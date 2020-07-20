@@ -12,7 +12,7 @@ up), and initializes all the submodules. It can be run like this, preferably in
 `$HOME`:
 
 ```bash
-bash <(curl https://git.io/JJczn)
+bash <(curl -L https://git.io/JJczn)
 ```
 
 Notice that this *overwrites* existing dotfiles.
