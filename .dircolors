@@ -161,6 +161,7 @@ EXEC 38;2;203;75;22  # Unix
 .tex 32
 .vim 32
 .xml 32
+.yaml 32
 .yml 32
 .zsh 32
 
