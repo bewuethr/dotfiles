@@ -50,10 +50,10 @@ hi  Search                                  cterm=reverse  ctermfg=3 ctermbg=NON
 hi  SignColumn                              cterm=NONE  ctermfg=12  ctermbg=NONE  guifg=#839496  guibg=NONE  gui=NONE
 hi  Special                                 cterm=NONE  ctermfg=1  guifg=#dc322f  gui=NONE
 hi  SpecialKey                              cterm=NONE  ctermfg=11  ctermbg=0  guifg=#657b83  guibg=#073642  gui=NONE
-hi  SpellBad                                cterm=undercurl  ctermfg=NONE  ctermbg=NONE  guisp=#dc322f  gui=undercurl
-hi  SpellCap                                cterm=undercurl  ctermfg=NONE  ctermbg=NONE  guisp=#6c71c4  gui=undercurl
-hi  SpellLocal                              cterm=undercurl  ctermfg=NONE  ctermbg=NONE  guisp=#b58900  gui=undercurl
-hi  SpellRare                               cterm=undercurl  ctermfg=NONE  ctermbg=NONE  guisp=#2aa198  gui=undercurl
+hi  SpellBad                                cterm=underline  ctermfg=NONE  ctermbg=NONE  guisp=#dc322f  gui=undercurl
+hi  SpellCap                                cterm=underline  ctermfg=NONE  ctermbg=NONE  guisp=#6c71c4  gui=undercurl
+hi  SpellLocal                              cterm=underline  ctermfg=NONE  ctermbg=NONE  guisp=#b58900  gui=undercurl
+hi  SpellRare                               cterm=underline  ctermfg=NONE  ctermbg=NONE  guisp=#2aa198  gui=undercurl
 hi  Statement                               cterm=NONE  ctermfg=2  guifg=#859900  gui=NONE
 hi  StatusLine                              cterm=reverse  ctermfg=14  ctermbg=0  guifg=#93a1a1  guibg=#073642  gui=reverse
 hi  StatusLineNC                            cterm=reverse  ctermfg=11  ctermbg=0  guifg=#657b83  guibg=#073642  gui=reverse
