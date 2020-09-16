@@ -146,8 +146,13 @@ let g:pandoc#syntax#codeblocks#embeds#langs = [
 let g:pandoc#formatting#mode = "h"
 
 " vim-go settings
-" Use goimports instead of gofmt
-let g:go_fmt_command = "goimports"
+" Formatting
+let g:go_fmt_command = "gopls"
+let g:go_fmt_autosave = 1
+
+" Importing
+let g:go_imports_mode = "gopls"
+let g:go_imports_autosave = 1
 
 " Use gopls for :GoDef and :GoRename
 let g:go_def_mode = 'gopls'
