@@ -159,6 +159,9 @@ let g:go_def_mode = 'gopls'
 let g:go_info_mode = 'gopls'
 let g:go_rename_command = 'gopls'
 
+" Use popup window instead of separate pane
+let g:go_doc_popup_window = 1
+
 " Syntax highlighting
 let g:go_highlight_array_whitespace_error = 1
 let g:go_highlight_build_constraints = 1
