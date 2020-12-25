@@ -5,7 +5,7 @@ set output-meta on
 # Kill complete line
 "\e\C-k": kill-whole-line
 
-# Jump to next/previous whitespace
+# Jump to next/previous non-quoted shell metacharacter
 "\e\C-f": shell-forward-word
 "\e\C-b": shell-backward-word
 
