@@ -60,6 +60,9 @@
 [icdiff]
 	options = --line-numbers --tabsize=4
 
+[init]
+	defaultBranch = main
+
 [log]
 	# Human readable dates, unless no pager is used
 	date = auto:human
