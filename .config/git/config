@@ -109,6 +109,6 @@
 
 # Local settings
 [include]
-	path = ~/.gitconfig_local
+	path = config_local
 
 # vim:ft=gitconfig
