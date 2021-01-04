@@ -79,8 +79,8 @@ fi
 
 # Enable color support of ls
 if type dircolors &> /dev/null; then
-	if [[ -r $HOME/.dircolors ]]; then
-		eval "$(dircolors -b "$HOME/.dircolors")"
+	if [[ -r $HOME/.config/dircolors ]]; then
+		eval "$(dircolors -b "$HOME/.config/dircolors")"
 	else
 		eval "$(dircolors -b)"
 	fi
