@@ -1,1 +1,1 @@
-autocmd BufRead,BufNewFile *.bash set filetype=bash
+autocmd BufRead,BufNewFile *.bash set filetype=sh
