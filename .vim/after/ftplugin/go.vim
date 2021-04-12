@@ -42,3 +42,9 @@ nmap <buffer><silent> <LocalLeader>s :GoSameIdsToggle<CR>
 
 " Make gq break lines at 80 instead of 79 charatcers
 setlocal textwidth=80
+
+" Add staticcheck to default linters
+let b:ale_linters = ['gofmt', 'golint', 'govet', 'staticcheck']
+
+" Without this, staticcheck complains about undeclared names
+let b:ale_go_staticcheck_lint_package = 1
