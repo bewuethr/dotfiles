@@ -146,19 +146,6 @@ let g:pandoc#syntax#codeblocks#embeds#langs = [
 let g:pandoc#formatting#mode = "h"
 
 " vim-go settings
-" Formatting
-let g:go_fmt_command = "gopls"
-let g:go_fmt_autosave = 1
-
-" Importing
-let g:go_imports_mode = "gopls"
-let g:go_imports_autosave = 1
-
-" Use gopls for :GoDef and :GoRename
-let g:go_def_mode = 'gopls'
-let g:go_info_mode = 'gopls'
-let g:go_rename_command = 'gopls'
-
 " Use popup window instead of separate pane
 let g:go_doc_popup_window = 1
 
