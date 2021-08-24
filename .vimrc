@@ -62,7 +62,7 @@ let g:vimwiki_list = [{
 \	'auto_tags': 1,
 \	'auto_toc': 1,
 \	'bullet_types': ['-'],
-\	'custom_wiki2html': '~/bin/vimwiki2html',
+\	'custom_wiki2html': '~/.local/bin/vimwiki2html',
 \	'diary_caption_level': 1,
 \	'ext': '.md',
 \	'links_space_char': '_',
