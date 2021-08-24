@@ -7,10 +7,6 @@
 [submodule "vim/bundle/vim-lion"]
 	path = .vim/bundle/vim-lion
 	url = https://github.com/tommcdo/vim-lion.git
-[submodule "vim/bundle/vim-go"]
-	path = .vim/bundle/vim-go
-	url = https://github.com/fatih/vim-go.git
-	# update = none
 [submodule "vim/bundle/vimwiki"]
 	path = .vim/bundle/vimwiki
 	url = https://github.com/vimwiki/vimwiki.git
