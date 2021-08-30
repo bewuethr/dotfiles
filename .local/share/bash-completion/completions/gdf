@@ -1,4 +1,5 @@
 # Completion for git dotfiles
+source /usr/share/bash-completion/completions/git
 complete -o bashdefault -o default -o nospace -F __git_wrap__git_main gdf
 
 # vim:ft=sh
