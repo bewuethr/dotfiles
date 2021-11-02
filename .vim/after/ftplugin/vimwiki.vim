@@ -7,6 +7,7 @@ setlocal sbr=>\
 setlocal wrap linebreak breakindent breakindentopt=shift:2,sbr
 setlocal spell spelllang=en_ca spellcapcheck=
 setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+syntax sync fromstart
 
 " Path to mdl style file
 let b:ale_linters = ['mdl']
