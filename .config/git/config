@@ -57,6 +57,9 @@
 	# Smudge filter to unexpand spaces to tabs
 	smudge = unexpand -t 4 --first-only
 
+[help]
+	autoCorrect = prompt
+
 [icdiff]
 	options = --line-numbers --tabsize=4
 
