@@ -2,14 +2,18 @@ alias ..='cd ..'
 alias ...='cd ../..'
 
 # Some ls aliases
-alias l1='ls -1'
-alias l='ls -CF'
-alias la1='ls -A1'
-alias la='ls -A'
-alias ll='ls -l'
-alias lla='ls -AlF'
-alias ls='ls --color=auto'
-alias lsd='ls --group-directories-first'
+alias ls='ls --color=auto'                # Default: add colour unless in pipe
+alias lsd='ls --group-directories-first'  # Directories first
+alias l1='ls -1'                          # One file per line
+alias l='ls -C --classify'                # By columns, append type indicator
+
+alias la='ls --almost-all'                # Show dotfiles, but not . and ..
+alias la1='la -1'                         # Show dotfiles, one per line
+alias lad='la --group-directories-first'  # Show dotfiles, directories first
+
+alias ll='ls -l'                                        # Long listing format
+alias lla='ll --almost-all'                             # Long listing with dotfiles
+alias llad='ll --almost-all --group-directories-first'  # Long with dofiles, dirs first
 
 # Git for dotfiles
 alias gdf='git --git-dir="$HOME/.dotfiles.git" --work-tree="$HOME"'
