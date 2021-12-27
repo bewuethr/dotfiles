@@ -13,45 +13,7 @@ wrap() {
 # Filter for percent encoding - chose between "%20" and "+" for spaces with the
 # -p option
 percentencode() {
-	local usage='Usage: percentencode [-h|-p] STRING [STRING...]'
-	local opt
-	local p
-	OPTIND=1
-	while getopts ':hp' opt; do
-		case $opt in
-			h) printf '%s\n' "$usage" >&2 && return 1 ;;
-			p) p='yes' ;;
-			*) printf 'Invalid option: %s\n%s\n' "$OPTARG" "$usage" >&2 && return 1 ;;
-		esac
-	done
-	shift "$((OPTIND - 1))"
-
-	if (($# == 0)); then
-		printf '%s\n' "$usage" >&2
-		return 1
-	fi
-
-	local str i j res
-	local re='[]:/?#@!$&'"'"'()*+,;=% []'
-	i=0
-	for str in "$@"; do
-		for ((j = 0; j < ${#str}; ++j)); do
-			local l=${str:j:1}
-			if [[ $l =~ $re ]]; then
-				res[i]+=$(printf '%%%02X' "'$l")
-			else
-				res[i]+=$l
-			fi
-		done
-		((++i))
-	done
-
-	# Check if spaces should be "+"
-	if [[ $p ]]; then
-		printf '%s\n' "${res[*]//%20/+}"
-	else
-		printf '%s\n' "${res[*]}"
-	fi
+	jq --raw-input --raw-output '@uri'
 }
 
 # Local function definitions
