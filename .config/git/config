@@ -74,7 +74,7 @@
 
 [merge]
 	# Show common ancestor code in merge conflicts
-	conflictstyle = diff3
+	conflictstyle = zdiff3
 	# Don't create extra commits for fast-forward merges
 	ff = true
 	# Use vimdiff for merge conflict resolution
