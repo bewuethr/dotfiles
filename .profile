@@ -1,10 +1,13 @@
-# Add $HOME/bin to PATH if it isn't there yet
-if [ -d "$HOME/bin" ]; then
-	case :${PATH:=$HOME/bin}: in
-		*:"$HOME/bin":*) ;;
-		*) PATH=$HOME/bin:$PATH ;;
+# Add $HOME/.local/bin to PATH if it isn't there yet
+dir=$HOME/.local/bin
+if [ -d "$dir" ]; then
+	case :${PATH:=$dir}: in
+		*:"$dir":*) ;;
+		*) PATH=$dir:$PATH ;;
 	esac
 fi
+
+unset dir
 
 # Local settings
 if [ -r "$HOME/.profile_local" ]; then
