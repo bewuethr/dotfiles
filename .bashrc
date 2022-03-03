@@ -28,6 +28,9 @@ export FCEDIT='vim'
 # Colours for grep results
 export GREP_COLORS='mt=01;31:sl=:cx=00;38;5;10:fn=38;2;108;113;196:ln=32:bn=35:se=33'
 
+# Use this history file
+HISTFILE="$HOME/.local/share/bash/history"
+
 # Don't put lines starting with spaces and repeated commands into history
 HISTCONTROL='ignoreboth'
 
