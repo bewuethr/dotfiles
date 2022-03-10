@@ -1,0 +1,3 @@
+eval "$(yq shell-completion bash)"
+
+# vim:ft=bash
