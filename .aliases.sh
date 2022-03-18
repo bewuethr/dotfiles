@@ -37,6 +37,10 @@ alias od='od -A x -t x1z -v'
 # Use my style file for mdl
 alias mdl='mdl --style ~/.config/mdl/style.rb'
 
+# Connect and disconnect Sonos speaker
+alias btcon='bluetoothctl <<< "connect 5C:AA:FD:D4:EB:84"'
+alias btuncon='bluetoothctl <<< disconnect'
+
 # Local alias definitions
 if [[ -f $HOME/.aliases_local.sh ]]; then
 	# shellcheck source=/dev/null
