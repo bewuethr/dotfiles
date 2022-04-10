@@ -100,7 +100,7 @@ set_prompt() {
 			local uscct
 			if uscct=$(git status --porcelain | grep -c '^.[MD]'); then
 				((uscct == 1)) && uscct=
-				PS1+="${space:-"\\[$grey\\]|"}\\[$orange\\]$uscct"$'\u25cb'
+				PS1+="${space:-"\\[$grey\\]|"}\\[$orange\\]$uscct"$'\uf62f' # 
 				space=""
 			fi
 
@@ -108,7 +108,7 @@ set_prompt() {
 			local scct
 			if scct=$(git status --porcelain | grep -c '^[MADRC]'); then
 				((scct == 1)) && scct=
-				PS1+="${space:-"\\[$grey\\]|"}\\[$orange\\]$scct"$'\u25cf'
+				PS1+="${space:-"\\[$grey\\]|"}\\[$orange\\]$scct"$'\uf62e' # 
 				space=""
 			fi
 
@@ -117,7 +117,7 @@ set_prompt() {
 				local stashct
 				stashct=$(git stash list | wc -l)
 				((stashct == 1)) && stashct=
-				PS1+="${space:-"\\[$grey\\]|"}\\[$blue\\]$stashct"$'\u2295'
+				PS1+="${space:-"\\[$grey\\]|"}\\[$blue\\]$stashct"$'\uf62d' # 
 				space=""
 			fi
 
@@ -125,7 +125,7 @@ set_prompt() {
 			local utct
 			if utct=$(git status --porcelain | grep -c '^??'); then
 				((utct == 1)) && utct=
-				PS1+="${space:-"\\[$grey\\]|"}\\[$magenta\\]$utct"$'\u2302'
+				PS1+="${space:-"\\[$grey\\]|"}\\[$magenta\\]$utct"$'\uf630' # 
 				space=
 			fi
 
@@ -135,7 +135,7 @@ set_prompt() {
 				local ahead
 				ahead=$(grep -c '^<' <<< "$commits")
 				((ahead > 0)) && {
-					PS1+="${space:-"\\[$grey\\]|"}\\[$violet\\]${ahead}"$'\u2b06'
+					PS1+="${space:-"\\[$grey\\]|"}\\[$violet\\]${ahead}"$'\uf63e' # 
 					space=
 				}
 
@@ -149,11 +149,11 @@ set_prompt() {
 					else
 						behcol=$red
 					fi
-					PS1+="${space:-"\\[$grey\\]|"}\\[$behcol\\]${behind}"$'\u2b07'
+					PS1+="${space:-"\\[$grey\\]|"}\\[$behcol\\]${behind}"$'\uf63b' # 
 					space=
 				fi
 
-				((ahead == 0 && behind == 0)) && PS1+="${space:-"\\[$grey\\]|"}\\[$green\\]"$'\u2713'
+				((ahead == 0 && behind == 0)) && PS1+="${space:-"\\[$grey\\]|"}\\[$green\\]"$'\uf62b' # 
 			fi
 		else
 			# Probably detached HEAD, use describe or commit hash
