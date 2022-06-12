@@ -1,5 +1,8 @@
 all
 
+# Ignore front matter
+ignore_front_matter true
+
 # Use MD041 instead
 exclude_rule 'MD002'
 
