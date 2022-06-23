@@ -19,7 +19,7 @@ alias llad='ll --almost-all --group-directories-first'  # Long with dofiles, dir
 alias gdf='git --git-dir="$HOME/.dotfiles.git" --work-tree="$HOME"'
 
 # grep
-alias grep='grep --color=auto --exclude-dir=.git --exclude=tags --exclude=*.swp'
+alias grep='grep --color=auto --exclude-dir=.git --exclude=tags --exclude=*.swp --exclude-dir=vendor'
 alias cgrep='grep --color=always'
 
 # Get colour for diffstat
