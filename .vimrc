@@ -3,6 +3,9 @@ execute pathogen#infect()
 " Indentation
 set shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
 
+" Shift by multiples of shiftwidth
+set shiftround
+
 " Colours
 set termguicolors
 colorscheme flattened_dark
