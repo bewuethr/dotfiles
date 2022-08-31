@@ -41,6 +41,9 @@ alias mdl='mdl --style ~/.config/mdl/style.rb'
 alias btcon='bluetoothctl <<< "connect 5C:AA:FD:D4:EB:84"'
 alias btuncon='bluetoothctl <<< disconnect'
 
+# Update and upgrade
+alias sauu='sudo apt update && sudo apt upgrade'
+
 # Local alias definitions
 if [[ -f $HOME/.aliases_local.sh ]]; then
 	# shellcheck source=/dev/null
