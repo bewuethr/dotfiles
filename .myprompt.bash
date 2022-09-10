@@ -91,7 +91,7 @@ set_prompt() {
 		elif [[ -f $git_dir/BISECT_LOG ]]; then
 			PS1+="\\[$orange\\]bisecting"
 
-		elif __bname=$(git symbolic-ref -q --short HEAD); then
+		elif __bname=$(git branch --show-current); then
 			# Use variable instead of assigning directly because of expansions vulnerability
 			PS1+="\\[$cyan\\]\${__bname}"
 			local space=" "
