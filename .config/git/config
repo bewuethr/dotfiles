@@ -50,6 +50,8 @@
 	prune = true
 	# Delete local tags that have been deleted on remote
 	pruneTags = true
+	# Write a commit-graph every time a packfile is downloaded
+	writeCommitGraph = true
 
 [filter "expand"]
 	# Clean filter to expand tabs to spaces
