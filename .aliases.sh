@@ -44,6 +44,9 @@ alias btuncon='bluetoothctl <<< disconnect'
 # Update and upgrade
 alias sauu='sudo apt update && sudo apt upgrade'
 
+# Use better keybindings for info
+alias info='info --vi-keys'
+
 # Local alias definitions
 if [[ -f $HOME/.aliases_local.sh ]]; then
 	# shellcheck source=/dev/null
