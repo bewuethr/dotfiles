@@ -47,6 +47,9 @@ alias sauu='sudo apt update && sudo apt upgrade'
 # Use better keybindings for info
 alias info='info --vi-keys'
 
+# Use custom config file location for jqp
+alias jqp='jqp --config "$HOME/.config/jqp/config.yml"'
+
 # Local alias definitions
 if [[ -f $HOME/.aliases_local.sh ]]; then
 	# shellcheck source=/dev/null
