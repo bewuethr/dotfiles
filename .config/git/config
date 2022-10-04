@@ -103,6 +103,10 @@
 	# Push tags
 	followTags = true
 
+[rebase]
+	# Update dependent branches when rebasing
+	updateRefs = true
+
 [rerere]
 	enabled = true
 
