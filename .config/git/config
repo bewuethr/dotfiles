@@ -19,6 +19,8 @@
 		| xargs --no-run-if-empty git branch --delete --force
 	# Log, No Tags - hide all tags in log
 	lnt = log --decorate-refs-exclude='tags/*'
+	# Update submodules from remote
+	sur = submodule update --remote
 
 [checkout]
 	defaultRemote = origin
