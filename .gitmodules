@@ -38,7 +38,6 @@
 [submodule ".vim/bundle/vim-go"]
 	path = .vim/bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
-	update = none
 [submodule ".vim/pack/tpope/start/eunuch"]
 	path = .vim/pack/tpope/start/eunuch
 	url = https://github.com/tpope/vim-eunuch.git
