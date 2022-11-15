@@ -41,3 +41,9 @@
 [submodule ".vim/pack/tpope/start/eunuch"]
 	path = .vim/pack/tpope/start/eunuch
 	url = https://github.com/tpope/vim-eunuch.git
+[submodule "vim-jekyll"]
+	path = vim-jekyll
+	url = https://github.com/parkr/vim-jekyll.git
+[submodule ".vim/pack/parkr/start/jekyll"]
+	path = .vim/pack/parkr/start/jekyll
+	url = https://github.com/parkr/vim-jekyll.git
