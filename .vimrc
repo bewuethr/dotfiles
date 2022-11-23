@@ -176,7 +176,6 @@ let g:go_highlight_variable_declarations = 1
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Insert timestamp
-nnoremap <F5> "=strftime("%F %T %z")<CR>P
 inoremap <F5> <C-R>=strftime("%F %T %z")<CR>
 
 " Local settings
