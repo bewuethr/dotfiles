@@ -172,6 +172,12 @@ let g:go_highlight_types = 1
 let g:go_highlight_variable_assignments = 1
 let g:go_highlight_variable_declarations = 1
 
+" Metalinter
+let g:go_metalinter_command = "golangci-lint"
+let g:go_metalinter_enabled = ["vet", "errcheck", "wsl", "staticcheck"]
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ["vet", "errcheck", "wsl", "staticcheck"]
+
 " Add git branch to statusline
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
