@@ -9,6 +9,13 @@ rule 'MD003', :style => :atx
 # Require dashes for unordered lists
 rule 'MD004', :style => :dash
 
+# Ignore inconsistend list indentation; required because we want to set rule 7
+# to 2 spaces
+exclude_rule 'MD005'
+
+# Require nested unordered lists to be indented by 2 spaces
+rule 'MD007', :indent => 2
+
 # Allow exactly 2 breaking spaces at the end of a line
 rule 'MD009', :br_spaces => 2
 

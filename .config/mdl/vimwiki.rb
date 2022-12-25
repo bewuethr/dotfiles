@@ -3,6 +3,13 @@ all
 # Require dash for unordered lists
 rule 'MD004', :style => :dash
 
+# Ignore inconsistend list indentation; required because we want to set rule 7
+# to 2 spaces
+exclude_rule 'MD005'
+
+# Require nested unordered lists to be indented by 2 spaces
+rule 'MD007', :indent => 2
+
 # Don't enforce line length
 exclude_rule 'MD013'
 
