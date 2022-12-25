@@ -13,7 +13,7 @@ rule 'MD004', :style => :dash
 rule 'MD009', :br_spaces => 2
 
 # Don't enforce line length in code blocks and tables
-rule 'MD013', :code_blocks => false, :tables => false
+rule 'MD013', :ignore_code_blocks => true, :tables => false
 
 # Allow duplicate titles
 exclude_rule 'MD024'
