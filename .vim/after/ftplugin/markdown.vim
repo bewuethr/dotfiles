@@ -8,4 +8,4 @@ setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 setlocal spell spelllang=en_ca spellcapcheck=
 
 " Path to mdl style file
-let b:ale_markdown_mdl_options = '--style ~/.config/mdl/style.rb'
+let b:ale_markdown_mdl_options = '--style ~/.config/mdl/style.rb --ignore-front-matter'
