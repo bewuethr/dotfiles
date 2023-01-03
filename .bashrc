@@ -57,7 +57,7 @@ HISTIGNORE='exit:history:l:l[1als]:lla:+(.)'
 HISTTIMEFORMAT='%F %T '
 
 # Sync history across sessions
-PROMPT_COMMAND="history -a; history -c; history -r${PROMPT_COMMAND:+$'\n'"$PROMPT_COMMAND"}"
+PROMPT_COMMAND=('history -a' 'history -c' 'history -r' "${PROMPT_COMMAND[@]}")
 
 # Keep LINES and COLUMNS up to date
 shopt -s checkwinsize
@@ -93,7 +93,7 @@ fi
 if [[ $color_prompt == 'yes' ]]; then
 	# shellcheck source=/dev/null
 	. "$HOME/.myprompt.bash"
-	PROMPT_COMMAND="set_prompt${PROMPT_COMMAND:+$'\n'"$PROMPT_COMMAND"}"
+	PROMPT_COMMAND=('set_prompt' "${PROMPT_COMMAND[@]}")
 else
 	PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
