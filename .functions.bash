@@ -16,6 +16,17 @@ percentencode() {
 	jq --raw-input --raw-output '@uri'
 }
 
+# Install latest version of yq and its man page
+yqupgrade() {
+	go install github.com/mikefarah/yq/v4@latest
+	(
+		cd /tmp || exit 1
+		gh --repo mikefarah/yq release download --pattern '*man_page*'
+		tar xvf yq_man_page_only.tar.gz
+		./install-man-page.sh
+	)
+}
+
 # Local function definitions
 if [[ -f $HOME/.functions_local.bash ]]; then
 	# shellcheck source=/dev/null
