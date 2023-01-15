@@ -193,6 +193,7 @@ EXEC 38;2;203;75;22  # Unix
 .tga 33
 .tif 33
 .tiff 33
+.webp 33
 .xbm 33
 .xcf 33
 .xpm 33
