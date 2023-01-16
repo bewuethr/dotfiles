@@ -21,7 +21,7 @@ yqupgrade() {
 	go install github.com/mikefarah/yq/v4@latest
 	(
 		cd /tmp || exit 1
-		gh --repo mikefarah/yq release download --pattern '*man_page*'
+		gh --repo mikefarah/yq release download --clobber --pattern '*man_page*'
 		tar xvf yq_man_page_only.tar.gz
 		./install-man-page.sh
 	)
