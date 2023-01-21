@@ -110,6 +110,10 @@ if ! shopt -oq posix; then
 	fi
 fi
 
+# Source asdf
+# shellcheck source=/dev/null
+source "$ASDF_DIR/asdf.sh"
+
 # Alias definitions
 if [[ -f $HOME/.aliases.sh ]]; then
 	# shellcheck source=/dev/null
