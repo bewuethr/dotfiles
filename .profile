@@ -15,6 +15,11 @@ if [ -r "$HOME/.profile_local" ]; then
 	. "$HOME/.profile_local"
 fi
 
+# asdf variables
+export ASDF_CONFIG_FILE="$HOME/.config/asdf/asdfrc"
+export ASDF_DIR="$HOME/.local/opt/asdf"
+export ASDF_DATA_DIR="$HOME/.local/share/asdf"
+
 # If running bash
 if [ -n "$BASH_VERSION" ]; then
 	# Include .bashrc if it exists
