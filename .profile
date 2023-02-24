@@ -9,16 +9,17 @@ fi
 
 unset dir
 
+# asdf variables
+export ASDF_CONFIG_FILE="$HOME/.config/asdf/asdfrc"
+export ASDF_DIR="$HOME/.local/opt/asdf"
+export ASDF_DATA_DIR="$HOME/.local/share/asdf"
+export ASDF_GEM_DEFAULT_PACKAGES_FILE="$HOME/.config/asdf/default-gems"
+
 # Local settings
 if [ -r "$HOME/.profile_local" ]; then
 	# shellcheck source=/dev/null
 	. "$HOME/.profile_local"
 fi
-
-# asdf variables
-export ASDF_CONFIG_FILE="$HOME/.config/asdf/asdfrc"
-export ASDF_DIR="$HOME/.local/opt/asdf"
-export ASDF_DATA_DIR="$HOME/.local/share/asdf"
 
 # If running bash
 if [ -n "$BASH_VERSION" ]; then
