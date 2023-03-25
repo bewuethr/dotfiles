@@ -1,2 +1,4 @@
---theme ansi-dark
---tabs 4
+--italic-text=always
+--style=full
+--tabs=4
+--theme='Solarized (dark)'
