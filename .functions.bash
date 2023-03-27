@@ -17,15 +17,13 @@ percentencode() {
 }
 
 # Install latest version of yq and its man page
-yqupgrade() {
-	go install github.com/mikefarah/yq/v4@latest
-	(
-		cd /tmp || exit 1
-		gh --repo mikefarah/yq release download --clobber --pattern '*man_page*'
-		tar xvf yq_man_page_only.tar.gz
-		./install-man-page.sh
-	)
-}
+yqupgrade() (
+	cd /tmp || exit 1
+	gh --repo mikefarah/yq release download --clobber --pattern 'yq_linux_amd64.tar.gz'
+	tar xvf yq_linux_amd64.tar.gz
+	mv yq_linux_amd64 "$HOME/go/bin/yq"
+	./install-man-page.sh
+)
 
 # Local function definitions
 if [[ -f $HOME/.functions_local.bash ]]; then
