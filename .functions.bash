@@ -25,6 +25,15 @@ yqupgrade() (
 	./install-man-page.sh
 )
 
+# Install latest version of golangci-lint
+gclupgrade() (
+	cd /tmp || exit 1
+	gh --repo golangci/golangci-lint release download --clobber \
+		--pattern 'golangci-lint-*-linux-amd64.deb' \
+		--output 'golangci-lint.deb'
+	sudo dpkg --install golangci-lint.deb
+)
+
 # Local function definitions
 if [[ -f $HOME/.functions_local.bash ]]; then
 	# shellcheck source=/dev/null
