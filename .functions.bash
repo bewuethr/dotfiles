@@ -23,6 +23,7 @@ yqupgrade() (
 	tar xvf yq_linux_amd64.tar.gz
 	mv yq_linux_amd64 "$HOME/go/bin/yq"
 	./install-man-page.sh
+	yq --version
 )
 
 # Install latest version of golangci-lint
@@ -32,6 +33,18 @@ gclupgrade() (
 		--pattern 'golangci-lint-*-linux-amd64.deb' \
 		--output 'golangci-lint.deb'
 	sudo dpkg --install golangci-lint.deb
+	golangci-lint version
+)
+
+# Install latest version of gitleaks
+glupgrade() (
+	cd /tmp || exit 1
+	gh --repo gitleaks/gitleaks release download --clobber \
+		--pattern 'gitleaks_*_linux_x64.tar.gz' \
+		--output 'gitleaks.tar.gz'
+	tar xvf gitleaks.tar.gz
+	mv gitleaks "$HOME/go/bin"
+	gitleaks version
 )
 
 # Local function definitions
