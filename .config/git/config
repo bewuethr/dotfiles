@@ -39,6 +39,12 @@
 	# Use grey to fade out lines with repeated information for --color-lines
 	repeatedLines = "#586e75"
 
+[credential "https://github.com"]
+	helper = !/usr/bin/gh auth git-credential
+
+[credential "https://gist.github.com"]
+	helper = !/usr/bin/gh auth git-credential
+
 [diff]
 	# Spend more time on diffing
 	algorithm = histogram
