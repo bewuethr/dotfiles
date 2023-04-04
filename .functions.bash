@@ -47,6 +47,18 @@ glupgrade() (
 	gitleaks version
 )
 
+# Install latest version of actionlint
+alupgrade() (
+	cd /tmp || exit 1
+	gh --repo rhysd/actionlint release download --clobber \
+		--pattern 'actionlint_*_linux_amd64.tar.gz' \
+		--output 'actionlint.tar.gz'
+	tar xvf actionlint.tar.gz
+	mv actionlint "$HOME/go/bin"
+	mv man/actionlint.1 "$HOME/.local/share/man/man1"
+	actionlint --version
+)
+
 # Local function definitions
 if [[ -f $HOME/.functions_local.bash ]]; then
 	# shellcheck source=/dev/null
