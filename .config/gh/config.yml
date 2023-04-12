@@ -1,4 +1,4 @@
 aliases:
     pcw: pr create --web
-    goalerts: '!gh api -X GET orgs/kohofinancial/dependabot/alerts -f per_page=100 -f ecosystem=go -f state=open -f sort=created --paginate --jq ''map(.url)'' | jq -rs ''flatten[]'' | sed ''s|https://api.github.com/repos/kohofinancial/||;s|/dependabot/alerts/.*$||'' | sort | uniq -c | sort -nr'
+    goalerts: '!gh api -X GET orgs/kohofinancial/dependabot/alerts -f per_page=100 -f ecosystem=go -f state=open -f sort=created --paginate --jq ''map(.repository.html_url)[]'' | sort | uniq -c | sort -nr'
 git_protocol: ssh
