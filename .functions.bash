@@ -16,14 +16,36 @@ percentencode() {
 	jq --raw-input --raw-output '@uri'
 }
 
-# Install latest version of yq and its man page
-yqupgrade() (
+# Install latest version of actionlint
+alupgrade() (
 	cd /tmp || exit 1
-	gh --repo mikefarah/yq release download --clobber --pattern 'yq_linux_amd64.tar.gz'
-	tar xvf yq_linux_amd64.tar.gz
-	mv yq_linux_amd64 "$HOME/go/bin/yq"
-	./install-man-page.sh
-	yq --version
+	gh --repo rhysd/actionlint release download --clobber \
+		--pattern 'actionlint_*_linux_amd64.tar.gz' \
+		--output 'actionlint.tar.gz'
+	tar xvf actionlint.tar.gz
+	mv actionlint "$HOME/.local/bin"
+	mv man/actionlint.1 "$HOME/.local/share/man/man1"
+	actionlint --version
+)
+
+# Install latest version of bat
+batupgrade() (
+	cd /tmp || exit 1
+	gh --repo sharkdp/bat release download --clobber \
+		--pattern 'bat_*_amd64.deb' \
+		--output 'bat.deb'
+	sudo dpkg --install bat.deb
+	bat --version
+)
+
+# Install latest version of delta
+deltaupgrade() (
+	cd /tmp || exit 1
+	gh --repo dandavison/delta release download --clobber \
+		--pattern 'git-delta_*_amd64.deb' \
+		--output 'delta.deb'
+	sudo dpkg --install delta.deb
+	delta --version
 )
 
 # Install latest version of golangci-lint
@@ -43,20 +65,19 @@ glupgrade() (
 		--pattern 'gitleaks_*_linux_x64.tar.gz' \
 		--output 'gitleaks.tar.gz'
 	tar xvf gitleaks.tar.gz
-	mv gitleaks "$HOME/go/bin"
+	mv gitleaks "$HOME/.local/bin"
 	gitleaks version
 )
 
-# Install latest version of actionlint
-alupgrade() (
+# Install latest version of yq and its man page
+yqupgrade() (
 	cd /tmp || exit 1
-	gh --repo rhysd/actionlint release download --clobber \
-		--pattern 'actionlint_*_linux_amd64.tar.gz' \
-		--output 'actionlint.tar.gz'
-	tar xvf actionlint.tar.gz
-	mv actionlint "$HOME/go/bin"
-	mv man/actionlint.1 "$HOME/.local/share/man/man1"
-	actionlint --version
+	gh --repo mikefarah/yq release download --clobber \
+		--pattern 'yq_linux_amd64.tar.gz'
+	tar xvf yq_linux_amd64.tar.gz
+	mv yq_linux_amd64 "$HOME/.local/bin/yq"
+	./install-man-page.sh
+	yq --version
 )
 
 # Local function definitions
