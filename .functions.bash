@@ -69,6 +69,17 @@ glupgrade() (
 	gitleaks version
 )
 
+# Install latest version of jqp
+jqpupgrade() (
+	cd /tmp || exit 1
+	gh --repo noahgorstein/jqp release download --clobber \
+		--pattern 'jqp_*_Linux_x86_64.tar.gz' \
+		--output 'jqp.tar.gz'
+	tar xvf jqp.tar.gz
+	mv jqp "$HOME/.local/bin"
+	jqp --version
+)
+
 # Install latest version of yq and its man page
 yqupgrade() (
 	cd /tmp || exit 1
