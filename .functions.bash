@@ -17,7 +17,7 @@ percentencode() {
 }
 
 # Install latest version of actionlint
-alupgrade() (
+upgradeactionlint() (
 	cd /tmp || exit 1
 	gh --repo rhysd/actionlint release download --clobber \
 		--pattern 'actionlint_*_linux_amd64.tar.gz' \
@@ -29,7 +29,7 @@ alupgrade() (
 )
 
 # Install latest version of bat
-batupgrade() (
+upgradebat() (
 	cd /tmp || exit 1
 	gh --repo sharkdp/bat release download --clobber \
 		--pattern 'bat_*_amd64.deb' \
@@ -39,7 +39,7 @@ batupgrade() (
 )
 
 # Install latest version of delta
-deltaupgrade() (
+upgradedelta() (
 	cd /tmp || exit 1
 	gh --repo dandavison/delta release download --clobber \
 		--pattern 'git-delta_*_amd64.deb' \
@@ -49,7 +49,7 @@ deltaupgrade() (
 )
 
 # Install latest version of golangci-lint
-gclupgrade() (
+upgradegolangci-lint() (
 	cd /tmp || exit 1
 	gh --repo golangci/golangci-lint release download --clobber \
 		--pattern 'golangci-lint-*-linux-amd64.deb' \
@@ -59,7 +59,7 @@ gclupgrade() (
 )
 
 # Install latest version of gitleaks
-glupgrade() (
+upgradegitleaks() (
 	cd /tmp || exit 1
 	gh --repo gitleaks/gitleaks release download --clobber \
 		--pattern 'gitleaks_*_linux_x64.tar.gz' \
@@ -70,7 +70,7 @@ glupgrade() (
 )
 
 # Install latest version of jqp
-jqpupgrade() (
+upgradejqp() (
 	cd /tmp || exit 1
 	gh --repo noahgorstein/jqp release download --clobber \
 		--pattern 'jqp_*_Linux_x86_64.tar.gz' \
@@ -81,7 +81,7 @@ jqpupgrade() (
 )
 
 # Install latest version of yq and its man page
-yqupgrade() (
+upgradeyq() (
 	cd /tmp || exit 1
 	gh --repo mikefarah/yq release download --clobber \
 		--pattern 'yq_linux_amd64.tar.gz'
