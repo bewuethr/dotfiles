@@ -80,6 +80,16 @@ upgradejqp() (
 	jqp --version
 )
 
+# Install latest version of shfmt
+upgradeshfmt() {
+	gh --repo mvdan/sh release download --clobber \
+		--pattern 'shfmt_*_linux_amd64' \
+		--output "$HOME/.local/bin/shfmt"
+	chmod +x "$HOME/.local/bin/shfmt"
+	shfmt --version
+}
+
+
 # Install latest version of yq and its man page
 upgradeyq() (
 	cd /tmp || exit 1
