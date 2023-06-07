@@ -80,6 +80,16 @@ upgradejqp() (
 	jqp --version
 )
 
+# Install latest version of pandoc
+upgradepandoc() (
+	cd /tmp || exit 1
+	gh --repo jgm/pandoc release download --clobber \
+		--pattern 'pandoc-*-amd64.deb' \
+		--output 'pandoc.deb'
+	sudo dpkg --install pandoc.deb
+	pandoc --version
+)
+
 # Install latest version of shfmt
 upgradeshfmt() {
 	gh --repo mvdan/sh release download --clobber \
