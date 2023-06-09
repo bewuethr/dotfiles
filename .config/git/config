@@ -106,6 +106,9 @@
 	ff = only
 
 [push]
+	# Assume --set-upstream when no upstream tracking exists for the current
+	# branch
+	autoSetupRemote = true
 	# Don't push if upstream branch name is different
 	default = simple
 	# Push tags
