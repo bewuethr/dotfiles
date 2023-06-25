@@ -109,6 +109,18 @@ upgradeshfmt() {
 	shfmt --version
 }
 
+# Install latest version of tmux
+upgradetmux() (
+	cd /tmp || exit 1
+	gh --repo tmux/tmux release download --clobber \
+		--pattern 'tmux-*.tar.gz' \
+		--output 'tmux.tar.gz'
+	tar xf tmux.tar.gz --transform 's/^tmux[^\/]*/tmux/'
+	cd tmux || exit 1
+	./configure && make
+	sudo make install
+	tmux -V
+)
 
 # Install latest version of yq and its man page
 upgradeyq() (
