@@ -80,6 +80,16 @@ upgradejqp() (
 	jqp --version
 )
 
+# Install latest version of neovim
+upgradenvim() (
+	cd /tmp || exit 1
+	gh --repo neovim/neovim release download --clobber \
+		--pattern 'nvim.appimage'
+	chmod u+x nvim.appimage
+	mv nvim.appimage "$HOME/.local/bin/nvim"
+	nvim --version
+)
+
 # Install latest version of pandoc
 upgradepandoc() (
 	cd /tmp || exit 1
