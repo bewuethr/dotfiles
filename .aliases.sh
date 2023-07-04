@@ -42,7 +42,7 @@ alias btcon='bluetoothctl <<< "connect 5C:AA:FD:D4:EB:84"'
 alias btuncon='bluetoothctl <<< disconnect'
 
 # Update and upgrade
-alias sauu='sudo apt update && sudo apt upgrade'
+alias sauu='sudo apt update && sudo apt upgrade --yes'
 
 # Use better keybindings for info
 alias info='info --vi-keys'
