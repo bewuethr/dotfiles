@@ -28,6 +28,16 @@ upgradeactionlint() (
 	actionlint --version
 )
 
+# Install latest version of AWS CLI
+upgradeaws() (
+	cd /tmp || exit 1
+	curl 'https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip' --output 'awscliv2.zip'
+	unzip awscliv2.zip
+	sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
+	rm -rf aws
+	aws --version
+)
+
 # Install latest version of bat
 upgradebat() (
 	cd /tmp || exit 1
