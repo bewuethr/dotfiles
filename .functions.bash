@@ -48,6 +48,16 @@ upgradedelta() (
 	delta --version
 )
 
+# Install latest version of duf
+upgradeduf() (
+	cd /tmp || exit 1
+	gh --repo muesli/duf release download --clobber \
+		--pattern 'duf_*_linux_amd64.deb' \
+		--output 'duf.deb'
+	sudo dpkg --install duf.deb
+	duf --version
+)
+
 # Install latest version of golangci-lint
 upgradegolangci-lint() (
 	cd /tmp || exit 1
