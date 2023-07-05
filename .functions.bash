@@ -120,6 +120,24 @@ upgradepandoc() (
 	pandoc --version
 )
 
+# Install latest version of ShellCheck
+upgradeshellcheck() (
+	cd /tmp || exit 1
+	repo='koalaman/shellcheck'
+	gh --repo "$repo" release download --clobber \
+		--pattern 'shellcheck-*.linux.x86_64.tar.xz' \
+		--output 'shellcheck.tar.xz'
+	tar xf shellcheck.tar.xz --transform 's/^shellcheck[^\/]*/shellcheck/'
+	cd shellcheck || exit 1
+	tag=$(gh --repo "$repo" release view --json tagName --jq '.tagName')
+	manfile='shellcheck.1.md'
+	gh api "repos/$repo/contents/$manfile?ref=$tag" --jq '.content | @base64d' > "$manfile"
+	pandoc -s -f markdown-smart -t man shellcheck.1.md -o shellcheck.1
+	sudo mv shellcheck /usr/local/bin
+	sudo mv shellcheck.1 /usr/local/share/man/man1
+	shellcheck --version
+)
+
 # Install latest version of shfmt
 upgradeshfmt() {
 	gh --repo mvdan/sh release download --clobber \
