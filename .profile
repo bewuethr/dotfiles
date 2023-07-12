@@ -15,6 +15,9 @@ export ASDF_DIR="$HOME/.local/opt/asdf"
 export ASDF_DATA_DIR="$HOME/.local/share/asdf"
 export ASDF_GEM_DEFAULT_PACKAGES_FILE="$HOME/.config/asdf/default-gems"
 
+# Custom Docker config directory location
+export DOCKER_CONFIG="$HOME/.config/docker"
+
 # Local settings
 if [ -r "$HOME/.profile_local" ]; then
 	# shellcheck source=/dev/null
