@@ -68,6 +68,25 @@ upgradeduf() (
 	duf --version
 )
 
+# Install latest version of gems and bundler, and apply to Swiss Club website
+upgradegems() (
+	cd "$HOME/dev/swissclubto/swissclubto.github.io" || exit 1
+	local gv bv
+	gem update --system
+	gv=$(gem --version)
+	echo "$gv"
+	bundle update --bundler
+	bv=$(bundle --version)
+	echo "$bv"
+	local wf='.github/workflows/deploy.yml'
+	gv="$gv" yq '.jobs.build.steps[1].with.rubygems |= env(gv)' "$wf" \
+		| diff --ignore-all-space --ignore-blank-lines "$wf" - \
+		| patch "$wf" -
+	git diff
+	git add "$wf" Gemfile.lock
+	git commit --message "Bump gems to $gv and bundler to $bv"
+)
+
 # Install latest version of golangci-lint
 upgradegolangci-lint() (
 	cd /tmp || exit 1
