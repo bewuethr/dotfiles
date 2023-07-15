@@ -48,6 +48,17 @@ upgradebat() (
 	bat --version
 )
 
+# Install latest version of bats
+upgradebats() (
+	cd /tmp || exit 1
+	gh --repo bats-core/bats-core release download \
+		--archive tar.gz --output - \
+		| tar xzvf - --transform 's/^bats-core[^\/]*/bats-core/'
+	cd bats-core || exit 1
+	sudo ./install.sh /usr/local
+	bats --version
+)
+
 # Install latest version of delta
 upgradedelta() (
 	cd /tmp || exit 1
