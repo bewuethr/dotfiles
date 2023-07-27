@@ -98,6 +98,16 @@ upgradegems() (
 	echo git commit --message "Bump gems to $gv and bundler to ${bv#Bundler version }"
 )
 
+upgradegocomplete() (
+	cd /tmp || exit 1
+	gh --repo posener/complete release download \
+		--archive tar.gz --output - \
+		| tar xzvf - --transform 's/^complete[^\/]*/complete/'
+	cd complete/gocomplete || exit 1
+	go build
+	mv gocomplete "$HOME/.local/bin"
+)
+
 # Install latest version of golangci-lint
 upgradegolangci-lint() (
 	cd /tmp || exit 1
