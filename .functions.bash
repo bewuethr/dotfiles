@@ -93,9 +93,10 @@ upgradegems() (
 	gv="$gv" yq '.jobs.build.steps[1].with.rubygems |= env(gv)' "$wf" \
 		| diff --ignore-all-space --ignore-blank-lines "$wf" - \
 		| patch "$wf" -
-	echo git diff
-	echo git add "$wf" Gemfile.lock
-	echo git commit --message "Bump gems to $gv and bundler to ${bv#Bundler version }"
+	git diff
+	git add "$wf" Gemfile.lock
+	git commit --message "Bump gems to $gv and bundler to ${bv#Bundler version }"
+	if gum confirm "Push?"; then git push; fi
 )
 
 upgradegocomplete() (
