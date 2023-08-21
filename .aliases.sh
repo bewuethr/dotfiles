@@ -53,9 +53,6 @@ alias jqp='jqp --config "$HOME/.config/jqp/config.yml"'
 # GitHub Copilot CLI
 eval "$(github-copilot-cli alias -- "$0")"
 
-# Inflate a compressed file
-alias inflate='ruby -r zlib -e "STDOUT.write Zlib::Inflate.inflate(STDIN.read)"'
-
 # Local alias definitions
 if [[ -f $HOME/.aliases_local.sh ]]; then
 	# shellcheck source=/dev/null
