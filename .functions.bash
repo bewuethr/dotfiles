@@ -130,6 +130,25 @@ upgradegitleaks() (
 	gitleaks version
 )
 
+# Install latest version of jq
+upgradejq() (
+	cd /tmp || exit 1
+	gh --repo jqlang/jq release download --clobber \
+		--pattern 'jq-linux-amd64' \
+		--output "$HOME/.local/bin/jq"
+	chmod +x "$HOME/.local/bin/jq"
+	rm -rf jq
+	gh repo clone jqlang/jq
+	cd jq || exit 1
+	git submodule update --init
+	autoreconf -i
+	./configure # --with-oniguruma=builtin
+	make --jobs=8
+	# make jq.1
+	mv jq.1 "$HOME/.local/share/man/man1"
+	jq --version
+)
+
 # Install latest version of jqp
 upgradejqp() (
 	cd /tmp || exit 1
