@@ -39,6 +39,9 @@
 	# Use grey to fade out lines with repeated information for --color-lines
 	repeatedLines = "#586e75"
 
+[commit]
+	verbose = true
+
 [credential "https://github.com"]
 	helper = !/usr/bin/gh auth git-credential
 
