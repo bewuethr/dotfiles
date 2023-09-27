@@ -61,3 +61,6 @@ if [[ -f $HOME/.aliases_local.sh ]]; then
 	# shellcheck source=/dev/null
 	. "$HOME/.aliases_local.sh"
 fi
+
+# Use Jekyll binstub
+alias jekyll='bin/jekyll'
