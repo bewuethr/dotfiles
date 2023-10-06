@@ -231,6 +231,17 @@ upgradeyq() (
 	yq --version
 )
 
+# Install latest version of xsv
+upgradexsv() (
+	cd /tmp || exit 1
+	gh --repo BurntSushi/xsv release download --clobber \
+		--pattern 'xsv-*-x86_64-unknown-linux-musl.tar.gz' \
+		--output 'xsv.tar.gz'
+	tar xvf xsv.tar.gz
+	mv xsv "$HOME/.local/bin"
+	xsv --version
+)
+
 # Local function definitions
 if [[ -f $HOME/.functions_local.bash ]]; then
 	# shellcheck source=/dev/null
