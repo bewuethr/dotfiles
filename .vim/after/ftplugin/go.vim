@@ -42,3 +42,6 @@ nmap <buffer><silent> <LocalLeader>s :GoSameIdsToggle<CR>
 
 " Make gq break lines at 80 instead of 79 charatcers
 setlocal textwidth=80
+
+" Set explicitly to avoid golangci-lint, which is run through vim-go already
+let b:ale_linters = {'go': ['gofmt', 'gopls', 'govet']}
