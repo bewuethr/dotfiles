@@ -50,9 +50,6 @@ alias info='info --vi-keys'
 # Use custom config file location for jqp
 alias jqp='jqp --config "$HOME/.config/jqp/config.yml"'
 
-# GitHub Copilot CLI
-eval "$(github-copilot-cli alias -- "$0")"
-
 # Inflate a compressed file
 alias inflate='ruby -r zlib -e "STDOUT.write Zlib::Inflate.inflate(STDIN.read)"'
 
