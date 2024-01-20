@@ -82,6 +82,7 @@ upgradeduf() (
 # Install latest version of gems and bundler, and apply to Swiss Club website
 upgradegems() (
 	cd "$HOME/dev/swissclubto/swissclubto.github.io" || exit 1
+	git pull
 	local gv bv
 	gem update --system
 	gv=$(gem --version)
