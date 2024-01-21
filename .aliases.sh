@@ -53,11 +53,14 @@ alias jqp='jqp --config "$HOME/.config/jqp/config.yml"'
 # Inflate a compressed file
 alias inflate='ruby -r zlib -e "STDOUT.write Zlib::Inflate.inflate(STDIN.read)"'
 
+# Use Jekyll binstub
+alias jekyll='bin/jekyll'
+
+# Always show directories first
+alias tree='tree --dirsfirst'
+
 # Local alias definitions
 if [[ -f $HOME/.aliases_local.sh ]]; then
 	# shellcheck source=/dev/null
 	. "$HOME/.aliases_local.sh"
 fi
-
-# Use Jekyll binstub
-alias jekyll='bin/jekyll'
