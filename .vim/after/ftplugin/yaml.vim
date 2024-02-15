@@ -4,4 +4,4 @@ setlocal softtabstop=2
 setlocal expandtab
 setlocal cursorcolumn
 
-au BufRead,BufNewFile */.github/*/*.y{,a}ml let b:ale_linters = {'yaml': ['actionlint']}
+au BufRead,BufNewFile */.github/workflows/*.y{,a}ml let b:ale_linters = {'yaml': ['actionlint']}
