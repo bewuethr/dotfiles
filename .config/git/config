@@ -22,6 +22,10 @@
 	# Update submodules
 	su = submodule update
 
+[branch]
+	# Sort branches by committer date, most recent first
+	sort = -committerdate
+
 [checkout]
 	defaultRemote = origin
 
@@ -39,7 +43,12 @@
 	# Use grey to fade out lines with repeated information for --color-lines
 	repeatedLines = "#586e75"
 
+[column]
+	# For suppored commands, print output in columns when it goes to terminal
+	ui = auto
+
 [commit]
+	# Show diff when authoring commit message
 	verbose = true
 
 [credential "https://github.com"]
