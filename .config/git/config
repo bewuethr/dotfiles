@@ -111,8 +111,9 @@
 	prompt = false
 
 [pack]
-	# Reuse objects from multiple packs instead of just one
-	allowPackReuse = multi
+	# Reuse objects from multiple packs instead of just one; uncomment when
+	# running Git 2.44
+	# allowPackReuse = multi
 
 [pager]
 	diff = diff-highlight | less
