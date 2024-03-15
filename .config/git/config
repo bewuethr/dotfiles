@@ -4,6 +4,10 @@
 	# Default editor
 	editor = vim
 
+[advice]
+	# Don't warn about detached HEAD
+	detachedHead = false
+
 [alias]
 	# Branches All - get all branches containing the argument in their name
 	ba = "!git -P branch --list -i -a \"*$1*\" #"
