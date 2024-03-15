@@ -110,6 +110,10 @@
 	# Don't ask to confirm merge tool
 	prompt = false
 
+[pack]
+	# Reuse objects from multiple packs instead of just one
+	allowPackReuse = multi
+
 [pager]
 	diff = diff-highlight | less
 	log = diff-highlight | less
@@ -129,6 +133,9 @@
 	followTags = true
 
 [rebase]
+	# Automatically squash commits with specially formatted messages into
+	# previous commits being rebased
+	autoSquash = true
 	# Update dependent branches when rebasing
 	updateRefs = true
 
