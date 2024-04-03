@@ -79,6 +79,16 @@ upgradeduf() (
 	duf --version
 )
 
+# Install latest version of freeze
+upgradefreeze() (
+	gh --repo charmbracelet/freeze release download \
+		--pattern 'freeze_*_Linux_x86_64.tar.gz' \
+		--output - \
+		| tar xvzf - > "$HOME/.local/bin/freeze"
+	chmod +x "$HOME/.local/bin/freeze"
+	freeze version
+)
+
 # Install latest version of gems and bundler, and apply to Swiss Club website
 upgradegems() (
 	cd "$HOME/dev/swissclubto/swissclubto.github.io" || exit 1
