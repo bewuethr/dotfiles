@@ -50,3 +50,6 @@
 [submodule ".vim/pack/bfrg/start/vim-jq"]
 	path = .vim/pack/bfrg/start/vim-jq
 	url = https://github.com/bfrg/vim-jq.git
+[submodule ".vim/pack/hashivim/start/vim-terraform"]
+	path = .vim/pack/hashivim/start/vim-terraform
+	url = https://github.com/hashivim/vim-terraform.git
