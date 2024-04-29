@@ -53,3 +53,6 @@
 [submodule ".vim/pack/hashivim/start/vim-terraform"]
 	path = .vim/pack/hashivim/start/vim-terraform
 	url = https://github.com/hashivim/vim-terraform.git
+[submodule ".vim/pack/stephpy/start/vim-yaml"]
+	path = .vim/pack/stephpy/start/vim-yaml
+	url = https://github.com/stephpy/vim-yaml.git
