@@ -166,7 +166,7 @@ upgradejq() (
 upgradejqp() (
 	cd /tmp || exit 1
 	gh --repo noahgorstein/jqp release download --clobber \
-		--pattern 'jqp_*_Linux_x86_64.tar.gz' \
+		--pattern 'jqp_Linux_x86_64.tar.gz' \
 		--output 'jqp.tar.gz'
 	tar xvf jqp.tar.gz
 	mv jqp "$HOME/.local/bin"
