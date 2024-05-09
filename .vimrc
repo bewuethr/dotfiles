@@ -6,6 +6,13 @@ set shiftwidth=4 softtabstop=4 tabstop=4 noexpandtab
 " Shift by multiples of shiftwidth
 set shiftround
 
+" Keep current line in the middle of the window
+set scrolloff=999
+
+" Show current line number, and relative distance to surrounding numbers
+set number
+set relativenumber
+
 " Colours
 set termguicolors
 colorscheme flattened_dark
@@ -13,7 +20,8 @@ colorscheme flattened_dark
 " Highlight previous search matches
 set hlsearch
 
-" Ignore case in searches, unless there is an uppercase character. Tags don't ignore case.
+" Ignore case in searches, unless there is an uppercase character. Tags don't
+" ignore case.
 set ignorecase smartcase tagcase=match
 
 " Highlight current line
