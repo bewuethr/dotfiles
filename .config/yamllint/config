@@ -19,4 +19,8 @@ rules:
   line-length:
     allow-non-breakable-inline-mappings: true
 
+ignore:
+  - '**/docs/swagger.yaml'
+  - '**/docs/asyncapi.yaml'
+
 # vim:ft=yaml
