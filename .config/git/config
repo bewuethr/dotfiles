@@ -5,6 +5,8 @@
 	editor = vim
 
 [advice]
+	# Warn about empty path spec
+	addEmptyPathspec = true
 	# Don't warn about detached HEAD
 	detachedHead = false
 
