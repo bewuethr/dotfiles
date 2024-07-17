@@ -20,10 +20,11 @@ fi
 # search, exit if output fits on a single screen
 export LESS='--LONG-PROMPT --tabs=4 --RAW-CONTROL-CHARS --ignore-case --quit-if-one-screen'
 
-# Define default editor for C-x C-e and fc
-export VISUAL='vim'
-export EDITOR='vim'
-export FCEDIT='vim'
+# Define default editor for Git, C-x C-e, and fc
+export GIT_EDITOR='nvim'
+export VISUAL='nvim'
+export EDITOR='nvim'
+export FCEDIT='nvim'
 
 # Colours for grep results
 export GREP_COLORS='mt=01;31:sl=:cx=00;38;5;10:fn=38;2;108;113;196:ln=32:bn=35:se=33'
