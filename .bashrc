@@ -21,7 +21,6 @@ fi
 export LESS='--LONG-PROMPT --tabs=4 --RAW-CONTROL-CHARS --ignore-case --quit-if-one-screen'
 
 # Define default editor for Git, C-x C-e, and fc
-export GIT_EDITOR='nvim'
 export VISUAL='nvim'
 export EDITOR='nvim'
 export FCEDIT='nvim'

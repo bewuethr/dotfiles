@@ -2,7 +2,7 @@
 	# Abbreviate object names
 	abbrev = auto
 	# Default editor
-	editor = vim
+	editor = nvim
 
 [advice]
 	# Warn about empty path spec
