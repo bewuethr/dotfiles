@@ -3,6 +3,8 @@
 	abbrev = auto
 	# Default editor
 	editor = nvim
+	# Use Delta as the default pager
+	pager = delta
 
 [advice]
 	# Warn about empty path spec
@@ -63,6 +65,9 @@
 [credential "https://gist.github.com"]
 	helper = !/usr/bin/gh auth git-credential
 
+[delta]
+	features = decoration
+
 [diff]
 	# Spend more time on diffing
 	algorithm = histogram
@@ -94,6 +99,9 @@
 [init]
 	defaultBranch = main
 
+[interactive]
+	diffFilter = delta --color-only --features=interactive
+
 [log]
 	# Human readable dates, unless no pager is used
 	date = auto:human
@@ -120,11 +128,6 @@
 	# Reuse objects from multiple packs instead of just one; uncomment when
 	# running Git 2.44
 	# allowPackReuse = multi
-
-[pager]
-	diff = diff-highlight | less
-	log = diff-highlight | less
-	show = diff-highlight | less
 
 [pull]
 	# Allow only fast-forward merges when pulling
