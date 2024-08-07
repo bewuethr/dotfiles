@@ -1,0 +1,3 @@
+eval "$(delta --generate-completion bash)"
+
+# vim:ft=bash
