@@ -18,7 +18,7 @@ fi
 
 # Show verbose prompt, reduce tabs, handle escape chars, case insensitive
 # search, exit if output fits on a single screen
-export LESS='--LONG-PROMPT --tabs=4 --RAW-CONTROL-CHARS --ignore-case --quit-if-one-screen'
+export LESS='--LONG-PROMPT --tabs=4 --RAW-CONTROL-CHARS --ignore-case --quit-if-one-screen --mouse'
 
 # Define default editor for Git, C-x C-e, and fc
 export VISUAL='nvim'
