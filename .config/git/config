@@ -52,7 +52,7 @@
 	repeatedLines = "#586e75"
 
 [column]
-	# For suppored commands, print output in columns when it goes to terminal
+	# For supported commands, print output in columns when it goes to terminal
 	ui = auto
 
 [commit]
@@ -66,7 +66,18 @@
 	helper = !/usr/bin/gh auth git-credential
 
 [delta]
+	# Enable terminal hyperlinks
+	hyperlinks = true
+	# Enable navigation keybindings for larg diffs
 	navigate = true
+	# side-by-side implies line numbers, and wraps automatically
+	side-by-side = true
+	# Applies to foreground colours only
+	syntax-theme = Solarized (dark)
+
+[delta "interactive"]
+	# Don't show +/- markers in interactive diffs
+	keep-plus-minus-markers = false
 
 [diff]
 	# Spend more time on diffing
@@ -102,6 +113,7 @@
 	defaultBranch = main
 
 [interactive]
+	# Run diffs such as "git add --patch" through delta
 	diffFilter = delta --color-only --features=interactive
 
 [log]
