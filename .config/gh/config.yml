@@ -5,3 +5,5 @@ aliases:
     css: copilot suggest -t shell
 git_protocol: ssh
 version: "1"
+editor: nvim
+pager: delta
