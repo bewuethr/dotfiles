@@ -1,10 +1,11 @@
+.DS_Store
 .gawk_history
 .gawkrc
 .github_token
-.DS_Store
-*.swp
-*.swo
+.rake_tasks~
 Session.vim
+*.swo
+*.swp
 tags
 !tags/
 
