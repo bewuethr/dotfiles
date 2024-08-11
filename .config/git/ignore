@@ -2,7 +2,6 @@
 .gawk_history
 .gawkrc
 .github_token
-.rake_tasks~
 Session.vim
 *.swo
 *.swp
