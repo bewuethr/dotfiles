@@ -88,8 +88,8 @@
 	colorMoved = default
 	# List submodule commits like "git submodule summary" does
 	submodule = log
-	# Use vimdiff for diffing
-	tool = vimdiff
+	# Use Neovim diff mode for diffing
+	tool = nvimdiff
 
 [fetch]
 	# Delete local references on remotes that have deleted those branches
@@ -132,8 +132,8 @@
 	conflictStyle = zdiff3
 	# Don't create extra commits for fast-forward merges
 	ff = true
-	# Use vimdiff for merge conflict resolution
-	tool = vimdiff
+	# Use Neovim diff mode for merge conflict resolution
+	tool = nvimdiff
 
 [mergetool]
 	# Don't keep the .orig backup files
