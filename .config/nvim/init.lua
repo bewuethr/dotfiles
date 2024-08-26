@@ -479,6 +479,7 @@ require('lazy').setup({
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         ruby_lsp = {},
+        bashls = {},
         -- clangd = {},
         -- gopls = {},
         -- pyright = {},
@@ -554,7 +555,6 @@ require('lazy').setup({
       },
     },
     opts = {
-      notify_on_error = false,
       format_on_save = function(bufnr)
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
@@ -571,8 +571,12 @@ require('lazy').setup({
           lsp_format = lsp_format_opt,
         }
       end,
+      formatters = {
+        shfmt = { prepend_args = { '-bn', '-ci', '-sr' } },
+      },
       formatters_by_ft = {
         lua = { 'stylua' },
+        sh = { 'shfmt' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
