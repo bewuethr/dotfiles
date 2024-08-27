@@ -573,9 +573,11 @@ require('lazy').setup({
         }
       end,
       formatters = {
+        prettier = { prepend_args = { '--single-quote' } },
         shfmt = { prepend_args = { '-bn', '-ci', '-sr' } },
       },
       formatters_by_ft = {
+        javascript = { 'prettier' },
         lua = { 'stylua' },
         sh = { 'shfmt' },
         -- Conform can also run multiple formatters sequentially
