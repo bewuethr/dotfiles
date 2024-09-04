@@ -833,6 +833,7 @@ require('lazy').setup({
       'tpope/vim-rhubarb', -- GitHub integration
     },
   },
+  'tpope/vim-eunuch', -- Vim sugar for shell commands
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
