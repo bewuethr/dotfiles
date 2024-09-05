@@ -100,6 +100,9 @@ let g:lion_squeeze_spaces = 1
 " Bind F8 to fixing problems
 nmap <F8> <Plug>(ale_fix)
 
+" Clear highlights on search when pressing <Esc> in normal mode
+nmap <silent> <Esc> :nohlsearch<CR>
+
 " Format for message when cursor near warning/error
 let g:ale_echo_msg_format = '%severity%% (code)%: %s'
 
