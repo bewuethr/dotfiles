@@ -130,6 +130,7 @@ EXEC 38;2;203;75;22  # Unix
 .el 32
 .go 32
 .gpi 32
+.graphql 32
 .gv 32
 .h 32
 .hs 32
