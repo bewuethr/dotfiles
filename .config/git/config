@@ -13,6 +13,8 @@
 	detachedHead = false
 	# Hint about git branch -D
 	forceDeleteBranch = true
+	# Hint about re-applying cherry-picked commits
+	skippedCherryPicks = true
 
 [alias]
 	# Branches All - get all branches containing the argument in their name
