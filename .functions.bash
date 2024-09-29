@@ -143,6 +143,16 @@ upgradegitleaks() (
 	gitleaks version
 )
 
+# Install latest version of hexyl
+upgradehexyl() (
+	cd /tmp || exit 1
+	gh --repo sharkdp/hexyl release download --clobber \
+		--pattern 'hexyl_*_amd64.deb' \
+		--output 'hexyl.deb'
+	sudo dpkg --install hexyl.deb
+	hexyl --version
+)
+
 # Install latest version of jq
 upgradejq() (
 	cd /tmp || exit 1
