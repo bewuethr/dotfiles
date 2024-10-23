@@ -2,18 +2,18 @@ alias ..='cd ..'
 alias ...='cd ../..'
 
 # Some ls aliases
-alias ls='ls --color=auto'                # Default: add colour unless in pipe
-alias lsd='ls --group-directories-first'  # Directories first
-alias l1='ls -1'                          # One file per line
-alias l='ls -C --classify'                # By columns, append type indicator
+alias ls='ls --color=auto'               # Default: add colour unless in pipe
+alias lsd='ls --group-directories-first' # Directories first
+alias l1='ls -1'                         # One file per line
+alias l='ls -C --classify'               # By columns, append type indicator
 
-alias la='ls --almost-all'                # Show dotfiles, but not . and ..
-alias la1='la -1'                         # Show dotfiles, one per line
-alias lad='la --group-directories-first'  # Show dotfiles, directories first
+alias la='ls --almost-all'               # Show dotfiles, but not . and ..
+alias la1='la -1'                        # Show dotfiles, one per line
+alias lad='la --group-directories-first' # Show dotfiles, directories first
 
-alias ll='ls -l'                                        # Long listing format
-alias lla='ll --almost-all'                             # Long listing with dotfiles
-alias llad='ll --almost-all --group-directories-first'  # Long with dofiles, dirs first
+alias ll='ls -l'                                       # Long listing format
+alias lla='ll --almost-all'                            # Long listing with dotfiles
+alias llad='ll --almost-all --group-directories-first' # Long with dofiles, dirs first
 
 # Git for dotfiles
 alias gdf='git --git-dir="$HOME/.dotfiles.git" --work-tree="$HOME"'
@@ -37,7 +37,7 @@ alias od='od -A x -t x1z -v'
 # Use my style file for mdl
 alias mdl='mdl --style ~/.config/mdl/style.rb'
 
-# Connect and disconnect Sonos speaker
+# Connect and disconnect external speaker
 alias btcon='bluetoothctl <<< "connect 5C:AA:FD:D4:EB:84"'
 alias btuncon='bluetoothctl <<< disconnect'
 
