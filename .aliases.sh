@@ -38,7 +38,7 @@ alias od='od -A x -t x1z -v'
 alias mdl='mdl --style ~/.config/mdl/style.rb'
 
 # Connect and disconnect external speaker
-alias btcon='bluetoothctl <<< "connect 5C:AA:FD:D4:EB:84"'
+alias btcon='bluetoothctl <<< "connect 50:1E:2D:01:14:EF"'
 alias btuncon='bluetoothctl <<< disconnect'
 
 # Update and upgrade
