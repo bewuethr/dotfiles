@@ -1,5 +1,6 @@
-# Set theme to Solarized Dark
-theme = Solarized Dark - Patched
+# Set theme to Solarized Dark; consider manually patching colour 8 to not be
+# invisible
+theme = Builtin Solarized Dark
 
 # Prevent cursor blinking
 cursor-style-blink = false
@@ -16,6 +17,23 @@ keybind = ctrl+b>shift+'=new_split:down
 keybind = ctrl+b>o=goto_split:next
 keybind = ctrl+b>shift+o=goto_split:previous
 keybind = ctrl+b>z=toggle_split_zoom
+
+# Distribute incomplete padding when viewport isn't exactly a multiple of cell
+# size
+window-padding-balance = true
+
+# Use colour of nearest cell (with exceptions) for padding
+window-padding-color = extend
+
+# Don't show titlebar and borders
+window-decoration = false
+
+# Use configured colours for tab
+window-theme = ghostty
+
+# Prevent shell cursor from becoming a blinking bar; reconsider when it can be
+# a non-blinking bar
+shell-integration-features = no-cursor
 
 # TODO
 #
