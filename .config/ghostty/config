@@ -4,6 +4,9 @@ theme = Solarized Dark - Patched
 # Prevent cursor blinking
 cursor-style-blink = false
 
+# Make background a little transparent
+background-opacity = 0.96
+
 # Use tmux-style keybindings for split and focus control
 keybind = ctrl+b>c=new_tab
 keybind = ctrl+b>p=previous_tab
