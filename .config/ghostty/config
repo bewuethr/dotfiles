@@ -1,1 +1,19 @@
+# Set theme to Solarized Dark
 theme = Solarized Dark - Patched
+
+# Prevent cursor blinking
+cursor-style-blink = false
+
+# Use tmux-style keybindings for split and focus control
+keybind = ctrl+b>c=new_tab
+keybind = ctrl+b>p=previous_tab
+keybind = ctrl+b>n=next_tab
+keybind = ctrl+b>shift+5=new_split:right
+keybind = ctrl+b>shift+'=new_split:down
+keybind = ctrl+b>o=goto_split:next
+keybind = ctrl+b>shift+o=goto_split:previous
+keybind = ctrl+b>z=toggle_split_zoom
+
+# TODO
+#
+# - figure out terminal hyperlinks
