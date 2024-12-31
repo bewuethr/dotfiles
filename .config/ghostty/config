@@ -1,6 +1,5 @@
-# Set theme to Solarized Dark; consider manually patching colour 8 to not be
-# invisible
-theme = Builtin Solarized Dark
+# Set theme to Solarized Dark, with colour 8 manually patched
+theme = Solarized Dark custom
 
 # Prevent cursor blinking
 cursor-style-blink = false
