@@ -30,6 +30,9 @@ window-decoration = false
 # Use configured colours for tab
 window-theme = ghostty
 
+# Open new tabs at the end
+window-new-tab-position = end
+
 # Prevent shell cursor from becoming a blinking bar; reconsider when it can be
 # a non-blinking bar
 shell-integration-features = no-cursor
