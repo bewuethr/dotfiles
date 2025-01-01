@@ -100,7 +100,7 @@ set_prompt() {
 			local uscct
 			if uscct=$(git status --porcelain | grep -c '^.[MD]'); then
 				((uscct == 1)) && uscct=
-				PS1+="${space:-"\\[$grey\\]|"}\\[$orange\\]$uscct"$'\uf62f' # 
+				PS1+="${space:-"\\[$grey\\]|"}\\[$orange\\]$uscct"$'\Uf0130' # 󰄰
 				space=""
 			fi
 
@@ -108,7 +108,7 @@ set_prompt() {
 			local scct
 			if scct=$(git status --porcelain | grep -c '^[MADRC]'); then
 				((scct == 1)) && scct=
-				PS1+="${space:-"\\[$grey\\]|"}\\[$orange\\]$scct"$'\uf62e' # 
+				PS1+="${space:-"\\[$grey\\]|"}\\[$orange\\]$scct"$'\Uf012f' # 󰄯
 				space=""
 			fi
 
