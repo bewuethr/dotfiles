@@ -8,6 +8,7 @@ return {
       lint.linters_by_ft = {
         ghaction = { 'actionlint' },
         ruby = { 'standardrb' },
+        yaml = { 'yamllint' },
       }
 
       -- Create autocommand which carries out the actual linting
