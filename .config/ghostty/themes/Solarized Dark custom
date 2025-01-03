@@ -19,4 +19,4 @@ foreground = 839496
 cursor-color = 839496
 selection-background = 073642
 selection-foreground = 93a1a1
-# vim:ft=ghostty
+# vim: ft=ghostty
