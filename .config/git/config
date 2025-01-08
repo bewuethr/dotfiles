@@ -72,7 +72,7 @@
 [delta]
 	# Enable terminal hyperlinks
 	hyperlinks = true
-	# Enable navigation keybindings for larg diffs
+	# Enable navigation keybindings for large diffs
 	navigate = true
 	# side-by-side implies line numbers, and wraps automatically
 	side-by-side = true
