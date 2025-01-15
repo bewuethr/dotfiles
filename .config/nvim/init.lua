@@ -332,7 +332,7 @@ require('lazy').setup({
       library = {
         -- Load luvit types when the "vim.uv" word is found
         {
-          path = 'luvit-meta/library',
+          path = '${3rd}/luv/library',
           words = { 'vim%.uv' },
         },
       },
@@ -343,13 +343,14 @@ require('lazy').setup({
     -- Main LSP configuration
     'neovim/nvim-lspconfig',
     dependencies = {
-      -- Automatically install LSPs and related tools to stdpath for Neovim
+      -- Automatically install LSPs and related tools to stdpath for Neovim;
+      -- Mason must be loaded before its dependents.
+      -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
       { 'williamboman/mason.nvim', opts = {} },
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Useful status updates for LSP.
-      -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
       { 'j-hui/fidget.nvim', opts = {} },
     },
     config = function()
