@@ -67,7 +67,9 @@ unfocused-split-opacity = 0.75
 keybind = ctrl+b>c=new_tab
 keybind = ctrl+b>p=previous_tab
 keybind = ctrl+b>n=next_tab
+keybind = ctrl+b>shift+4=new_split:left
 keybind = ctrl+b>shift+5=new_split:right
+keybind = ctrl+b>shift+[=new_split:up
 keybind = ctrl+b>shift+'=new_split:down
 keybind = ctrl+b>o=goto_split:next
 keybind = ctrl+b>shift+o=goto_split:previous
