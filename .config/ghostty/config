@@ -57,6 +57,9 @@ theme = Solarized Dark custom
 # Prevent cursor blinking
 cursor-style-blink = false
 
+# Set scroll speed to 30% of default
+mouse-scroll-multiplier = 0.3
+
 # Make background a little transparent
 background-opacity = 0.96
 
