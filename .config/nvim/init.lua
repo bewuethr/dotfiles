@@ -21,6 +21,10 @@ vim.opt.relativenumber = true
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
 
+-- Set scroll speed to a third of the defaults to compensate for how Ghostty's
+-- scroll speed seems to multiply Neovim scroll speed
+vim.opt.mousescroll = { 'ver:1', 'hor:2' }
+
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 
