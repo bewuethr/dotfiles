@@ -117,7 +117,7 @@ set_prompt() {
 				local stashct
 				stashct=$(git stash list | wc -l)
 				((stashct == 1)) && stashct=
-				PS1+="${space:-"\\[$grey\\]|"}\\[$blue\\]$stashct"$'\uf62d' # 
+				PS1+="${space:-"\\[$grey\\]|"}\\[$blue\\]$stashct"$'\Uf0419' # 󰐙
 				space=""
 			fi
 
