@@ -3,6 +3,36 @@ aliases:
     goalerts: '!gh api -X GET orgs/kohofinancial/dependabot/alerts -f per_page=100 -f ecosystem=go -f state=open -f sort=created --paginate --jq ''map(.repository.html_url)[]'' | sort | uniq -c | sort -nr'
     dbr: repo view --json defaultBranchRef --jq '.defaultBranchRef.name'
     css: copilot suggest -t shell
+    deprcfg: |-
+        !gh api orgs/kohofinancial/properties/values --paginate \
+            | jq -rn '[inputs] | flatten
+            | map(
+                select(
+                  .properties
+                  | any(
+                    (.property_name | startswith("go-pkg-deprecation-"))
+                    and .value != null
+                  )
+                )
+                | {
+                    repository_name,
+                    properties:
+                      .properties
+                      | map(select(.property_name
+                        | startswith("go-pkg-deprecation-")))
+                }
+                | [
+                    .repository_name,
+                    (.properties[1].value // [] | sort | join(", ")),
+                    (.properties[0].value // [] | sort | join(", "))
+                ]
+            ) | sort as $data
+            | [["repo", "warn", "error"]] + $data
+            | .[]
+            | @csv
+        ' \
+        | csvlook \
+        | glow -w0
 git_protocol: ssh
 version: "1"
 editor: nvim
