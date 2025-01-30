@@ -187,7 +187,8 @@ upgradejqp() (
 upgradenvim() (
 	cd /tmp || exit 1
 	gh --repo neovim/neovim release download --clobber \
-		--pattern 'nvim.appimage'
+		--pattern 'nvim-linux-x86_64.appimage' \
+		--output 'nvim.appimage'
 	chmod u+x nvim.appimage
 	mv nvim.appimage "$HOME/.local/bin/nvim"
 	nvim --version
