@@ -85,8 +85,15 @@ window-padding-balance = true
 # Use colour of nearest cell (with exceptions) for padding
 window-padding-color = extend
 
-# Don't show titlebar and borders
-window-decoration = false
+# User server-side decorations if available and preferred; currently only for
+# non-GNOME
+window-decoration = auto
+
+# Use Monaspace Argon for window title
+window-title-font-family = Monaspace Argon
+
+# Set window subtitle; currently has no effect (bug?)
+window-subtitle = working-directory
 
 # Use configured colours for tab
 window-theme = ghostty
@@ -97,3 +104,6 @@ window-new-tab-position = end
 # Prevent shell cursor from becoming a blinking bar; reconsider when it can be
 # a non-blinking bar
 shell-integration-features = no-cursor
+
+# Show toast when text is copied to clipboard
+app-notifications = clipboard-copy
