@@ -28,6 +28,15 @@ upgradeactionlint() (
 	actionlint --version
 )
 
+# Install latest version of asdf
+upgradeasdf() {
+	gh --repo asdf-vm/asdf release download --clobber \
+		--pattern 'asdf-*-linux-amd64.tar.gz' \
+		--output - \
+		| tar xzvf - --directory "$HOME/.local/bin"
+	asdf --version
+}
+
 # Install latest version of AWS CLI
 upgradeaws() (
 	cd /tmp || exit 1
