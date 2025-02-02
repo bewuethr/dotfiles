@@ -1,1 +1,3 @@
-../../../opt/asdf/completions/asdf.bash
+eval "$(asdf completion bash)"
+
+# vim:ft=bash
