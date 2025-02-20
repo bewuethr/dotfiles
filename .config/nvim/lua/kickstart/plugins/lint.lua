@@ -7,6 +7,7 @@ return {
       local lint = require 'lint'
       lint.linters_by_ft = {
         ghaction = { 'actionlint' },
+        html = { 'htmlhint' },
         ruby = { 'standardrb' },
         yaml = { 'yamllint' },
       }
