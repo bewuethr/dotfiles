@@ -606,6 +606,7 @@ require('lazy').setup {
         ruby = { 'standardrb' },
         sh = { 'shfmt' },
         hcl = { 'terraform_fmt' },
+        terraform = { 'terraform_fmt' },
 
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
@@ -795,12 +796,14 @@ require('lazy').setup {
         'bash',
         'c',
         'diff',
+        'hcl',
         'html',
         'javascript',
         'lua',
         'luadoc',
         'markdown',
         'mermaid',
+        'terraform',
         'vim',
         'vimdoc',
       },
