@@ -9,6 +9,7 @@ return {
         ghaction = { 'actionlint' },
         html = { 'htmlhint' },
         ruby = { 'standardrb' },
+        terraform = { 'tflint' },
         yaml = { 'yamllint' },
       }
 
