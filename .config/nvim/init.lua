@@ -858,6 +858,7 @@ require('lazy').setup {
     },
   },
   'tpope/vim-eunuch', -- Vim sugar for shell commands
+  'github/copilot.vim', -- GitHub Copilot integration
 }
 
 -- vim: ts=2 sts=2 sw=2 et
