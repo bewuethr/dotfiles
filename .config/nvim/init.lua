@@ -522,6 +522,7 @@ require('lazy').setup {
         bashls = {},
         gopls = {},
         ruby_lsp = {},
+        terraformls = {},
         ts_ls = {},
         lua_ls = {
           -- cmd = { ... },
