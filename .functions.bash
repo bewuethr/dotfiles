@@ -162,6 +162,22 @@ upgradehexyl() (
 	hexyl --version
 )
 
+# Install latest version of hledger
+upgradehledger() (
+	cd /tmp || exit 1
+	gh --repo simonmichael/hledger release download --clobber \
+		--pattern 'hledger-linux-x64.tar.gz' \
+		--output 'hledger.tar.gz'
+	tar xvf hledger.tar.gz
+	mv hledger hledger-ui hledger-web "$HOME/.local/bin"
+	mv hledger.1 hledger-ui.1 hledger-web.1 "$HOME/.local/share/man/man1"
+	mv hledger.info hledger-ui.info hledger-web.info "$HOME/.local/share/info"
+	mv hledger-completion.bash "$HOME/.local/share/bash-completion/completions/hledger"
+	hledger --version
+	hledger-ui --version
+	hledger-web --version
+)
+
 # Install latest version of jq
 upgradejq() (
 	cd /tmp || exit 1
