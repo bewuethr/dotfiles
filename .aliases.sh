@@ -56,8 +56,8 @@ alias inflate='ruby -r zlib -e "STDOUT.write Zlib::Inflate.inflate(STDIN.read)"'
 # Use Jekyll binstub
 alias jekyll='bin/jekyll'
 
-# Always show directories first
-alias tree='tree --dirsfirst'
+# Always show directories first, and ignore the vendor directory
+alias tree='tree --dirsfirst -I vendor'
 
 # Local alias definitions
 if [[ -f $HOME/.aliases_local.sh ]]; then
