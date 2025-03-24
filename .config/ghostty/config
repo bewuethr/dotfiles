@@ -78,6 +78,9 @@ keybind = ctrl+b>o=goto_split:next
 keybind = ctrl+b>shift+o=goto_split:previous
 keybind = ctrl+b>z=toggle_split_zoom
 
+# Remove collision with Neovim keybinding
+keybind = ctrl+shift+j=unbind
+
 # Distribute incomplete padding when viewport isn't exactly a multiple of cell
 # size
 window-padding-balance = true
