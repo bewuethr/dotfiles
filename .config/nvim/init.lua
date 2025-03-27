@@ -635,6 +635,7 @@ require('lazy').setup {
       formatters_by_ft = {
         html = { 'html_beautify' },
         javascript = { 'prettier' },
+        json = { 'jq' },
         lua = { 'stylua' },
         ruby = { 'standardrb' },
         sh = { 'shfmt' },
