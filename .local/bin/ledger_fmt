@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+trap 'rm -f "$tmpfile"' EXIT
+
 fname=$1
 
 tmpfile=$(mktemp)
