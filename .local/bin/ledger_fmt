@@ -2,8 +2,16 @@
 
 fname=$1
 
+tmpfile=$(mktemp)
+header=$(sed -n '1,/^# End of header/p' "$fname")
+
+if ! hledger print --file="$fname" > "$tmpfile"; then
+	exit 1
+fi
+
 {
-	sed -n '1,/^# End of header/p' "$fname"
-	echo
-	hledger print --file="$fname"
-} | sponge "$fname"
+	printf '%s\n\n' "$header"
+	sed '${/^$/d}' "$tmpfile"
+} > "$fname"
+
+truncate --size=-1 "$fname"
