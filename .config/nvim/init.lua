@@ -629,6 +629,11 @@ require('lazy').setup {
         end
       end,
       formatters = {
+        ledger_fmt = {
+          command = 'ledger_fmt',
+          args = '$FILENAME',
+          stdin = false,
+        },
         prettier = { prepend_args = { '--single-quote' } },
         shfmt = { prepend_args = { '-bn', '-ci', '-sr' } },
       },
@@ -636,6 +641,7 @@ require('lazy').setup {
         html = { 'html_beautify' },
         javascript = { 'prettier' },
         json = { 'jq' },
+        ledger = { 'ledger_fmt' },
         lua = { 'stylua' },
         ruby = { 'standardrb' },
         sh = { 'shfmt' },
