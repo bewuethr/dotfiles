@@ -638,6 +638,7 @@ require('lazy').setup {
         shfmt = { prepend_args = { '-bn', '-ci', '-sr' } },
       },
       formatters_by_ft = {
+        css = { 'css_beautify' },
         html = { 'html_beautify' },
         javascript = { 'prettier' },
         json = { 'jq' },
