@@ -492,6 +492,7 @@ require('lazy').setup {
             return diagnostic_message[diagnostic.severity]
           end,
         },
+        virtual_lines = true,
       }
 
       -- LSP servers and clients are able to communicate to each other what features they support.
@@ -534,8 +535,7 @@ require('lazy').setup {
               completion = {
                 callSnippet = 'Replace',
               },
-              -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-              -- diagnostics = { disable = { 'missing-fields' } },
+              diagnostics = { disable = { 'missing-fields' } },
             },
           },
         },
