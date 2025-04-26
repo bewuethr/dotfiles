@@ -59,6 +59,9 @@ alias jekyll='bin/jekyll'
 # Always show directories first, and ignore the vendor directory
 alias tree='tree --dirsfirst -I vendor'
 
+# Always use pager for glow
+alias glow='glow --pager'
+
 # Local alias definitions
 if [[ -f $HOME/.aliases_local.sh ]]; then
 	# shellcheck source=/dev/null
