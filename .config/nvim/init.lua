@@ -114,9 +114,10 @@ vim.keymap.set('n', '<C-S-k>', '<C-w>K', { desc = 'Move window down' })
 -- Insert date/time stamp
 vim.keymap.set('i', '<F5>', '<C-R>=strftime("%F %T %z")<CR>')
 
--- Add Actions-specific filetype
+-- Add additional filetypes
 vim.filetype.add {
   pattern = { ['.*/.github/workflows/.*%.ya?ml'] = 'yaml.ghaction' },
+  extension = { bru = 'bruno' },
 }
 
 -- [[ Basic Autocommands ]]
