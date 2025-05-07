@@ -61,10 +61,10 @@ cursor-style-blink = false
 mouse-scroll-multiplier = 1
 
 # Make background a little transparent
-background-opacity = 0.96
+background-opacity = 0.95
 
 # Make unfocused splits opaque, but a little less than the default 0.7
-unfocused-split-opacity = 0.75
+unfocused-split-opacity = 0.8
 
 # Use tmux-style keybindings for split and focus control
 keybind = ctrl+b>c=new_tab
