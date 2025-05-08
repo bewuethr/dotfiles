@@ -365,8 +365,8 @@ require('lazy').setup {
       -- Automatically install LSPs and related tools to stdpath for Neovim;
       -- Mason must be loaded before its dependents.
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'williamboman/mason.nvim', opts = {} },
-      'williamboman/mason-lspconfig.nvim',
+      { 'mason-org/mason.nvim', opts = {} },
+      'mason-org/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Useful status updates for LSP.
@@ -829,6 +829,21 @@ require('lazy').setup {
       },
       indent = { enable = true, disable = { 'ruby' } },
     },
+    config = function(_, opts)
+      require('nvim-treesitter.configs').setup(opts)
+
+      local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
+      parser_config.bruno = {
+        install_info = {
+          url = 'https://github.com/Scalamando/tree-sitter-bruno',
+          files = { 'src/parser.c', 'src/scanner.c' }, -- Add scanner.c to include external scanner
+          branch = 'main',
+          generate_requires_npm = false, -- Don't require npm
+          requires_generate_from_grammar = false, -- Don't regenerate from grammar
+        },
+        filetype = 'bruno',
+      }
+    end,
     -- There are additional nvim-treesitter modules that you can use to interact
     -- with nvim-treesitter. You should go explore a few and see what interests you:
     --
