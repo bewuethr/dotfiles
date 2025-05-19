@@ -477,7 +477,6 @@ require('lazy').setup {
       vim.diagnostic.config {
         severity_sort = true,
         float = { border = 'rounded', source = 'if_many' },
-        underline = { severity = vim.diagnostic.severity.ERROR },
         signs = {
           text = {
             [vim.diagnostic.severity.ERROR] = '󰅚 ',
@@ -488,9 +487,7 @@ require('lazy').setup {
         },
         virtual_text = {
           source = 'if_many',
-          spacing = 2,
         },
-        virtual_lines = true,
       }
 
       -- LSP servers and clients are able to communicate to each other what features they support.
