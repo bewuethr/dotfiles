@@ -78,6 +78,9 @@ keybind = ctrl+b>o=goto_split:next
 keybind = ctrl+b>shift+o=goto_split:previous
 keybind = ctrl+b>z=toggle_split_zoom
 
+# Insert a a literal newline (used for Claude Code)
+keybind = shift+enter=text:\n
+
 # Remove collision with Neovim keybinding
 keybind = ctrl+shift+j=unbind
 
