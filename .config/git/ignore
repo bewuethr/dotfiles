@@ -1,14 +1,16 @@
+!tags/
+**/.claude/settings.local.json
+**/.terraform/*
+*.swo
+*.swp
+*.tfstate
+*.tfstate.*
 .DS_Store
 .gawk_history
 .gawkrc
 .github_token
 Session.vim
-*.swo
-*.swp
 tags
-!tags/
-**/.terraform/*
-*.tfstate
-*.tfstate.*
 
 # vim:ft=conf
+
