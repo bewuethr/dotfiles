@@ -597,6 +597,9 @@ require('lazy').setup {
           args = '$FILENAME',
           stdin = false,
         },
+        markdownlint = {
+          prepend_args = { '--fix', '--config=~/.config/markdownlint/markdown-lint.yml' },
+        },
         prettier = { prepend_args = { '--single-quote' } },
         shfmt = { prepend_args = { '-bn', '-ci', '-sr' } },
       },
@@ -607,6 +610,7 @@ require('lazy').setup {
         json = { 'jq' },
         ledger = { 'ledger_fmt' },
         lua = { 'stylua' },
+        markdown = { 'markdownlint' },
         ruby = { 'standardrb' },
         sh = { 'shfmt' },
         hcl = { 'terraform_fmt' },
