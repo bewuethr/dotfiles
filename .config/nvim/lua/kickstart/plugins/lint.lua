@@ -5,9 +5,16 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       local lint = require 'lint'
+      local markdownlint = require 'lint.linters.markdownlint'
+      markdownlint.args = {
+        '--config',
+        '~/.config/markdownlint/markdown-lint.yml',
+        '--stdin',
+      }
       lint.linters_by_ft = {
         ghaction = { 'actionlint' },
         html = { 'htmlhint' },
+        markdown = { 'markdownlint' },
         ruby = { 'standardrb' },
         terraform = { 'tflint' },
         yaml = { 'yamllint' },
