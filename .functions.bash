@@ -247,12 +247,15 @@ upgradeshellcheck() (
 	shellcheck --version
 )
 
-# Install latest version of shfmt
+# Install latest version of shfmt and its manpage
 upgradeshfmt() {
 	gh --repo mvdan/sh release download --clobber \
 		--pattern 'shfmt_*_linux_amd64' \
 		--output "$HOME/.local/bin/shfmt"
 	chmod +x "$HOME/.local/bin/shfmt"
+	gh api repos/mvdan/sh/contents/cmd/shfmt/shfmt.1.scd \
+		--jq '.content | @base64d' \
+		| scdoc > "$HOME/.local/share/man/man1/shfmt.1"
 	shfmt --version
 }
 
