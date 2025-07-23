@@ -40,3 +40,6 @@ MD035:
 # Require fenced code blocks
 MD046:
   style: fenced
+
+# Don't require descriptive URL text
+MD059: false
