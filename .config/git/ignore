@@ -6,6 +6,7 @@
 *.tfstate
 *.tfstate.*
 .DS_Store
+.crush
 .gawk_history
 .gawkrc
 .github_token
