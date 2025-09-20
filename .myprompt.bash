@@ -19,13 +19,13 @@ set_prompt() {
 	PS1=
 
 	# Git aware prompt
-	# - Check for unstaged (*) and staged changes (+)
+	# - Check for unstaged (󰄰) and staged changes (󰄯)
 	#     - Show how many
-	# - Check if something is stashed ($)
+	# - Check if something is stashed (󰐙)
 	#     - Show how many refs in stash
-	# - Check if there are untracked files (%)
+	# - Check if there are untracked files ()
 	#     - Show how many
-	# - Show difference between HEAD and upstream (<,>,<>,=)
+	# - Show difference between HEAD and upstream (󰜮,󰜷,)
 	# - Show number of commits ahead/behind upstream (+/-)
 	#     - Show if fast-forwardable
 	#     - TODO more ways of checking if actually can be fast-forwarded ("dirty state"?)
@@ -135,7 +135,7 @@ set_prompt() {
 				local ahead
 				ahead=$(grep -c '^<' <<< "$commits")
 				((ahead > 0)) && {
-					PS1+="${space:-"\\[$grey\\]|"}\\[$violet\\]${ahead}"$'\uf63e' # 
+					PS1+="${space:-"\\[$grey\\]|"}\\[$violet\\]${ahead}"$'\Uf0737' # 󰜷
 					space=
 				}
 
@@ -149,7 +149,7 @@ set_prompt() {
 					else
 						behcol=$red
 					fi
-					PS1+="${space:-"\\[$grey\\]|"}\\[$behcol\\]${behind}"$'\uf63b' # 
+					PS1+="${space:-"\\[$grey\\]|"}\\[$behcol\\]${behind}"$'\Uf072e' # 󰜮
 					space=
 				fi
 
