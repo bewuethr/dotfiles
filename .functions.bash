@@ -178,6 +178,16 @@ upgradehledger() (
 	hledger-web --version
 )
 
+# Install latest version of ijq
+upgradeijq() (
+	cd /tmp || exit 1
+	rm -rf ijq
+	gh repo clone gpanders/ijq
+	cd ijq || exit 1
+	make "PREFIX=$HOME/.local" install
+	ijq -V
+)
+
 # Install latest version of jq
 upgradejq() (
 	cd /tmp || exit 1
