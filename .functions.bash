@@ -152,6 +152,15 @@ upgradegitleaks() (
 	gitleaks version
 )
 
+# Install latest version of hadolint
+upgradehadolint() {
+	gh --repo hadolint/hadolint release download --clobber \
+		--pattern 'hadolint-linux-x86_64' \
+		--output "$HOME/.local/bin/hadolint"
+	chmod +x "$HOME/.local/bin/hadolint"
+	hadolint --version
+}
+
 # Install latest version of hexyl
 upgradehexyl() (
 	cd /tmp || exit 1
