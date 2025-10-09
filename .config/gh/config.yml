@@ -33,6 +33,7 @@ aliases:
         ' \
         | csvlook \
         | glow -w0
+    notifclean: '!ghnotifs'
 git_protocol: ssh
 version: "1"
 editor: nvim
