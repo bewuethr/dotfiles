@@ -11,6 +11,8 @@
 	addEmptyPathspec = true
 	# Don't warn about detached HEAD
 	detachedHead = false
+	# Warn about diverging branches
+	diverging = true
 	# Hint about git branch -D
 	forceDeleteBranch = true
 	# Hint about re-applying cherry-picked commits
