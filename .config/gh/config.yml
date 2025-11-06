@@ -34,6 +34,14 @@ aliases:
         | csvlook \
         | glow -w0
     notifclean: '!ghnotifs'
+    delartif: |
+        ! gh api -X DELETE repos/{owner}/{repo}/actions/artifacts/"$(
+            name="$1" gh api repos/{owner}/{repo}/actions/artifacts --jq "
+                .artifacts
+                | map(select(.name == env.name))
+                | first.id
+            "
+        )"
 git_protocol: ssh
 version: "1"
 editor: nvim
