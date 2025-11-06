@@ -1,7 +1,19 @@
 aliases:
     pcw: pr create --web
-    goalerts: '!gh api -X GET orgs/kohofinancial/dependabot/alerts -f per_page=100 -f ecosystem=go -f state=open -f sort=created --paginate --jq ''map(.repository.html_url)[]'' | sort | uniq -c | sort -nr'
-    dbr: repo view --json defaultBranchRef --jq '.defaultBranchRef.name'
+    goalerts: |
+        ! gh api -X GET orgs/kohofinancial/dependabot/alerts \
+            -f per_page=100 \
+            -f ecosystem=go \
+            -f state=open \
+            -f sort=created \
+            --paginate \
+            --jq '
+                map(.repository.html_url)[]
+            ' \
+            | sort \
+            | uniq -c \
+            | sort -nr
+    dbr: repo view --json defaultBranchRef --jq '.defaultBranchRef.name
     css: copilot suggest -t shell
     deprcfg: |-
         !gh api orgs/kohofinancial/properties/values --paginate \
