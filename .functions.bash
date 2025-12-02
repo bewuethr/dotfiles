@@ -10,8 +10,7 @@ wrap() {
 	fold --spaces "$1" > "$1".$$ && mv "$1".$$ "$1"
 }
 
-# Filter for percent encoding - chose between "%20" and "+" for spaces with the
-# -p option
+# Filter for percent encoding
 percentencode() {
 	jq --raw-input --raw-output '@uri'
 }
