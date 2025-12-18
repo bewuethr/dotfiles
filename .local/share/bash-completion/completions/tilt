@@ -1,0 +1,3 @@
+eval "$(tilt completion bash)"
+
+# vim:ft=bash
