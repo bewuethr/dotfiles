@@ -277,17 +277,14 @@ upgradeshfmt() {
 	shfmt --version
 }
 
-# Install latest version of tmux
-upgradetmux() (
+# Install latest version of Tilt
+upgradetilt() (
 	cd /tmp || exit 1
-	gh --repo tmux/tmux release download --clobber \
-		--pattern 'tmux-*.tar.gz' \
-		--output 'tmux.tar.gz'
-	tar xf tmux.tar.gz --transform 's/^tmux[^\/]*/tmux/'
-	cd tmux || exit 1
-	./configure && make
-	sudo make install
-	tmux -V
+	gh --repo tilt-dev/tilt release download --clobber \
+		--pattern 'tilt.*.linux.x86_64.tar.gz' \
+		--output - \
+		| tar xzvf - --directory "$HOME/.local/bin" tilt
+	tilt version
 )
 
 # Install latest version of yq and its man page
