@@ -118,6 +118,7 @@ vim.keymap.set('i', '<F5>', '<C-R>=strftime("%F %T %z")<CR>')
 vim.filetype.add {
   pattern = { ['.*/.github/workflows/.*%.ya?ml'] = 'yaml.ghaction' },
   extension = { bru = 'bruno' },
+  filename = { Tiltfile = 'starlark' },
 }
 
 -- [[ Basic Autocommands ]]
