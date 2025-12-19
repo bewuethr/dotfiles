@@ -1,0 +1,3 @@
+eval "$(k3d completion bash)"
+
+# vim:ft=bash
