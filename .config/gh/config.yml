@@ -14,7 +14,6 @@ aliases:
             | uniq -c \
             | sort -nr
     dbr: repo view --json defaultBranchRef --jq '.defaultBranchRef.name'
-    css: copilot suggest -t shell
     deprcfg: |-
         !gh api orgs/kohofinancial/properties/values --paginate \
             | jq -rn '[inputs] | flatten
