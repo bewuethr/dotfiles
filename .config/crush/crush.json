@@ -1,7 +1,7 @@
 {
   "options": {
     "tui": {
-      "diff_mode": "split",
+      "diff_mode": "split"
     }
   }
 }
