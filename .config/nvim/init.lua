@@ -599,7 +599,7 @@ require('lazy').setup {
           return nil
         else
           return {
-            timeout_ms = 500,
+            timeout_ms = vim.bo[bufnr].filetype == 'ledger' and 750 or 500,
             lsp_format = lsp_format_opt,
           }
         end
