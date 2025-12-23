@@ -77,6 +77,9 @@ vim.o.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.o.scrolloff = 10
 
+-- Use rounded borders for all floating windows
+vim.o.winborder = 'rounded'
+
 -- Save buffer when switching to other buffer
 vim.o.autowrite = true
 
@@ -780,6 +783,9 @@ require('lazy').setup {
     },
     init = function()
       vim.cmd.colorscheme 'neosolarized'
+      -- Make floating windows use the same background as the editor
+      vim.api.nvim_set_hl(0, 'NormalFloat', { link = 'Normal' })
+      vim.api.nvim_set_hl(0, 'FloatBorder', { link = 'Normal' })
     end,
   },
 
