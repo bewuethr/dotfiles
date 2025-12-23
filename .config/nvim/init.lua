@@ -118,8 +118,10 @@ vim.keymap.set('i', '<F5>', '<C-R>=strftime("%F %T %z")<CR>')
 vim.filetype.add {
   pattern = { ['.*/.github/workflows/.*%.ya?ml'] = 'yaml.ghaction' },
   extension = { bru = 'bruno' },
-  filename = { Tiltfile = 'starlark' },
+  filename = { Tiltfile = 'tiltfile' },
 }
+
+vim.treesitter.language.register('starlark', 'tiltfile')
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -530,9 +532,6 @@ require('lazy').setup {
             },
           },
         },
-        ruby_lsp = {},
-        terraformls = {},
-        ts_ls = {},
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
@@ -546,11 +545,18 @@ require('lazy').setup {
             },
           },
         },
+        ruby_lsp = {},
+        terraformls = {},
+        tilt_ls = {},
+        ts_ls = {},
       }
 
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
-      local ensure_installed = vim.tbl_keys(servers or {})
+      local servers_not_in_mason = { 'tilt_ls' }
+      local ensure_installed = vim.tbl_filter(function(server)
+        return not vim.tbl_contains(servers_not_in_mason, server)
+      end, vim.tbl_keys(servers or {}))
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
       })
@@ -571,6 +577,14 @@ require('lazy').setup {
           end,
         },
       }
+
+      -- Manually configure servers not available in Mason
+      for _, server_name in ipairs(servers_not_in_mason) do
+        local server = servers[server_name] or {}
+        server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+        vim.lsp.config(server_name, server)
+        vim.lsp.enable(server_name)
+      end
     end,
   },
 
