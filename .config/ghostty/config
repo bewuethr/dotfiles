@@ -85,7 +85,7 @@ keybind = shift+enter=text:\n
 keybind = ctrl+shift+j=unbind
 
 # Don't send bell to avoid breaking vimwiki to do items
-keybind = ctrl+space=unbind
+keybind = ctrl+space=text:\x1b[32;5u
 
 # Distribute incomplete padding when viewport isn't exactly a multiple of cell
 # size
