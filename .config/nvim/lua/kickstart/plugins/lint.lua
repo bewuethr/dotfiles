@@ -11,12 +11,26 @@ return {
         '~/.config/markdownlint/markdown-lint.yml',
         '--stdin',
       }
+      local buildifier = require 'lint.linters.buildifier'
+      buildifier.args = {
+        '-lint',
+        'warn',
+        '-mode',
+        'check',
+        '-warnings',
+        '-module-docstring',
+        '-format',
+        'json',
+        '-type',
+        buildifier.args[#buildifier.args],
+      }
       lint.linters_by_ft = {
         ghaction = { 'actionlint' },
         html = { 'htmlhint' },
         markdown = { 'markdownlint' },
         ruby = { 'standardrb' },
         terraform = { 'tflint' },
+        tiltfile = { 'buildifier' },
         yaml = { 'yamllint' },
       }
 
