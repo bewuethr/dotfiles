@@ -84,6 +84,9 @@ keybind = shift+enter=text:\n
 # Remove collision with Neovim keybinding
 keybind = ctrl+shift+j=unbind
 
+# Don't send bell to avoid breaking vimwiki to do items
+keybind = ctrl+space=unbind
+
 # Distribute incomplete padding when viewport isn't exactly a multiple of cell
 # size
 window-padding-balance = true
@@ -111,5 +114,10 @@ window-new-tab-position = end
 # a non-blinking bar
 shell-integration-features = no-cursor
 
+# Request attention when Ghostty is unfocused, prepend a bell emoji to the
+# title, and display a border around the alerted surface
+bell-features = attention,title,border
+
 # Show toast when text is copied to clipboard
 app-notifications = clipboard-copy
+
