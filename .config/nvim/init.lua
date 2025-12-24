@@ -654,6 +654,7 @@ require('lazy').setup {
         ruby = { 'standardrb' },
         sh = { 'shfmt' },
         hcl = { 'terraform_fmt' },
+        tiltfile = { 'buildifier' },
         terraform = { 'terraform_fmt' },
 
         -- Conform can also run multiple formatters sequentially
