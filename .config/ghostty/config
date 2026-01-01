@@ -111,8 +111,9 @@ window-theme = ghostty
 window-new-tab-position = end
 
 # Prevent shell cursor from becoming a blinking bar; reconsider when it can be
-# a non-blinking bar
-shell-integration-features = no-cursor
+# a non-blinking bar; preserve terminfo when using sudo; copy terminfo to
+# remote machines, fall back to xterm-256color
+shell-integration-features = no-cursor,sudo,ssh-terminfo,ssh-env
 
 # Request attention when Ghostty is unfocused, prepend a bell emoji to the
 # title, and display a border around the alerted surface
