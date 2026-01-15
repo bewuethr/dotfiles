@@ -1,4 +1,5 @@
 --italic-text=always
+--map-syntax 'Tiltfile:python'
 --style=full
 --tabs=4
 --theme='Solarized (dark)'
