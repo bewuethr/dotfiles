@@ -25,6 +25,7 @@ return {
         buildifier.args[#buildifier.args],
       }
       lint.linters_by_ft = {
+        dockerfile = { 'hadolint' },
         ghaction = { 'actionlint' },
         html = { 'htmlhint' },
         markdown = { 'markdownlint' },
