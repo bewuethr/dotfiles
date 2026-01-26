@@ -10,8 +10,8 @@
 .gawk_history
 .gawkrc
 .github_token
+.playwright-mcp/
 Session.vim
 tags
 
 # vim:ft=conf
-
