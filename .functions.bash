@@ -70,7 +70,7 @@ upgradebats() (
 # Install latest version of buildifier
 upgradebuildifier() {
 	gh --repo bazelbuild/buildtools release download --clobber \
-		--pattern 'buildifier-linux-amd64' \
+		--pattern 'buildifier-linux*amd64' \
 		--output "$HOME/.local/bin/buildifier"
 	chmod +x "$HOME/.local/bin/buildifier"
 	buildifier -version
