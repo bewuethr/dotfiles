@@ -10,6 +10,14 @@ MD004: dash
 MD009:
   strict: true
 
+# Allow hard tabs in Makefile codeblocks; everywhere else, replace them with
+# four spaces
+MD010:
+  ignore_code_languages:
+    - make
+    - makefile
+  spaces_per_tab: 4
+
 # Enforce line length, but not in code blocks and tables
 MD013:
   code_blocks: false
