@@ -189,6 +189,14 @@ upgradehledger() (
 	mv hledger hledger-ui hledger-web "$HOME/.local/bin"
 	mv hledger.1 hledger-ui.1 hledger-web.1 "$HOME/.local/share/man/man1"
 	mv hledger.info hledger-ui.info hledger-web.info "$HOME/.local/share/info"
+
+	# shellcheck disable=SC2016
+	sed '
+		s/\(complete -F _hledger_completion\) hledger/\1 hla/
+		s/\(complete -F _hledger_extension_completion\) hledger-ui hledger-web/\1 hla-ui hla-web/
+		s/\(local ext=${cmd#\)hledger\(-}\)/\1hla\2/
+		s/\(COMP_WORDS=("\)hledger\(" "\$ext" "\${COMP_WORDS\[@\]:1}")\)/\1hla\2/
+	' hledger-completion.bash > "$HOME/.local/share/bash-completion/completions/hla"
 	mv hledger-completion.bash "$HOME/.local/share/bash-completion/completions/hledger"
 	hledger --version
 	hledger-ui --version
@@ -317,6 +325,28 @@ upgradexsv() (
 	mv xsv "$HOME/.local/bin"
 	xsv --version
 )
+
+# Call hledger for all journal files
+hla() {
+	hledger \
+		--file="$HOME/dev/ledger/2025.journal" \
+		--file="$HOME/dev/ledger/2026.journal" \
+		"$@" not:tag:clopen
+}
+
+hla-ui() {
+	hledger-ui \
+		--file="$HOME/dev/ledger/2025.journal" \
+		--file="$HOME/dev/ledger/2026.journal" \
+		"$@" not:tag:clopen
+}
+
+hla-web() {
+	hledger-web \
+		--file="$HOME/dev/ledger/2025.journal" \
+		--file="$HOME/dev/ledger/2026.journal" \
+		"$@" not:tag:clopen
+}
 
 # Local function definitions
 if [[ -f $HOME/.functions_local.bash ]]; then
