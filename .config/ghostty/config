@@ -45,47 +45,48 @@ font-feature = liga
 # Make font one point smaller than default
 font-size = 11
 
+# Map specific Unicode ranges to a symbols font for Nerd Font icons
+# https://ghostty.org/docs/config/reference#font-codepoint-map
+# font-codepoint-map = U+E000-U+F8FF=Symbols Nerd Font
+
+# Break ligatures at the cursor position so the cursor is always visible
+# https://ghostty.org/docs/config/reference#ont-shaping-break
+# font-shaping-break = cursor
+
+# Set theme to Solarized Dark, with colour 8 manually patched
+theme = Solarized Dark custom
+
+# Set a background image for the terminal
+# https://ghostty.org/docs/config/reference#background-image
+# background-image = /path/to/image.png
+
+# Control background image transparency relative to background-opacity
+# https://ghostty.org/docs/config/reference#background-image-opacity
+# background-image-opacity = 0.1
+
+# Scale the background image to fill the terminal
+# https://ghostty.org/docs/config/reference#background-image-fit
+# background-image-fit = cover
+
+# Enforce a minimum WCAG 2.0 contrast ratio between foreground and background
+# https://ghostty.org/docs/config/reference#minimum-contrast
+# minimum-contrast = 4.5
+
+# Prevent cursor blinking
+cursor-style-blink = false
+
+# Alt+click to reposition cursor at shell prompts
+# https://ghostty.org/docs/config/reference#cursor-click-to-move
+# cursor-click-to-move = true
+
+# Make unfocused splits opaque, but a little less than the default 0.7
+unfocused-split-opacity = 0.8
+
 # Add a bit of vertical space
 adjust-cell-height = 2
 
 # Make cursor the same height as the adjusted cells
 adjust-cursor-height = 2
-
-# Set theme to Solarized Dark, with colour 8 manually patched
-theme = Solarized Dark custom
-
-# Prevent cursor blinking
-cursor-style-blink = false
-
-# Use default mouse scroll speed
-mouse-scroll-multiplier = 1
-
-# Make background a little transparent
-background-opacity = 0.95
-
-# Make unfocused splits opaque, but a little less than the default 0.7
-unfocused-split-opacity = 0.8
-
-# Use tmux-style keybindings for split and focus control
-keybind = ctrl+b>c=new_tab
-keybind = ctrl+b>p=previous_tab
-keybind = ctrl+b>n=next_tab
-keybind = ctrl+b>shift+4=new_split:left
-keybind = ctrl+b>shift+5=new_split:right
-keybind = ctrl+b>shift+[=new_split:up
-keybind = ctrl+b>shift+'=new_split:down
-keybind = ctrl+b>o=goto_split:next
-keybind = ctrl+b>shift+o=goto_split:previous
-keybind = ctrl+b>z=toggle_split_zoom
-
-# Insert a a literal newline (used for Claude Code)
-keybind = shift+enter=text:\n
-
-# Remove collision with Neovim keybinding
-keybind = ctrl+shift+j=unbind
-
-# Don't send bell to avoid breaking vimwiki to do items
-keybind = ctrl+space=text:\x1b[32;5u
 
 # Distribute incomplete padding when viewport isn't exactly a multiple of cell
 # size
@@ -107,13 +108,100 @@ window-subtitle = working-directory
 # Use configured colours for tab
 window-theme = ghostty
 
+# Restore windows, tabs, and splits when Ghostty restarts (macOS only)
+# https://ghostty.org/docs/config/reference#window-save-state
+# window-save-state = always
+
 # Open new tabs at the end
 window-new-tab-position = end
+
+# Use default mouse scroll speed
+mouse-scroll-multiplier = 1
+
+# Auto-copy selected text to both system and selection clipboards
+# https://ghostty.org/docs/config/reference#copy-on-select
+# copy-on-select = clipboard
+
+# Strip trailing whitespace when copying text
+# https://ghostty.org/docs/config/reference#clipboard-trim-trailing-spaces
+# clipboard-trim-trailing-spaces = true
+
+# Show a preview when hovering over URLs in the terminal
+# https://ghostty.org/docs/config/reference#link-previews
+# link-previews = true
+
+# Use tmux-style keybindings for split and focus control
+keybind = ctrl+b>c=new_tab
+keybind = ctrl+b>p=previous_tab
+keybind = ctrl+b>n=next_tab
+keybind = ctrl+b>shift+4=new_split:left
+keybind = ctrl+b>shift+5=new_split:right
+keybind = ctrl+b>shift+[=new_split:up
+keybind = ctrl+b>shift+'=new_split:down
+keybind = ctrl+b>o=goto_split:next
+keybind = ctrl+b>shift+o=goto_split:previous
+keybind = ctrl+b>z=toggle_split_zoom
+
+# Resize splits with tmux-style keybindings
+# https://ghostty.org/docs/config/keybind/reference#resize_split
+# keybind = ctrl+b>alt+arrow_up=resize_split:up,10
+# keybind = ctrl+b>alt+arrow_down=resize_split:down,10
+# keybind = ctrl+b>alt+arrow_left=resize_split:left,10
+# keybind = ctrl+b>alt+arrow_right=resize_split:right,10
+
+# Equalize split sizes
+# https://ghostty.org/docs/config/keybind/reference#equalize_splits
+# keybind = ctrl+b>shift+e=equalize_splits
+
+# Jump between shell prompts using shell integration markers
+# https://ghostty.org/docs/config/keybind/reference#jump_to_prompt
+# keybind = ctrl+b>k=jump_to_prompt:-1
+# keybind = ctrl+b>j=jump_to_prompt:1
+
+# Insert a a literal newline (used for Claude Code)
+keybind = shift+enter=text:\n
+
+# Remove collision with Neovim keybinding
+keybind = ctrl+shift+j=unbind
+
+# Don't send bell to avoid breaking vimwiki to do items
+keybind = ctrl+space=text:\x1b[32;5u
+
+# Toggle a drop-down quake-style terminal with a global keybind
+# https://ghostty.org/docs/config/keybind/reference#toggle_quick_terminal
+# keybind = global:ctrl+grave_accent=toggle_quick_terminal
+
+# Make background a little transparent
+background-opacity = 0.95
+
+# Blur what's behind the terminal when using transparency
+# https://ghostty.org/docs/config/reference#background-blur
+# background-blur = true
 
 # Prevent shell cursor from becoming a blinking bar; reconsider when it can be
 # a non-blinking bar; preserve terminfo when using sudo; copy terminfo to
 # remote machines, fall back to xterm-256color
 shell-integration-features = no-cursor,sudo,ssh-terminfo,ssh-env
+
+# Position the quick terminal at the top of the screen
+# https://ghostty.org/docs/config/reference#quick-terminal-position
+# quick-terminal-position = top
+
+# Set the quick terminal to 40% of the screen
+# https://ghostty.org/docs/config/reference#quick-terminal-size
+# quick-terminal-size = 40%
+
+# Hide the quick terminal when it loses focus
+# https://ghostty.org/docs/config/reference#quick-terminal-autohide
+# quick-terminal-autohide = true
+
+# Auto-focus splits on mouse hover
+# https://ghostty.org/docs/config/reference#focus-follows-mouse
+# focus-follows-mouse = true
+
+# Add custom entries to the command palette (ctrl+shift+p)
+# https://ghostty.org/docs/config/reference#command-palette-entry
+# command-palette-entry = title:Name, action:binding, description:Optional text
 
 # Request attention when Ghostty is unfocused, prepend a bell emoji to the
 # title, and display a border around the alerted surface
@@ -121,4 +209,3 @@ bell-features = attention,title,border
 
 # Show toast when text is copied to clipboard
 app-notifications = clipboard-copy
-
