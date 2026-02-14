@@ -139,6 +139,38 @@ upgradegocomplete() (
 	mv gocomplete "$HOME/.local/bin"
 )
 
+# Upgrade Go to latest
+upgradego() {
+	local version
+	local statuscode
+
+	version=$(curl --silent https://go.dev/dl/?mode=json \
+		| jq --raw-output 'first.version')
+
+	statuscode=$(curl \
+		--head \
+		--silent \
+		--write-out '%{response_code}' \
+		--output /dev/null \
+		"https://dl.google.com/go/$version.linux-amd64.tar.gz")
+
+	if ((statuscode != 200)); then
+		echo "$version does not exist" >&2
+		return 1
+	fi
+
+	curl \
+		--progress-bar \
+		--output "go$version.tar.gz" \
+		"https://dl.google.com/go/$version.linux-amd64.tar.gz"
+
+	sudo rm --recursive --force /usr/local/go
+	sudo tar --directory=/usr/local --extract --file="go$version.tar.gz"
+	rm "go$version.tar.gz"
+
+	go version
+}
+
 # Install latest version of golangci-lint
 upgradegolangci-lint() (
 	cd /tmp || exit 1
