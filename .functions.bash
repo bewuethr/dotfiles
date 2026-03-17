@@ -96,18 +96,6 @@ upgradeduf() (
 	duf --version
 )
 
-# Install latest version of freeze
-upgradefreeze() {
-	gh --repo charmbracelet/freeze release download \
-		--pattern 'freeze_*_Linux_x86_64.tar.gz' \
-		--output - \
-		| tar xzvf - \
-			--directory="$HOME/.local/bin" \
-			--wildcards 'freeze_*/freeze' \
-			--transform 's/^freeze.*\///'
-	freeze
-}
-
 # Install latest version of gems and bundler, and apply to Swiss Club website
 upgradegems() (
 	cd "$HOME/dev/swissclubto/swissclubto.github.io" || exit 1
@@ -352,9 +340,8 @@ upgradexsv() (
 	cd /tmp || exit 1
 	gh --repo BurntSushi/xsv release download --clobber \
 		--pattern 'xsv-*-x86_64-unknown-linux-musl.tar.gz' \
-		--output 'xsv.tar.gz'
-	tar xvf xsv.tar.gz
-	mv xsv "$HOME/.local/bin"
+		--output - \
+		| tar xzvf - --directory "$HOME/.local/bin" xsv
 	xsv --version
 )
 
