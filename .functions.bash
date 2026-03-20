@@ -80,7 +80,7 @@ upgradebuildifier() {
 upgradedelta() (
 	cd /tmp || exit 1
 	gh --repo dandavison/delta release download --clobber \
-		--pattern 'git-delta_*_amd64.deb' \
+		--pattern 'git-delta-musl_*_amd64.deb' \
 		--output 'delta.deb'
 	sudo dpkg --install delta.deb
 	delta --version
