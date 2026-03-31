@@ -1,5 +1,5 @@
 # Use Monaspace Neon for everything
-font-family = Monaspace Neon
+font-family = Monaspace Neon NF
 
 # Make sure to use Monaspace styles
 font-synthetic-style = no-bold,no-italic,no-bold-italic
@@ -47,7 +47,8 @@ font-size = 11
 
 # Map specific Unicode ranges to a symbols font for Nerd Font icons
 # https://ghostty.org/docs/config/reference#font-codepoint-map
-# font-codepoint-map = U+E000-U+F8FF=Symbols Nerd Font
+# font-codepoint-map = U+E000-U+F8FF=Monaspace Neon NF
+# font-codepoint-map = U+F0000-U+F3FFF=Monaspace Neon NF
 
 # Break ligatures at the cursor position so the cursor is always visible
 # https://ghostty.org/docs/config/reference#ont-shaping-break
@@ -100,7 +101,7 @@ window-padding-color = extend
 window-decoration = auto
 
 # Use Monaspace Argon for window title
-window-title-font-family = Monaspace Argon
+window-title-font-family = Monaspace Argon NF
 
 # Set window subtitle; currently has no effect (bug?)
 window-subtitle = working-directory
