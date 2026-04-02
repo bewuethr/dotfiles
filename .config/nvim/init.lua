@@ -842,13 +842,28 @@ require('lazy').setup {
   },
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
+    lazy = false,
     build = ':TSUpdate',
-    -- switch to just "config" when updating to the main branch
-    main = 'nvim-treesitter.configs',
-    -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
-    opts = {
-      ensure_installed = {
+    branch = 'main',
+    init = function()
+      vim.api.nvim_create_autocmd('User', {
+        pattern = 'TSUpdate',
+        callback = function()
+          require('nvim-treesitter.parsers').bruno = {
+            install_info = {
+              url = 'https://github.com/Scalamando/tree-sitter-bruno',
+              branch = 'main',
+              queries = 'queries',
+            },
+          }
+        end,
+      })
+    end,
+    -- [[ Configure Treesitter ]] See `:help nvim-treesitter-intro`
+    config = function()
+      local parsers = {
         'bash',
+        'bruno',
         'c',
         'diff',
         'hcl',
@@ -857,36 +872,48 @@ require('lazy').setup {
         'lua',
         'luadoc',
         'markdown',
+        'markdown_inline',
         'mermaid',
         'terraform',
         'vim',
         'vimdoc',
-      },
-      -- Autoinstall languages that are not installed
-      auto_install = true,
-      highlight = {
-        enable = true,
-        -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
-        --  If you are experiencing weird indenting issues, add the language to
-        --  the list of additional_vim_regex_highlighting and disabled languages for indent.
-        additional_vim_regex_highlighting = { 'ruby' },
-      },
-      indent = { enable = true, disable = { 'ruby' } },
-    },
-    config = function(_, opts)
-      require('nvim-treesitter.configs').setup(opts)
-
-      local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
-      parser_config.bruno = {
-        install_info = {
-          url = 'https://github.com/Scalamando/tree-sitter-bruno',
-          files = { 'src/parser.c', 'src/scanner.c' }, -- Add scanner.c to include external scanner
-          branch = 'main',
-          generate_requires_npm = false, -- Don't require npm
-          requires_generate_from_grammar = false, -- Don't regenerate from grammar
-        },
-        filetype = 'bruno',
+        'yaml',
       }
+      require('nvim-treesitter').install(parsers)
+
+      ---@param buf integer
+      ---@param language string
+      local function treesitter_try_attach(buf, language)
+        if not vim.treesitter.language.add(language) then
+          return
+        end
+        vim.treesitter.start(buf, language)
+        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+      end
+
+      local available_parsers = require('nvim-treesitter').get_available()
+      vim.api.nvim_create_autocmd('FileType', {
+        callback = function(args)
+          local buf, filetype = args.buf, args.match
+
+          local language = vim.treesitter.language.get_lang(filetype)
+          if not language then
+            return
+          end
+
+          local installed_parsers = require('nvim-treesitter').get_installed 'parsers'
+
+          if vim.tbl_contains(installed_parsers, language) then
+            treesitter_try_attach(buf, language)
+          elseif vim.tbl_contains(available_parsers, language) then
+            require('nvim-treesitter').install(language):await(function()
+              treesitter_try_attach(buf, language)
+            end)
+          else
+            treesitter_try_attach(buf, language)
+          end
+        end,
+      })
     end,
     -- There are additional nvim-treesitter modules that you can use to interact
     -- with nvim-treesitter. You should go explore a few and see what interests you:
