@@ -3,6 +3,7 @@ export ASDF_CONFIG_FILE="$HOME/.config/asdf/asdfrc"
 export ASDF_DIR="$HOME/.local/opt/asdf"
 export ASDF_DATA_DIR="$HOME/.local/share/asdf"
 export ASDF_GEM_DEFAULT_PACKAGES_FILE="$HOME/.config/asdf/default-gems"
+export ASDF_NPM_DEFAULT_PACKAGES_FILE="$HOME/.config/asdf/default-npm-packages"
 
 # Custom Docker config directory location
 export DOCKER_CONFIG="$HOME/.config/docker"
