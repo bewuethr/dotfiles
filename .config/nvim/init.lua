@@ -515,6 +515,14 @@ require('lazy').setup {
         virtual_text = {
           source = 'if_many',
         },
+        jump = {
+          on_jump = function(diagnostic, _)
+            if not diagnostic then
+              return
+            end
+            vim.diagnostic.open_float { focus = false }
+          end,
+        },
       }
 
       -- LSP servers and clients are able to communicate to each other what features they support.
