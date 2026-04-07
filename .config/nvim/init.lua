@@ -516,12 +516,11 @@ require('lazy').setup {
           source = 'if_many',
         },
         jump = {
-          on_jump = function(_, bufnr)
-            vim.diagnostic.open_float {
-              bufnr = bufnr,
-              scope = 'cursor',
-              focus = false,
-            }
+          on_jump = function(diagnostic, _)
+            if not diagnostic then
+              return
+            end
+            vim.diagnostic.open_float { focus = false }
           end,
         },
       }
