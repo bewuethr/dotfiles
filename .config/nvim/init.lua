@@ -896,7 +896,10 @@ require('lazy').setup {
           return
         end
         vim.treesitter.start(buf, language)
-        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        local has_indent_query = vim.treesitter.query.get(language, 'indent') ~= nil
+        if has_indent_query then
+          vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        end
       end
 
       local available_parsers = require('nvim-treesitter').get_available()
