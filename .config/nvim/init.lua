@@ -965,7 +965,37 @@ require('lazy').setup {
       'tpope/vim-rhubarb', -- GitHub integration
     },
   },
+
   'tpope/vim-eunuch', -- Vim sugar for shell commands
+
+  { -- Vim-based wiki
+    'vimwiki/vimwiki',
+    init = function()
+      vim.g.vimwiki_list = {
+        {
+          auto_diary_index = 1,
+          auto_export = 0,
+          auto_tags = 1,
+          auto_toc = 1,
+          bullet_types = { '-' },
+          custom_wiki2html = '~/.local/bin/vimwiki2html',
+          diary_caption_level = 1,
+          ext = '.md',
+          links_space_char = '_',
+          list_margin = 0,
+          path = '~/vimwiki',
+          syntax = 'markdown',
+        },
+      }
+      vim.g.vimwiki_global_ext = 0
+      vim.g.vimwiki_hl_headers = 1
+      vim.g.vimwiki_hl_cb_checked = 2
+      vim.g.vimwiki_html_header_numbering = 2
+      vim.g.vimwiki_dir_link = 'index'
+      vim.g.vimwiki_markdown_link_ext = 1
+      vim.g.vimwiki_toc_header_level = 2
+    end,
+  },
 }
 
 -- vim: ts=2 sts=2 sw=2 et
