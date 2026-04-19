@@ -348,22 +348,22 @@ upgradexsv() (
 # Call hledger for all journal files
 hla() {
 	hledger \
-		--file="$HOME/dev/ledger/2025.journal" \
 		--file="$HOME/dev/ledger/2026.journal" \
+		--file="$HOME/dev/ledger/2025.journal" \
 		"$@" not:tag:clopen
 }
 
 hla-ui() {
 	hledger-ui \
-		--file="$HOME/dev/ledger/2025.journal" \
 		--file="$HOME/dev/ledger/2026.journal" \
+		--file="$HOME/dev/ledger/2025.journal" \
 		"$@" not:tag:clopen
 }
 
 hla-web() {
 	hledger-web \
-		--file="$HOME/dev/ledger/2025.journal" \
 		--file="$HOME/dev/ledger/2026.journal" \
+		--file="$HOME/dev/ledger/2025.journal" \
 		"$@" not:tag:clopen
 }
 
