@@ -555,6 +555,8 @@ require('lazy').setup {
         },
         lua_ls = {
           on_init = function(client)
+            client.server_capabilities.documentFormattingProvider = false
+
             if client.workspace_folders then
               local path = client.workspace_folders[1].name
               if path ~= vim.fn.stdpath 'config' and (vim.uv.fs_stat(path .. '/.luarc.json') or vim.uv.fs_stat(path .. '/.luarc.jsonc')) then
@@ -579,7 +581,9 @@ require('lazy').setup {
             })
           end,
           settings = {
-            Lua = {},
+            Lua = {
+              format = { enable = false },
+            },
           },
         },
         ruby_lsp = {},
@@ -615,7 +619,7 @@ require('lazy').setup {
       {
         '<leader>f',
         function()
-          require('conform').format { async = true, lsp_format = 'fallback' }
+          require('conform').format { async = true }
         end,
         mode = '',
         desc = '[F]ormat buffer',
@@ -623,20 +627,18 @@ require('lazy').setup {
     },
     opts = {
       format_on_save = function(bufnr)
-        -- Disable "format_on_save lsp_fallback" for languages that don't
-        -- have a well standardized coding style. You can add additional
-        -- languages here or re-enable it for the disabled ones.
         local disable_filetypes = { c = true, cpp = true, markdown = true }
-        local lsp_format_opt
         if disable_filetypes[vim.bo[bufnr].filetype] then
           return nil
         else
           return {
             timeout_ms = vim.bo[bufnr].filetype == 'ledger' and 750 or 500,
-            lsp_format = lsp_format_opt,
           }
         end
       end,
+      default_format_opts = {
+        lsp_format = 'fallback',
+      },
       formatters = {
         buildifier = {
           prepend_args = { '-buildifier_disable', 'loadTop' },
