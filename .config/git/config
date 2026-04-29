@@ -28,6 +28,8 @@
 	# Delete No Upstream - delete local branches where there is no upstream branch
 	dnu = !git branch --format '%(if:equals=)%(upstream)%(then)%(refname:short)%(end)' \
 		| xargs --no-run-if-empty git branch --delete --force
+	# CLean - switch to default branch, pull, and prune local branches
+	cl = !git switch "$(gh dbr)" && git pull && git dsb && git dnu
 	# Delete Stale Branches - delete local branches where the tracking branch is gone
 	dsb = !git branch --format '%(if:equals=[gone])%(upstream:track)%(then)%(refname:short)%(end)' \
 		| xargs --no-run-if-empty git branch --delete --force
