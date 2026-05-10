@@ -347,10 +347,21 @@ upgradexsv() (
 
 # Call hledger for all journal files
 hla() {
-	hledger \
-		--file="$HOME/dev/ledger/2026.journal" \
-		--file="$HOME/dev/ledger/2025.journal" \
-		"$@" not:tag:clopen
+	local cmd=$1
+	shift
+	local params=(
+		--file="$HOME/dev/ledger/2026.journal"
+		--file="$HOME/dev/ledger/2025.journal"
+		"$cmd"
+	)
+	case $cmd in
+		add | import | rewrite)
+			hledger "${params[@]}" "$@"
+			;;
+		*)
+			hledger "${params[@]}" "$@" not:tag:clopen
+			;;
+	esac
 }
 
 hla-ui() {
