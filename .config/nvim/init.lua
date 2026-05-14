@@ -119,7 +119,10 @@ vim.keymap.set('i', '<F5>', '<C-R>=strftime("%F %T %z")<CR>')
 
 -- Add additional filetypes
 vim.filetype.add {
-  pattern = { ['.*/.github/workflows/.*%.ya?ml'] = 'yaml.ghaction' },
+  pattern = {
+    ['.*/.github/workflows/.*%.ya?ml'] = 'yaml.ghaction',
+    ['.*%.json%.tpl'] = 'json',
+  },
   extension = { bru = 'bruno' },
   filename = { Tiltfile = 'tiltfile' },
 }
@@ -144,7 +147,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = '*.go',
   callback = function()
-    local params = vim.lsp.util.make_range_params()
+    local clients = vim.lsp.get_clients { bufnr = 0, method = 'textDocument/codeAction' }
+    if #clients == 0 then
+      return
+    end
+    local params = vim.lsp.util.make_range_params(0, clients[1].offset_encoding)
     params.context = { only = { 'source.organizeImports' } }
     local result = vim.lsp.buf_request_sync(0, 'textDocument/codeAction', params, 1000)
     for cid, res in pairs(result or {}) do
