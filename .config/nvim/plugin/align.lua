@@ -7,6 +7,9 @@ local function align(char)
   local max_cols = 0
   for i, line in ipairs(lines) do
     split[i] = vim.split(line, char, { plain = true })
+    for col, part in ipairs(split[i]) do
+      split[i][col] = part:gsub('%s+$', '')
+    end
     max_cols = math.max(max_cols, #split[i])
   end
 
@@ -15,7 +18,7 @@ local function align(char)
     widths[col] = 0
     for _, parts in ipairs(split) do
       if parts[col] then
-        widths[col] = math.max(widths[col], #parts[col])
+        widths[col] = math.max(widths[col], vim.fn.strdisplaywidth(parts[col]))
       end
     end
   end
@@ -23,7 +26,9 @@ local function align(char)
   local result = {}
   for i, parts in ipairs(split) do
     for col = 1, #parts - 1 do
-      parts[col] = parts[col] .. string.rep(' ', widths[col] - #parts[col])
+      local pad = widths[col] - vim.fn.strdisplaywidth(parts[col])
+      if #parts[col] > 0 then pad = pad + 1 end
+      parts[col] = parts[col] .. string.rep(' ', pad)
     end
     result[i] = table.concat(parts, char)
   end
