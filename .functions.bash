@@ -378,6 +378,12 @@ hla-web() {
 		"$@" not:tag:clopen
 }
 
+# Add "Architectures: amd64" to Chrome apt source after updates strip it
+fix-chrome-sources() {
+	sudo sed --in-place '/^Signed-By/i Architectures: amd64' \
+		/etc/apt/sources.list.d/google-chrome.sources
+}
+
 # Local function definitions
 if [[ -f $HOME/.functions_local.bash ]]; then
 	# shellcheck source=/dev/null
