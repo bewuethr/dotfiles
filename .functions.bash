@@ -67,6 +67,16 @@ upgradebats() (
 	bats --version
 )
 
+# Install latest version of Copilot app
+upgradecopilotapp() (
+	cd /tmp || exit 1
+	gh --repo github/app release download --clobber \
+		--pattern 'GitHub-Copilot-linux-x64.AppImage' \
+		--output 'copilot.appimage'
+	chmod u+x copilot.appimage
+	mv copilot.appimage "$HOME/.local/bin/copilot-app"
+)
+
 # Install latest version of buildifier
 upgradebuildifier() {
 	gh --repo bazelbuild/buildtools release download --clobber \
