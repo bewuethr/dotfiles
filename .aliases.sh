@@ -19,7 +19,12 @@ alias llad='ll --almost-all --group-directories-first' # Long with dofiles, dirs
 alias gdf='git --git-dir="$HOME/.dotfiles.git" --work-tree="$HOME"'
 
 # grep
-alias grep='grep --color=auto --exclude-dir=.git --exclude=tags --exclude=*.swp --exclude-dir=vendor'
+alias grep='grep --color=auto \
+	--exclude-dir=.git \
+	--exclude-dir=node_modules \
+	--exclude-dir=vendor \
+	--exclude=*.swp \
+	--exclude=tags'
 alias cgrep='grep --color=always'
 
 # Get colour for diffstat
@@ -56,8 +61,8 @@ alias inflate='ruby -r zlib -e "STDOUT.write Zlib::Inflate.inflate(STDIN.read)"'
 # Use Jekyll binstub
 alias jekyll='bin/jekyll'
 
-# Always show directories first, and ignore the vendor directory
-alias tree='tree --dirsfirst -I vendor'
+# Always show directories first, and ignore vendor directories
+alias tree='tree --dirsfirst -I vendor -I node_modules'
 
 # Always use pager for glow
 alias glow='glow --pager'
