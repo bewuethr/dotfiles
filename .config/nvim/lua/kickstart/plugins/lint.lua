@@ -28,6 +28,7 @@ return {
         dockerfile = { 'hadolint' },
         ghaction = { 'actionlint' },
         html = { 'htmlhint' },
+        javascript = { 'eslint' },
         markdown = { 'markdownlint' },
         ruby = { 'standardrb' },
         terraform = { 'tflint' },
