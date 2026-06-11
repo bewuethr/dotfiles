@@ -288,7 +288,6 @@ require('lazy').setup {
         end,
       },
       { 'nvim-telescope/telescope-ui-select.nvim' },
-      { 'nvim-tree/nvim-web-devicons' }, -- pretty icons
     },
     config = function()
       -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -852,6 +851,13 @@ require('lazy').setup {
       statusline.section_location = function()
         return '%2l:%-2v'
       end
+
+      -- Icons provider; used by neo-tree, telescope, and others.
+      require('mini.icons').setup()
+
+      -- Used for backwards compatibility with plugins that require
+      -- "nvim-web-devicons" (e.g. telescope.nvim)
+      require('mini.icons').mock_nvim_web_devicons()
 
       -- ... and there is more!
       --  Check out: https://github.com/nvim-mini/mini.nvim
