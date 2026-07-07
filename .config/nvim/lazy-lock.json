@@ -14,7 +14,7 @@
   "luvit-meta": { "branch": "main", "commit": "cc9b2d412d2fbd30b94a70cfc214c2a3be27a0a2" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "47059d71b42d74b0a1e9f61c1d99d301039c3b5b" },
   "mason.nvim": { "branch": "main", "commit": "2a6940af80375532e5e9e7c1f2fc6319a1b7a69d" },
-  "mini.nvim": { "branch": "main", "commit": "d74190c1528aaf12ba5f3a29d03524c6b81e18b3" },
+  "mini.nvim": { "branch": "main", "commit": "928971c3cfe99ddf29659acc31214cfa836fabe4" },
   "neo-tree.nvim": { "branch": "main", "commit": "83e7a2982fd12b9c3d35bc39dd5877cd91a02a61" },
   "neosolarized.nvim": { "branch": "main", "commit": "0c01fd2ac2ab33918073f57c63bcb2ae5a31d8de" },
   "nui.nvim": { "branch": "main", "commit": "de740991c12411b663994b2860f1a4fd0937c130" },
