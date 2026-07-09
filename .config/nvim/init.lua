@@ -549,6 +549,15 @@ require('lazy').setup {
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         bashls = {},
+        gh_actions_ls = {
+          filetypes = { 'yaml', 'yaml.ghaction' },
+          init_options = {
+            sessionToken = vim.fn.system({ 'gh', 'auth', 'token' }):gsub('%s+$', ''),
+            experimentalFeatures = {
+              all = true,
+            },
+          },
+        },
         gopls = {
           settings = {
             gopls = {
