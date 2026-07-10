@@ -538,6 +538,32 @@ require('lazy').setup {
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
+      -- Build the repos context the Actions language server uses for
+      -- repository-specific completions (environments, secret names, and so on).
+      local function get_repos_config()
+        local git_root = vim.fs.root(0, '.git')
+        if not git_root then
+          return nil
+        end
+
+        local remote = vim.fn.system({ 'git', '-C', git_root, 'remote', 'get-url', 'origin' }):gsub('%s+$', '')
+        local owner, name = remote:match 'github%.com[:/]([^/]+)/([^/]+)'
+        if not owner then
+          return nil
+        end
+        name = name:gsub('%.git$', '')
+
+        local id = vim.fn.system({ 'gh', 'api', '--jq', '.id', 'repos/' .. owner .. '/' .. name }):gsub('%s+$', '')
+        return {
+          {
+            id = tonumber(id),
+            owner = owner,
+            name = name,
+            workspaceUri = 'file://' .. git_root,
+          },
+        }
+      end
+
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
       --
@@ -550,9 +576,10 @@ require('lazy').setup {
       local servers = {
         bashls = {},
         gh_actions_ls = {
-          filetypes = { 'yaml', 'yaml.ghaction' },
+          filetypes = { 'yaml.ghaction' },
           init_options = {
             sessionToken = vim.fn.system({ 'gh', 'auth', 'token' }):gsub('%s+$', ''),
+            repos = get_repos_config(),
             experimentalFeatures = {
               all = true,
             },
