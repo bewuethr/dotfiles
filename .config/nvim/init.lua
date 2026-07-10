@@ -575,16 +575,6 @@ require('lazy').setup {
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         bashls = {},
-        gh_actions_ls = {
-          filetypes = { 'yaml.ghaction' },
-          init_options = {
-            sessionToken = vim.fn.system({ 'gh', 'auth', 'token' }):gsub('%s+$', ''),
-            repos = get_repos_config(),
-            experimentalFeatures = {
-              all = true,
-            },
-          },
-        },
         gopls = {
           settings = {
             gopls = {
@@ -635,7 +625,7 @@ require('lazy').setup {
         ts_ls = {},
       }
 
-      -- tilt_ls is a valid lspconfig server but has no Mason package; install tilt externally
+      -- Install language servers not offered by Mason
       local servers_not_in_mason = { 'tilt_ls' }
       local ensure_installed = vim.tbl_filter(function(server)
         return not vim.tbl_contains(servers_not_in_mason, server)
@@ -650,6 +640,26 @@ require('lazy').setup {
         vim.lsp.config(name, server)
         vim.lsp.enable(name)
       end
+
+      -- Configure gh_actions_ls lazily due to slow blocking calls
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = 'yaml.ghaction',
+        once = true,
+        group = vim.api.nvim_create_augroup('gh-actions-ls-setup', { clear = true }),
+        callback = function()
+          vim.lsp.config('gh_actions_ls', {
+            filetypes = { 'yaml.ghaction' },
+            init_options = {
+              sessionToken = vim.fn.system({ 'gh', 'auth', 'token' }):gsub('%s+$', ''),
+              repos = get_repos_config(),
+              experimentalFeatures = {
+                all = true,
+              },
+            },
+          })
+          vim.lsp.enable 'gh_actions_ls'
+        end,
+      })
     end,
   },
 
