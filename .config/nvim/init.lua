@@ -1048,6 +1048,7 @@ require('lazy').setup {
           syntax = 'markdown',
         },
       }
+      vim.g.vimwiki_folding = 'custom'
       vim.g.vimwiki_global_ext = 0
       vim.g.vimwiki_hl_headers = 1
       vim.g.vimwiki_hl_cb_checked = 2
