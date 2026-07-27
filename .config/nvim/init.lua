@@ -553,12 +553,15 @@ require('lazy').setup {
         end
         name = name:gsub('%.git$', '')
 
-        local id = vim.fn.system({ 'gh', 'api', '--jq', '.id', 'repos/' .. owner .. '/' .. name }):gsub('%s+$', '')
+        local info = vim.fn.system({ 'gh', 'api', '--jq', '[.id, .owner.type] | @tsv', 'repos/' .. owner .. '/' .. name }):gsub('%s+$', '')
+        local id, owner_type = info:match '^(%d+)\t(.+)$'
         return {
           {
             id = tonumber(id),
             owner = owner,
             name = name,
+            -- Required fetch org-level secrets and variables
+            organizationOwned = owner_type == 'Organization',
             workspaceUri = 'file://' .. git_root,
           },
         }
