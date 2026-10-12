@@ -273,6 +273,16 @@ upgradejqp() (
 	jqp --version
 )
 
+# Install latest version of mo
+upgrademo() (
+	cd /tmp || exit 1
+	gh --repo k1LoW/mo release download --clobber \
+		--pattern 'mo_*_amd64.deb' \
+		--output 'mo.deb'
+	sudo dpkg --install mo.deb
+	mo --version
+)
+
 # Install latest version of neovim
 upgradenvim() (
 	cd /tmp || exit 1
