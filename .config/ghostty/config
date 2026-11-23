@@ -51,7 +51,7 @@ font-size = 11
 # font-codepoint-map = U+F0000-U+F3FFF=Monaspace Neon NF
 
 # Break ligatures at the cursor position so the cursor is always visible
-# https://ghostty.org/docs/config/reference#ont-shaping-break
+# https://ghostty.org/docs/config/reference#font-shaping-break
 # font-shaping-break = cursor
 
 # Set theme to Solarized Dark, with colour 8 manually patched
