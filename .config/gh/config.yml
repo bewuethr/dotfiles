@@ -53,6 +53,7 @@ aliases:
                 | first.id
             "
         )"
+    force-cancel: api --method POST repos/{owner}/{repo}/actions/runs/$1/force-cancel
 git_protocol: ssh
 version: "1"
 editor: nvim
